@@ -1,8 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { HERO_SKILL_CARDS } from '../constants';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero: React.FC = () => {
+    // State for capability line animation
+    const [currentCapabilityIndex, setCurrentCapabilityIndex] = useState(0);
+
+    const capabilities = [
+        'AI-powered solutions',
+        'Design systems',
+        'UX research',
+        'Bilingual (Arabic / English)'
+    ];
 
     // Animation Variants
     const containerVariants = {
@@ -25,19 +33,41 @@ const Hero: React.FC = () => {
         }
     };
 
-    const cardVariants = {
-        hidden: { opacity: 0, scale: 0.9, y: 20 },
-        visible: (custom: number) => ({
+    const badgeItemVariants = {
+        hidden: { opacity: 0, y: 10 },
+        visible: (i: number) => ({
             opacity: 1,
-            scale: 1,
             y: 0,
             transition: {
-                delay: 0.6 + (custom * 0.1),
                 duration: 0.5,
+                delay: i * 0.15,
                 ease: "easeOut"
             }
         })
     };
+
+    const capabilityItemVariants = {
+        enter: { opacity: 0, y: 10 },
+        center: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" }
+        },
+        exit: {
+            opacity: 0,
+            y: -10,
+            transition: { duration: 0.3, ease: "easeIn" }
+        }
+    };
+
+    // Sequential capability animation logic
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentCapabilityIndex((prev) => (prev + 1) % capabilities.length);
+        }, 2800); // 2.8 seconds per item (reveal + pause + fade out)
+
+        return () => clearInterval(interval);
+    }, [capabilities.length]);
 
     return (
         <section className="relative min-h-screen w-full flex items-center justify-center font-inter overflow-hidden py-24 md:py-32">
@@ -64,102 +94,162 @@ const Hero: React.FC = () => {
             />
 
             {/* Main Content Container */}
-            <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative z-20 w-full max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="flex flex-col items-center text-center space-y-6 md:space-y-8"
+                >
 
-                    {/* LEFT SIDE: Text Content */}
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="space-y-8"
-                    >
-                        {/* Small Tag */}
-                        <motion.div variants={fadeUpVariants}>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-full shadow-sm">
-                                <span className="text-sm font-medium text-slate-600">Principal Product Designer</span>
-                            </div>
-                        </motion.div>
+                    {/* Photo + Headline Inline */}
+                    <motion.div variants={fadeUpVariants} className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        {/* Profile Photo */}
+                        <div className="flex-shrink-0">
+                            <img
+                                src="/images/soliman-portrait-new.png"
+                                alt="Soliman Shaban"
+                                className="w-[120px] h-[120px] md:w-[140px] md:h-[140px] object-cover"
+                                style={{
+                                    borderRadius: '20px',
+                                    border: '6px solid white',
+                                    boxShadow: '0 0 0 1px rgba(0,0,0,0.05)'
+                                }}
+                            />
+                        </div>
 
-                        {/* Main Headline */}
-                        <motion.div variants={fadeUpVariants} className="space-y-2">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-900">
-                                I design with
+                        {/* Headline Text */}
+                        <div className="text-center md:text-left">
+                            <h1 style={{ fontFamily: 'Inter' }}>
+                                <div className="text-[26px] md:text-[40px] font-semibold text-[#1A1D23] leading-[1.3] mb-1 md:mb-2">
+                                    Hey, I'm Soliman
+                                </div>
+                                <div className="text-[26px] md:text-[40px] font-semibold text-[#1A1D23] leading-[1.3]">
+                                    I design with{' '}
+                                    <span
+                                        className="font-bold"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            backgroundClip: 'text'
+                                        }}
+                                    >
+                                        GenAI
+                                    </span>
+                                </div>
                             </h1>
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
-                                    GenAI
-                                </span>
-                            </h1>
-                        </motion.div>
-
-                        {/* Description */}
-                        <motion.div variants={fadeUpVariants} className="space-y-4">
-                            <p className="text-sm font-medium text-slate-500">
-                                Principal Product Designer | RTA Dubai
-                            </p>
-                            <p className="text-[17px] text-slate-600 leading-relaxed max-w-[520px]" style={{ lineHeight: '1.6', color: '#4B5563' }}>
-                                Building bilingual design systems that power Dubai's AI-driven government transformation.
-                            </p>
-                        </motion.div>
-
-                        {/* CTA Buttons */}
-                        <motion.div variants={fadeUpVariants} className="flex flex-col sm:flex-row gap-4">
-                            <a
-                                href="/work"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-base shadow-lg shadow-blue-600/30 hover:bg-blue-700 hover:shadow-blue-600/40 transition-all hover:-translate-y-0.5"
-                            >
-                                View My Work
-                            </a>
-                            <a
-                                href="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-slate-200 text-slate-900 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 transition-all"
-                            >
-                                Download CV
-                            </a>
-                        </motion.div>
+                        </div>
                     </motion.div>
 
-                    {/* RIGHT SIDE: 4 Floating Skill Cards (2x2 Grid) */}
-                    <div className="grid grid-cols-2 gap-4 lg:gap-6">
-                        {HERO_SKILL_CARDS.map((card, index) => (
-                            <motion.div
-                                key={card.id}
-                                custom={index}
-                                variants={cardVariants}
-                                initial="hidden"
-                                animate="visible"
-                                whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                                className={`${card.bgColor} p-6 rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-all cursor-pointer relative overflow-hidden group`}
+                    {/* Subline - Bilingual Design Systems */}
+                    <motion.div variants={fadeUpVariants} className="w-full max-w-3xl mx-auto px-2">
+                        <div className="text-[15px] md:text-[18px] text-slate-500 leading-[1.6] text-center" style={{ fontFamily: 'Inter' }}>
+                            Building bilingual design systems that power Dubai's AI-driven government transformation.
+                        </div>
+                    </motion.div>
+
+                    {/* Specialization Badges */}
+                    <motion.div
+                        variants={fadeUpVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="flex justify-center items-center min-h-[28px]"
+                    >
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={currentCapabilityIndex}
+                                variants={capabilityItemVariants}
+                                initial="enter"
+                                animate="center"
+                                exit="exit"
+                                className="font-semibold text-[17px]"
+                                style={{
+                                    background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text'
+                                }}
                             >
-                                {/* Card Background Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                {capabilities[currentCapabilityIndex]}
+                            </motion.span>
+                        </AnimatePresence>
+                    </motion.div>
 
-                                {/* Card Content */}
-                                <div className="relative z-10 space-y-3">
-                                    {/* Title */}
-                                    <h3 className="text-white font-bold text-base lg:text-lg">
-                                        {card.title}
-                                    </h3>
+                    {/* CTA Button */}
+                    <motion.div variants={fadeUpVariants} className="flex justify-center w-full md:w-auto px-4 md:px-0">
+                        <a
+                            href="/contact"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[15px] text-[#1A1D23] transition-all hover:opacity-80 w-full md:w-auto max-w-[280px] md:max-w-none"
+                            style={{
+                                background: 'white',
+                                border: '1.5px solid transparent',
+                                backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                backgroundOrigin: 'border-box',
+                                backgroundClip: 'padding-box, border-box',
+                                minHeight: '48px'
+                            }}
+                        >
+                            Download My CV <span>↓</span>
+                        </a>
+                    </motion.div>
 
-                                    {/* Screenshot Placeholder */}
-                                    <div className="bg-white/10 backdrop-blur-sm rounded-lg h-24 lg:h-28 flex items-center justify-center border border-white/20">
-                                        <span className="text-white/60 text-xs text-center px-2">
-                                            {card.screenshot}
-                                        </span>
-                                    </div>
+                    {/* Government Trust Section */}
+                    <motion.div variants={fadeUpVariants} className="mt-8 md:mt-12 w-full px-4">
+                        <p className="text-[13px] md:text-[14px] text-[#6B7280] mb-4 text-center">
+                            Trusted by Dubai government for <span className="font-semibold">4+ years</span>
+                        </p>
 
-                                    {/* Stats */}
-                                    <div className="space-y-1">
-                                        <p className="text-white/90 text-sm font-medium">{card.stat1}</p>
-                                        <p className="text-white/70 text-xs">{card.stat2}</p>
-                                    </div>
+                        {/* Logo Row */}
+                        <div className="flex flex-wrap gap-4 md:gap-6 justify-center items-center">
+                            <img src="/images/01.png" alt="RTA" className="h-[24px] md:h-[28px] w-auto object-contain" style={{ filter: 'grayscale(80%) opacity(0.7)' }} />
+                            <img src="/images/02.png" alt="Dubai Municipality" className="h-[24px] md:h-[28px] w-auto object-contain" style={{ filter: 'grayscale(80%) opacity(0.7)' }} />
+                            <img src="/images/03.png" alt="Digital Dubai" className="h-[24px] md:h-[28px] w-auto object-contain" style={{ filter: 'grayscale(80%) opacity(0.7)' }} />
+                        </div>
+                    </motion.div>
+
+                    {/* Bottom Metrics */}
+                    <motion.div variants={fadeUpVariants} className="w-full pt-8">
+                        <div className="flex flex-wrap gap-8 justify-center">
+                            {/* Metric 1 */}
+                            <div className="flex flex-col items-center">
+                                <div className="text-4xl md:text-5xl font-bold text-slate-900">12M+</div>
+                                <div className="text-sm text-slate-600 mt-1">Citizens served</div>
+                            </div>
+
+                            {/* Metric 2 - Featured AI Card */}
+                            <div
+                                className="flex flex-col items-center"
+                            >
+                                <div
+                                    className="text-4xl md:text-5xl font-bold"
+                                    style={{
+                                        background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text'
+                                    }}
+                                >
+                                    93%
                                 </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                                <div className="text-sm text-slate-600 mt-1">Time saved with AI</div>
+                            </div>
 
-                </div>
+                            {/* Metric 3 */}
+                            <div className="flex flex-col items-center">
+                                <div className="text-4xl md:text-5xl font-bold text-slate-900">8+</div>
+                                <div className="text-sm text-slate-600 mt-1">Years experience</div>
+                            </div>
+
+                            {/* Metric 4 */}
+                            <div className="flex flex-col items-center">
+                                <div className="text-4xl md:text-5xl font-bold text-slate-900">5+</div>
+                                <div className="text-sm text-slate-600 mt-1">Design systems</div>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                </motion.div>
             </div>
 
             {/* Gradient Animation Keyframes */}
