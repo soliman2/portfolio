@@ -5,10 +5,10 @@ import { MORE_EXPERTISE_CARDS } from '../constants';
 const MoreExpertise: React.FC = () => {
 
     const getImageUrl = (cardId: number) => {
-        // Using Unsplash images for different expertise areas
+        // Using local assets for expertise areas
         const imageMap: { [key: number]: string } = {
             1: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop', // Dashboard analytics
-            2: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop', // Teaching/workshop
+            2: '/thumnails /Teaching & Mentorship..png', // Teaching/workshop
             3: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop'  // Languages/translation
         };
         return imageMap[cardId] || '';

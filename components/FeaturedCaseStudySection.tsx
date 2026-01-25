@@ -99,23 +99,49 @@ const FeaturedCaseStudySection: React.FC<FeaturedCaseStudySectionProps> = ({
                     >
                         {/* Placeholder for Hero Image */}
                         <div className="w-full h-full bg-slate-100 rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-200 flex items-center justify-center overflow-hidden">
-                            {/* Temporary placeholder - replace with actual images */}
+                            {/* Conditional rendering: Real images for case studies with assets, placeholder for others */}
                             <div className="aspect-[4/3] w-full relative">
-                                <img
-                                    src={`https://images.unsplash.com/photo-${1486325212027 + index}?q=80&w=2070&auto=format&fit=crop`}
-                                    alt={caseStudy.imageAlt}
-                                    className="w-full h-full object-cover opacity-60"
-                                />
-                                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600/10 to-purple-600/10">
-                                    <div className="text-center p-8">
-                                        <div className="text-6xl mb-4">
-                                            {index === 0 ? '🤖' : index === 1 ? '🎨' : index === 2 ? '🏛️' : '🔬'}
+                                {index === 0 ? (
+                                    // Real image for AI Urban Design Tool
+                                    <img
+                                        src="/thumnails /AI Urban Design Tool thumbnail.png"
+                                        alt="AI Urban Design Tool – before and after urban visualization"
+                                        className="w-full h-full object-cover"
+                                    />
+                                ) : index === 1 ? (
+                                    // Real image for Enterprise Design Systems
+                                    <img
+                                        src="/thumnails /Design systm.png"
+                                        alt="Enterprise Design Systems – component library and system overview"
+                                        className="w-full h-full object-cover"
+                                    />
+                                ) : index === 3 ? (
+                                    // Real image for UX Research & Usability Lab
+                                    <img
+                                        src="/thumnails /UX Research & Usability Lab.png"
+                                        alt="UX Research & Usability Lab – usability testing sessions and research reports"
+                                        className="w-full h-full object-cover"
+                                    />
+                                ) : (
+                                    // Placeholder for other case studies (index 2)
+                                    <>
+                                        <img
+                                            src={`https://images.unsplash.com/photo-${1486325212027 + index}?q=80&w=2070&auto=format&fit=crop`}
+                                            alt={caseStudy.imageAlt}
+                                            className="w-full h-full object-cover opacity-60"
+                                        />
+                                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600/10 to-purple-600/10">
+                                            <div className="text-center p-8">
+                                                <div className="text-6xl mb-4">
+                                                    🏛️
+                                                </div>
+                                                <p className="text-sm text-slate-600 font-medium max-w-xs">
+                                                    {caseStudy.imageAlt}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <p className="text-sm text-slate-600 font-medium max-w-xs">
-                                            {caseStudy.imageAlt}
-                                        </p>
-                                    </div>
-                                </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </motion.div>

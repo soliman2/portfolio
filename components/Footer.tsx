@@ -1,113 +1,105 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Mail, Linkedin, Download, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#2B3544] text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          {/* Column 1: Brand */}
-          <div>
-            <h3 className="text-2xl font-bold mb-2">Soliman Shaban</h3>
-            <p className="text-slate-300 mb-4">Principal Product Designer</p>
-            <div className="space-y-1 text-sm text-slate-400">
-              <p>🇦🇪 Dubai, UAE</p>
-              <p>🇪🇬 From Egypt</p>
-            </div>
-          </div>
+    <section id="contact" className="py-24 bg-slate-900 text-white overflow-hidden relative">
+      {/* Subtle Background Glow - Standard, not experimental orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[50%] -left-[20%] w-[80%] h-[80%] rounded-full bg-blue-600/10 blur-3xl opacity-50"></div>
+        <div className="absolute -bottom-[50%] -right-[20%] w-[80%] h-[80%] rounded-full bg-indigo-600/10 blur-3xl opacity-50"></div>
+      </div>
 
-          {/* Column 2: Discover */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Discover</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/work" className="text-slate-300 hover:text-white transition-colors">
-                  Work
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-slate-300 hover:text-white transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-slate-300 hover:text-white transition-colors">
-                  Resume
-                </a>
-              </li>
-              <li>
-                <Link to="/contact" className="text-slate-300 hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="inline-flex items-center space-x-2 bg-slate-800 border border-slate-700 rounded-full px-4 py-1.5 mb-8 shadow-sm"
+        >
+          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          <span className="text-sm font-medium text-slate-200">Available for opportunities</span>
+        </motion.div>
 
-          {/* Column 3: Connect */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-300 hover:text-white transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:your.email@example.com"
-                  className="text-slate-300 hover:text-white transition-colors"
-                >
-                  Email
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+971502768308"
-                  className="text-slate-300 hover:text-white transition-colors"
-                >
-                  Phone
-                </a>
-              </li>
-            </ul>
-          </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-4xl md:text-5xl font-bold font-display mb-6 tracking-tight text-white"
+        >
+          Let's Build Something <br />
+          <span className="text-blue-400">Innovative Together</span>
+        </motion.h2>
 
-          {/* Column 4: Newsletter (Optional) */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-            <p className="text-sm text-slate-300 mb-4">Get design insights</p>
-            <form className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="Email"
-                className="px-4 py-2 rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors font-medium"
-              >
-                Subscribe
-              </button>
-            </form>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          Currently open to Principal/Staff Designer opportunities at Big Tech and Saudi Government digital transformation initiatives.
+        </motion.p>
+
+        {/* Recognition Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mb-12 inline-block bg-amber-900/20 border border-amber-500/20 px-4 py-2 rounded-lg"
+        >
+          <p className="text-amber-400 text-sm font-semibold flex items-center gap-2">
+            <span>🏆</span> RTA AI & Data Science Center Recognition
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col sm:flex-row justify-center items-center gap-4"
+        >
+          <a href="mailto:hello@solimanshaban.com" className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold font-display transition-all shadow-lg shadow-blue-900/50 hover:-translate-y-0.5">
+            <Mail className="mr-2 h-5 w-5" />
+            Email Me
+          </a>
+          <div className="flex gap-4 w-full sm:w-auto justify-center">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex-1 sm:flex-none inline-flex justify-center items-center px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full font-semibold font-display transition-all">
+              <Linkedin className="mr-2 h-5 w-5 text-slate-400" />
+              LinkedIn
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1533uWsFcWAdLsv8JiR9BN5VLs5KL2RgB/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 sm:flex-none inline-flex justify-center items-center px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full font-semibold font-display transition-all"
+            >
+              <Download className="mr-2 h-5 w-5 text-slate-400" />
+              Resume
+            </a>
+          </div>
+        </motion.div>
+
+        <div className="mt-16 flex flex-col md:flex-row justify-center items-center gap-6 text-slate-400 text-sm font-medium">
+          <div className="flex items-center hover:text-white transition-colors">
+            <Phone className="w-4 h-4 mr-2" />
+            +971 50 276 8308
+          </div>
+          <div className="hidden md:block w-1.5 h-1.5 bg-slate-700 rounded-full"></div>
+          <div className="flex items-center hover:text-white transition-colors">
+            <MapPin className="w-4 h-4 mr-2" />
+            Dubai, UAE | Open to relocation
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-            <p>© 2025 Soliman Shaban. All rights reserved.</p>
-            <p className="text-center md:text-right">
-              🏆 Official Recognition: RTA AI & Data Science Center
-            </p>
-          </div>
+        <div className="mt-12 pt-8 border-t border-slate-800 text-center">
+          <p className="text-slate-500 text-xs">© {new Date().getFullYear()} Soliman Shaban. All rights reserved.</p>
         </div>
       </div>
-    </footer>
+    </section>
   );
 };
 

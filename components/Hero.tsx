@@ -120,6 +120,25 @@ const Hero: React.FC = () => {
 
                         {/* Headline Text */}
                         <div className="text-center md:text-left">
+                            {/* Glass Badge - Sr. Product Designer */}
+                            <div className="mb-3 md:mb-4 flex justify-center md:justify-start">
+                                <span
+                                    className="inline-block px-4 py-1.5 text-xs md:text-sm font-semibold"
+                                    style={{
+                                        background: 'rgba(255, 255, 255, 0.35)',
+                                        backdropFilter: 'blur(12px)',
+                                        WebkitBackdropFilter: 'blur(12px)',
+                                        border: '1px solid rgba(255, 255, 255, 0.4)',
+                                        borderRadius: '999px',
+                                        color: '#1A2332',
+                                        letterSpacing: '0.3px',
+                                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+                                    }}
+                                >
+                                    Sr. Product Designer
+                                </span>
+                            </div>
+
                             <h1 style={{ fontFamily: 'Inter' }}>
                                 <div className="text-[26px] md:text-[40px] font-semibold text-[#1A1D23] leading-[1.3] mb-1 md:mb-2">
                                     Hey, I'm Soliman

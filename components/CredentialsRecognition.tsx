@@ -48,6 +48,24 @@ const CERTIFICATES: Certificate[] = [
         badgeType: "NANODEGREE",
         gradientClass: "bg-gradient-to-br from-emerald-100 to-emerald-200",
         icon: "graduation"
+    },
+    {
+        id: 5,
+        title: "Design Systems Specialist",
+        organization: "Interaction Design Foundation",
+        year: "2023",
+        badgeType: "CERTIFICATE",
+        gradientClass: "bg-gradient-to-br from-purple-100 to-purple-200",
+        icon: "badge"
+    },
+    {
+        id: 6,
+        title: "Product Design Certification",
+        organization: "Nielsen Norman Group",
+        year: "2022",
+        badgeType: "CERTIFICATE",
+        gradientClass: "bg-gradient-to-br from-indigo-100 to-indigo-200",
+        icon: "graduation"
     }
 ];
 

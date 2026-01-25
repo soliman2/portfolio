@@ -4,7 +4,6 @@ import FeaturedCaseStudySection from '../components/FeaturedCaseStudySection';
 import MoreExpertise from '../components/MoreExpertise';
 import CredentialsRecognition from '../components/CredentialsRecognition';
 import Testimonials from '../components/Testimonials';
-import CallToAction from '../components/CallToAction';
 import { FEATURED_CASE_STUDIES } from '../constants';
 
 interface HomeProps {
@@ -64,9 +63,6 @@ const Home: React.FC<HomeProps> = ({ onNavigateAI, onNavigateZLaundry, onNavigat
 
                 {/* Testimonials */}
                 <Testimonials />
-
-                {/* Call to Action */}
-                <CallToAction />
             </div>
         </>
     );
