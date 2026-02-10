@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
     { name: 'About', href: '/about', external: false },
     {
       name: 'Resume',
-      href: '/Soliman Shban -Senior Product Designer CV.pdf',
+      href: '/soliman-shaban-cv.pdf',
       external: true
     },
     { name: 'Contact', href: '/contact', external: false },

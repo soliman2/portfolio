@@ -198,7 +198,7 @@ const Hero: React.FC = () => {
                     {/* CTA Button */}
                     <motion.div variants={fadeUpVariants} className="flex justify-center w-full md:w-auto px-4 md:px-0">
                         <a
-                            href="/Soliman Shban -Senior Product Designer CV.pdf"
+                            href="/soliman-shaban-cv.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[15px] text-[#1A1D23] transition-all hover:opacity-80 w-full md:w-auto max-w-[280px] md:max-w-none"
