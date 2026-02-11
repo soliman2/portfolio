@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Linkedin } from 'lucide-react';
 
 const Hero: React.FC = () => {
     // State for capability line animation
@@ -197,9 +198,18 @@ const Hero: React.FC = () => {
                                 >
                                     Download CV ↓
                                 </a>
+                                <a
+                                    href="https://www.linkedin.com/in/solimanshaban/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 text-[#4169E1] hover:bg-blue-50 rounded-full transition-colors order-first md:order-none"
+                                    aria-label="LinkedIn Profile"
+                                >
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
                                 <button
                                     onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="text-[13px] font-medium text-[#4169E1] hover:underline"
+                                    className="hidden md:block text-[13px] font-medium text-[#4169E1] hover:underline"
                                 >
                                     View Work ↓
                                 </button>

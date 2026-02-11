@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
             Email Me
           </a>
           <div className="flex gap-4 w-full md:w-auto justify-center">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex-1 md:flex-none inline-flex justify-center items-center px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full font-semibold font-display transition-all">
+            <a href="https://www.linkedin.com/in/solimanshaban/" target="_blank" rel="noreferrer" className="flex-1 md:flex-none inline-flex justify-center items-center px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full font-semibold font-display transition-all">
               <Linkedin className="mr-2 h-5 w-5 text-slate-400" />
               LinkedIn
             </a>
