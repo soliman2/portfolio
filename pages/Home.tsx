@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import FeaturedCaseStudySection from '../components/FeaturedCaseStudySection';
 import MoreExpertise from '../components/MoreExpertise';
-import CredentialsRecognition from '../components/CredentialsRecognition';
+
 import Testimonials from '../components/Testimonials';
 import { FEATURED_CASE_STUDIES } from '../constants';
 
@@ -57,9 +57,6 @@ const Home: React.FC<HomeProps> = ({ onNavigateAI, onNavigateZLaundry, onNavigat
 
                 {/* More Expertise Section (3 Cards) */}
                 <MoreExpertise />
-
-                {/* Credentials & Recognition */}
-                <CredentialsRecognition />
 
                 {/* Testimonials */}
                 <Testimonials />

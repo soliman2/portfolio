@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
               LinkedIn
             </a>
             <a
-              href="https://drive.google.com/file/d/1533uWsFcWAdLsv8JiR9BN5VLs5KL2RgB/view"
+              href="/soliman-shaban-cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 sm:flex-none inline-flex justify-center items-center px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full font-semibold font-display transition-all"

@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
     }, [capabilities.length]);
 
     return (
-        <section className="relative min-h-screen w-full flex items-center justify-center font-inter overflow-hidden py-24 md:py-32">
+        <section className="relative min-h-screen w-full flex items-center justify-center font-inter overflow-hidden pt-24 pb-12 md:pt-32 md:pb-16">
             {/* Background Gradient */}
             <div
                 className="absolute inset-0 pointer-events-none z-0"
@@ -94,56 +94,43 @@ const Hero: React.FC = () => {
             />
 
             {/* Main Content Container */}
-            <div className="relative z-20 w-full max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-col items-center text-center space-y-6 md:space-y-8"
+                    className="flex flex-col space-y-10 md:space-y-16 h-full"
                 >
+                    {/* Hero Grid: Content Left, Image Right */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
 
-                    {/* Photo + Headline Inline */}
-                    <motion.div variants={fadeUpVariants} className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-                        {/* Profile Photo */}
-                        <div className="flex-shrink-0">
-                            <img
-                                src="/images/soliman-portrait-new.png"
-                                alt="Soliman Shaban"
-                                className="w-[120px] h-[120px] md:w-[140px] md:h-[140px] object-cover"
-                                style={{
-                                    borderRadius: '20px',
-                                    border: '6px solid white',
-                                    boxShadow: '0 0 0 1px rgba(0,0,0,0.05)'
-                                }}
-                            />
-                        </div>
-
-                        {/* Headline Text */}
-                        <div className="text-center md:text-left">
+                        {/* Left Side: Content Block */}
+                        <div className="flex flex-col justify-center items-start text-left space-y-4 order-2 lg:order-1">
                             {/* Glass Badge - Sr. Product Designer */}
-                            <div className="mb-3 md:mb-4 flex justify-center md:justify-start">
+                            <motion.div variants={fadeUpVariants}>
                                 <span
                                     className="inline-block px-4 py-1.5 text-xs md:text-sm font-semibold"
                                     style={{
-                                        background: 'rgba(255, 255, 255, 0.35)',
+                                        background: 'rgba(255, 255, 255, 0.45)',
                                         backdropFilter: 'blur(12px)',
                                         WebkitBackdropFilter: 'blur(12px)',
-                                        border: '1px solid rgba(255, 255, 255, 0.4)',
+                                        border: '1px solid rgba(255, 255, 255, 0.5)',
                                         borderRadius: '999px',
                                         color: '#1A2332',
                                         letterSpacing: '0.3px',
                                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                                     }}
                                 >
-                                    Sr. Product Designer
-                                </span>
-                            </div>
+                                    Sr. Product Designer • AI • Service Design
+                                </span >
+                            </motion.div>
 
-                            <h1 style={{ fontFamily: 'Inter' }}>
-                                <div className="text-[26px] md:text-[40px] font-semibold text-[#1A1D23] leading-[1.3] mb-1 md:mb-2">
+                            {/* Headline */}
+                            <motion.h1 variants={fadeUpVariants} className="space-y-2">
+                                <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
                                     Hey, I'm Soliman
-                                </div>
-                                <div className="text-[26px] md:text-[40px] font-semibold text-[#1A1D23] leading-[1.3]">
+                                </span>
+                                <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
                                     I design with{' '}
                                     <span
                                         className="font-bold"
@@ -156,120 +143,139 @@ const Hero: React.FC = () => {
                                     >
                                         GenAI
                                     </span>
-                                </div>
-                            </h1>
-                        </div>
-                    </motion.div>
+                                </span>
+                            </motion.h1>
 
-                    {/* Subline - Bilingual Design Systems */}
-                    <motion.div variants={fadeUpVariants} className="w-full max-w-3xl mx-auto px-2">
-                        <div className="text-[15px] md:text-[18px] text-slate-500 leading-[1.6] text-center" style={{ fontFamily: 'Inter' }}>
-                            Building bilingual design systems that power Dubai's AI-driven government transformation.
-                        </div>
-                    </motion.div>
+                            {/* Description */}
+                            <motion.p variants={fadeUpVariants} className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter">
+                                Building bilingual design systems that power Dubai's AI-driven government transformation.
+                            </motion.p>
 
-                    {/* Specialization Badges */}
-                    <motion.div
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="flex justify-center items-center min-h-[28px]"
-                    >
-                        <AnimatePresence mode="wait">
-                            <motion.span
-                                key={currentCapabilityIndex}
-                                variants={capabilityItemVariants}
-                                initial="enter"
-                                animate="center"
-                                exit="exit"
-                                className="font-semibold text-[17px]"
-                                style={{
-                                    background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    backgroundClip: 'text'
-                                }}
+                            {/* Capability Ticker */}
+                            <motion.div
+                                variants={fadeUpVariants}
+                                className="flex items-center min-h-[28px]"
                             >
-                                {capabilities[currentCapabilityIndex]}
-                            </motion.span>
-                        </AnimatePresence>
-                    </motion.div>
+                                <AnimatePresence mode="wait">
+                                    <motion.span
+                                        key={currentCapabilityIndex}
+                                        variants={capabilityItemVariants}
+                                        initial="enter"
+                                        animate="center"
+                                        exit="exit"
+                                        className="font-bold text-xl md:text-2xl"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            backgroundClip: 'text'
+                                        }}
+                                    >
+                                        {capabilities[currentCapabilityIndex]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </motion.div>
 
-                    {/* CTA Button */}
-                    <motion.div variants={fadeUpVariants} className="flex justify-center w-full md:w-auto px-4 md:px-0">
-                        <a
-                            href="/soliman-shaban-cv.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[15px] text-[#1A1D23] transition-all hover:opacity-80 w-full md:w-auto max-w-[280px] md:max-w-none"
-                            style={{
-                                background: 'white',
-                                border: '1.5px solid transparent',
-                                backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
-                                backgroundOrigin: 'border-box',
-                                backgroundClip: 'padding-box, border-box',
-                                minHeight: '48px'
-                            }}
-                        >
-                            Download My CV <span>↓</span>
-                        </a>
-                    </motion.div>
-
-                    {/* Government Trust Section */}
-                    <motion.div variants={fadeUpVariants} className="mt-8 md:mt-12 w-full px-4">
-                        <p className="text-[13px] md:text-[14px] text-[#6B7280] mb-4 text-center">
-                            Trusted by Dubai government for <span className="font-semibold">4+ years</span>
-                        </p>
-
-                        {/* Logo Row */}
-                        <div className="flex flex-wrap gap-4 md:gap-6 justify-center items-center">
-                            <img src="/images/01.png" alt="RTA" className="h-[24px] md:h-[28px] w-auto object-contain" style={{ filter: 'grayscale(80%) opacity(0.7)' }} />
-                            <img src="/images/02.png" alt="Dubai Municipality" className="h-[24px] md:h-[28px] w-auto object-contain" style={{ filter: 'grayscale(80%) opacity(0.7)' }} />
-                            <img src="/images/03.png" alt="Digital Dubai" className="h-[24px] md:h-[28px] w-auto object-contain" style={{ filter: 'grayscale(80%) opacity(0.7)' }} />
-                        </div>
-                    </motion.div>
-
-                    {/* Bottom Metrics */}
-                    <motion.div variants={fadeUpVariants} className="w-full pt-8">
-                        <div className="flex flex-wrap gap-8 justify-center">
-                            {/* Metric 1 */}
-                            <div className="flex flex-col items-center">
-                                <div className="text-4xl md:text-5xl font-bold text-slate-900">12M+</div>
-                                <div className="text-sm text-slate-600 mt-1">Citizens served</div>
-                            </div>
-
-                            {/* Metric 2 - Featured AI Card */}
-                            <div
-                                className="flex flex-col items-center"
-                            >
-                                <div
-                                    className="text-4xl md:text-5xl font-bold"
+                            {/* CTA Button */}
+                            <motion.div variants={fadeUpVariants} className="pt-4">
+                                <a
+                                    href="/soliman-shaban-cv.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full font-bold text-base text-[#1A1D23] transition-all hover:shadow-2xl hover:shadow-blue-200 active:scale-95 group"
                                     style={{
-                                        background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                        backgroundClip: 'text'
+                                        background: 'white',
+                                        border: '2px solid transparent',
+                                        backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                        backgroundOrigin: 'border-box',
+                                        backgroundClip: 'padding-box, border-box',
                                     }}
                                 >
-                                    93%
+                                    Download My CV <span className="group-hover:translate-y-1 transition-transform">↓</span>
+                                </a>
+                            </motion.div>
+                        </div>
+
+                        {/* Right Side: Image with matching height */}
+                        <motion.div
+                            variants={fadeUpVariants}
+                            className="relative order-1 lg:order-2 flex"
+                        >
+                            <div className="relative w-full h-[350px] lg:h-[450px] overflow-hidden rounded-[40px] shadow-2xl group border-[8px] border-white">
+                                <img
+                                    src="/images/soliman-portrait-new.png"
+                                    alt="Soliman Shaban"
+                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                />
+                                {/* Bottom recognition tags inside image */}
+                                <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3">
+                                    <div className="bg-white/80 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/50 shadow-lg self-start">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
+                                            <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Impact Highlight</p>
+                                        </div>
+                                        <p className="text-sm font-bold text-slate-900 leading-tight">93% Time saved with AI in urban planning tools</p>
+                                    </div>
+
+                                    <div className="bg-[#1A1D23]/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 shadow-xl self-end flex items-center gap-3">
+                                        <div className="flex flex-col">
+                                            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mb-1">Featured at</p>
+                                            <p className="text-sm font-black text-white tracking-tight leading-none">
+                                                GITEX <span className="text-blue-500">GLOBAL</span>
+                                            </p>
+                                        </div>
+                                        <div className="w-[1px] h-6 bg-white/20"></div>
+                                        <p className="text-[10px] font-bold text-white uppercase tracking-wider">Dubai</p>
+                                    </div>
                                 </div>
-                                <div className="text-sm text-slate-600 mt-1">Time saved with AI</div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Simplified Impact Row: Logos + Metrics */}
+                    <motion.div variants={fadeUpVariants} className="pt-12 border-t border-slate-200/50">
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
+
+                            {/* Government Logos */}
+                            <div className="border-b lg:border-b-0 lg:border-r border-slate-200 pb-8 lg:pb-0 lg:pr-16">
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">Government Trust</p>
+                                <div className="flex flex-wrap items-center gap-8">
+                                    <img src="/images/01.png" alt="RTA" className="h-7 md:h-8 w-auto" />
+                                    <img src="/images/02.png" alt="Dubai Municipality" className="h-7 md:h-8 w-auto" />
+                                    <img src="/images/03.png" alt="Digital Dubai" className="h-7 md:h-8 w-auto" />
+                                </div>
                             </div>
 
-                            {/* Metric 3 */}
-                            <div className="flex flex-col items-center">
-                                <div className="text-4xl md:text-5xl font-bold text-slate-900">8+</div>
-                                <div className="text-sm text-slate-600 mt-1">Years experience</div>
+                            {/* Metrics Grid */}
+                            <div className="flex flex-wrap gap-8 md:gap-12">
+                                <div className="flex flex-col">
+                                    <span className="text-2xl md:text-3xl font-bold text-slate-900 font-display">12M+</span>
+                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">Citizens</span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span
+                                        className="text-2xl md:text-3xl font-bold font-display"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            backgroundClip: 'text'
+                                        }}
+                                    >93%</span>
+                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">AI Speed</span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="text-2xl md:text-3xl font-bold text-slate-900 font-display">8+</span>
+                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">Years</span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="text-2xl md:text-3xl font-bold text-slate-900 font-display">5+</span>
+                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">Systems</span>
+                                </div>
                             </div>
 
-                            {/* Metric 4 */}
-                            <div className="flex flex-col items-center">
-                                <div className="text-4xl md:text-5xl font-bold text-slate-900">5+</div>
-                                <div className="text-sm text-slate-600 mt-1">Design systems</div>
-                            </div>
                         </div>
                     </motion.div>
-
                 </motion.div>
             </div>
 
