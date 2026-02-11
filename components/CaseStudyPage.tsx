@@ -53,17 +53,6 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
             {/* Navigation Spacer */}
             <div className="h-20 lg:h-24"></div>
 
-            {/* Back Button */}
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-8 py-6">
-                <button
-                    onClick={onBack}
-                    className="group inline-flex items-center gap-2 text-slate-500 hover:text-[#4169E1] transition-colors font-medium text-sm"
-                >
-                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    Back to Work
-                </button>
-            </div>
-
             {/* ==============================================================================
             SECTION 1: HERO
            ============================================================================== */}

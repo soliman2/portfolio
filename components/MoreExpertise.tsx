@@ -2,34 +2,55 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MORE_EXPERTISE_CARDS } from '../constants';
 
+const EXPERTISE_CHIPS = [
+    "Design Systems", "Service Design", "UX Research", "AI Prototyping",
+    "Figma", "Usability Testing", "Arabic/English", "Dashboards",
+    "Teaching", "Data Viz"
+];
+
 const MoreExpertise: React.FC = () => {
 
     const getImageUrl = (cardId: number) => {
-        // Using local assets for expertise areas
         const imageMap: { [key: number]: string } = {
-            1: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop', // Dashboard analytics
-            2: '/thumnails /Teaching & Mentorship..png', // Teaching/workshop
-            3: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop'  // Languages/translation
+            1: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+            2: '/thumnails /Teaching & Mentorship..png',
+            3: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop'
         };
         return imageMap[cardId] || '';
     };
 
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+            <div className="max-w-[1400px] mx-auto px-5 md:px-6 lg:px-12 relative z-10">
 
                 {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display text-[#1A1D23] leading-tight mb-4">
-                        More Expertise
+                <div className="text-center max-w-2xl mx-auto mb-6 md:mb-16">
+                    <h2 className="text-[28px] md:text-5xl font-bold font-display text-[#1A1D23] leading-tight mb-2 md:mb-4">
+                        Expertise
                     </h2>
-                    <p className="text-lg text-slate-600">
+                    <p className="hidden md:block text-lg text-slate-600">
                         Additional areas where I deliver impact
                     </p>
                 </div>
 
-                {/* 3 Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Mobile: Chip Cloud */}
+                <div className="md:hidden flex flex-wrap justify-center gap-2">
+                    {EXPERTISE_CHIPS.map((chip, idx) => (
+                        <motion.span
+                            key={idx}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: idx * 0.04 }}
+                            className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[13px] font-semibold bg-[#E8F0FE] text-[#4169E1]"
+                        >
+                            {chip}
+                        </motion.span>
+                    ))}
+                </div>
+
+                {/* Desktop: 3 Cards Grid */}
+                <div className="hidden md:grid grid-cols-3 gap-8">
                     {MORE_EXPERTISE_CARDS.map((card, index) => (
                         <motion.div
                             key={card.id}
@@ -51,17 +72,12 @@ const MoreExpertise: React.FC = () => {
 
                             {/* Content */}
                             <div className="p-8">
-                                {/* Headline */}
                                 <h3 className="text-2xl font-bold font-display text-[#1A1D23] mb-4 group-hover:text-[#4169E1] transition-colors duration-300">
                                     {card.headline}
                                 </h3>
-
-                                {/* Description */}
                                 <p className="text-slate-600 leading-relaxed mb-6">
                                     {card.description}
                                 </p>
-
-                                {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {card.tags.map((tag, idx) => (
                                         <span
@@ -72,8 +88,6 @@ const MoreExpertise: React.FC = () => {
                                         </span>
                                     ))}
                                 </div>
-
-                                {/* Mini Stat + Hover CTA */}
                                 <div className="flex items-center justify-between pt-4 border-t border-slate-200">
                                     <div className="text-sm font-bold text-[#4169E1]">
                                         {card.miniStat}

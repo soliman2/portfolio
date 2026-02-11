@@ -4,151 +4,109 @@ import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TESTIMONIALS } from '../constants';
 
 const Testimonials: React.FC = () => {
-    const [startIndex, setStartIndex] = useState(0);
-    const visibleCards = 3;
+    const [mobileIndex, setMobileIndex] = useState(0);
 
-    const nextSlide = () => {
-        setStartIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+    const nextMobile = () => {
+        setMobileIndex((prev) => (prev + 1) % TESTIMONIALS.length);
     };
 
-    const prevSlide = () => {
-        setStartIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+    const prevMobile = () => {
+        setMobileIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
     };
 
-    // Helper to get visible testimonials including wrap-around
-    const getVisibleTestimonials = () => {
-        const result = [];
-        for (let i = 0; i < visibleCards; i++) {
-            result.push(TESTIMONIALS[(startIndex + i) % TESTIMONIALS.length]);
-        }
-        return result;
-    };
+    // Pick the 3 strongest testimonials for the desktop row
+    const desktopTestimonials = TESTIMONIALS.slice(0, 3);
+    const currentMobileTestimonial = TESTIMONIALS[mobileIndex];
 
     return (
-        <section className="py-24 bg-[#F9FAFB] overflow-hidden" id="testimonials">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="pt-4 pb-4 md:py-10 bg-[#F9FAFB] overflow-hidden" id="testimonials">
+            <div className="max-w-[1280px] mx-auto px-5 md:px-6 lg:px-12">
 
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
-                    <div className="max-w-2xl">
-                        <h2 className="text-3xl md:text-5xl font-bold font-display text-slate-900 mb-4 tracking-tight">
-                            What Leaders Say
-                        </h2>
-                        <p className="text-lg text-slate-500 font-inter">
-                            Trusted by RTA executives, design leaders, and government teams.
-                        </p>
-                    </div>
+                <div className="mb-8 md:mb-12">
+                    <h2 className="text-[28px] md:text-4xl font-bold font-display text-slate-900 tracking-tight">
+                        What Leaders Say
+                    </h2>
+                </div>
 
-                    {/* Navigation Buttons */}
-                    <div className="flex items-center gap-3">
-                        <button
-                            onClick={prevSlide}
-                            className="p-3 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-[#4169E1] hover:text-white transition-all duration-300 shadow-sm"
-                            aria-label="Previous testimonials"
+                {/* ===== MOBILE: Single centered quote ===== */}
+                <div className="md:hidden">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={`mobile-${mobileIndex}`}
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -30 }}
+                            transition={{ duration: 0.3 }}
+                            className="text-center px-2"
                         >
-                            <ChevronLeft className="w-6 h-6" />
+                            <Quote className="w-6 h-6 text-[#4169E1]/30 mx-auto mb-4" />
+                            <p className="text-base text-slate-700 leading-relaxed italic mb-4">
+                                "{currentMobileTestimonial.quote}"
+                            </p>
+                            <div className="font-bold text-slate-900 text-sm">
+                                {currentMobileTestimonial.name}
+                            </div>
+                            <div className="text-xs text-[#4169E1] font-medium mt-0.5">
+                                {currentMobileTestimonial.title}
+                            </div>
+                            <div className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">
+                                {currentMobileTestimonial.company}
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+
+                    {/* Dot indicators + nav buttons */}
+                    <div className="flex items-center justify-center gap-4 mt-6">
+                        <button
+                            onClick={prevMobile}
+                            className="p-2 rounded-full border border-slate-200 bg-white text-slate-500"
+                            aria-label="Previous"
+                        >
+                            <ChevronLeft className="w-4 h-4" />
                         </button>
+                        <div className="flex gap-1.5">
+                            {TESTIMONIALS.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setMobileIndex(idx)}
+                                    className={`w-2 h-2 rounded-full transition-colors ${idx === mobileIndex ? 'bg-[#4169E1]' : 'bg-slate-300'}`}
+                                    aria-label={`Go to testimonial ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
                         <button
-                            onClick={nextSlide}
-                            className="p-3 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-[#4169E1] hover:text-white transition-all duration-300 shadow-sm"
-                            aria-label="Next testimonials"
+                            onClick={nextMobile}
+                            className="p-2 rounded-full border border-slate-200 bg-white text-slate-500"
+                            aria-label="Next"
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRight className="w-4 h-4" />
                         </button>
                     </div>
                 </div>
 
-                {/* Carousel Container */}
-                <div className="relative">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                        <AnimatePresence mode="popLayout" initial={false}>
-                            {getVisibleTestimonials().map((testimonial, idx) => {
-                                const isOfficial = testimonial.badge?.includes("Official Recognition");
-
-                                return (
-                                    <motion.div
-                                        key={`${testimonial.id}-${startIndex + idx}`}
-                                        initial={{ opacity: 0, x: 50 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: -50 }}
-                                        transition={{ duration: 0.4, ease: "easeOut" }}
-                                        className={`group relative flex flex-col h-full rounded-[28px] p-8 transition-all duration-500 ${isOfficial
-                                                ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-2 border-amber-400/30 shadow-2xl shadow-amber-900/10'
-                                                : 'bg-white border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-blue-900/5'
-                                            }`}
-                                    >
-                                        {/* Glow effect for Official card */}
-                                        {isOfficial && (
-                                            <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-400/20 to-indigo-400/20 rounded-[28px] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
-                                        )}
-
-                                        <div className="relative z-10 flex flex-col h-full">
-                                            {/* Quote Icon */}
-                                            <div className="mb-6">
-                                                <Quote className={`w-8 h-8 ${isOfficial ? 'text-amber-400' : 'text-blue-100 group-hover:text-blue-500 transition-colors duration-500'}`} />
-                                            </div>
-
-                                            {/* Recognition Badge */}
-                                            {testimonial.badge && (
-                                                <div className="mb-4">
-                                                    <span className={`inline-flex items-center px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border ${isOfficial
-                                                            ? 'bg-amber-400/10 text-amber-400 border-amber-400/20'
-                                                            : 'bg-amber-50 text-amber-600 border-amber-100'
-                                                        }`}>
-                                                        {testimonial.badge}
-                                                    </span>
-                                                </div>
-                                            )}
-
-                                            {/* Quote Content */}
-                                            <div className="flex-grow">
-                                                <p className={`leading-relaxed font-inter mb-8 italic ${isOfficial ? 'text-slate-200' : 'text-slate-700'}`}>
-                                                    "{testimonial.quote}"
-                                                </p>
-                                            </div>
-
-                                            {/* Author Info */}
-                                            <div className={`pt-6 border-t mt-auto ${isOfficial ? 'border-amber-400/10' : 'border-slate-100'}`}>
-                                                <div className={`font-bold font-display text-base leading-tight ${isOfficial ? 'text-white' : 'text-slate-900'}`}>
-                                                    {testimonial.name}
-                                                </div>
-                                                <div className={`text-sm font-medium mt-1 ${isOfficial ? 'text-amber-400/90' : 'text-blue-600'}`}>
-                                                    {testimonial.title}
-                                                </div>
-                                                <div className={`text-[11px] font-semibold uppercase tracking-widest mt-2 leading-tight ${isOfficial ? 'text-slate-400' : 'text-slate-400'}`}>
-                                                    {testimonial.company}
-                                                </div>
-
-                                                {testimonial.link && (
-                                                    <div className={`mt-4 pt-4 border-t ${isOfficial ? 'border-white/5' : 'border-slate-50'}`}>
-                                                        <a
-                                                            href="#"
-                                                            className={`inline-flex items-center text-xs font-bold transition-colors ${isOfficial ? 'text-amber-400 hover:text-white' : 'text-slate-900 hover:text-blue-600'
-                                                                }`}
-                                                        >
-                                                            {testimonial.link}
-                                                        </a>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                );
-                            })}
-                        </AnimatePresence>
-                    </div>
-                </div>
-
-                {/* LinkedIn Link Section */}
-                <div className="mt-16 text-center">
-                    <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm"
-                    >
-                        View More Recommendations on LinkedIn <span className="ml-2">→</span>
-                    </a>
+                {/* ===== DESKTOP: 3 quotes in one row, text-only with left border accent ===== */}
+                <div className="hidden md:grid md:grid-cols-3 gap-8">
+                    {desktopTestimonials.map((testimonial, idx) => (
+                        <motion.div
+                            key={testimonial.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: idx * 0.1 }}
+                            className="border-l-[3px] border-[#4169E1] pl-6"
+                        >
+                            <p className="text-[15px] text-[#6B7280] leading-relaxed italic mb-4">
+                                "{testimonial.quote}"
+                            </p>
+                            <div className="text-sm font-semibold text-[#1A1D23]">
+                                {testimonial.name}
+                            </div>
+                            <div className="text-[13px] text-[#9CA3AF] mt-0.5">
+                                {testimonial.title}, {testimonial.company}
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

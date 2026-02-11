@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -9,18 +9,17 @@ import Work from './pages/Work';
 import CaseStudyPage from './components/CaseStudyPage';
 import ZLaundryCaseStudy from './components/ZLaundryCaseStudy';
 import DesignSystemsCaseStudy from './components/DesignSystemsCaseStudy';
+import BeachLockerCaseStudy from './components/BeachLockerCaseStudy';
 
-// Wrapper component to handle navigation for homepage
-const HomeWrapper: React.FC = () => {
-  const navigate = useNavigate();
+// Scroll to top on every route change
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
 
-  return (
-    <Home
-      onNavigateAI={() => navigate('/work/ai-urban-tool')}
-      onNavigateZLaundry={() => navigate('/work/z-laundry')}
-      onNavigateDesignSystems={() => navigate('/work/rta-design-system')}
-    />
-  );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 };
 
 // Wrapper for case studies with back navigation
@@ -29,7 +28,16 @@ const CaseStudyWrapper: React.FC<{ children: React.ReactNode }> = ({ children })
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
-      <Navbar isCaseStudy={true} onBack={() => navigate('/')} />
+      <Navbar isCaseStudy={true} />
+      {/* Single back-to-home link */}
+      <div className="max-w-[1280px] mx-auto px-6 pt-4 pb-0">
+        <button
+          onClick={() => navigate('/')}
+          className="inline-flex items-center gap-1 text-sm font-medium text-[#4169E1] hover:underline"
+        >
+          ← Back to Home
+        </button>
+      </div>
       <main>{children}</main>
     </div>
   );
@@ -38,6 +46,7 @@ const CaseStudyWrapper: React.FC<{ children: React.ReactNode }> = ({ children })
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
         <Routes>
           {/* Homepage Route */}
@@ -45,7 +54,7 @@ const App: React.FC = () => {
             <>
               <Navbar isCaseStudy={false} />
               <main>
-                <HomeWrapper />
+                <Home />
               </main>
             </>
           } />
@@ -96,6 +105,12 @@ const App: React.FC = () => {
           <Route path="/work/rta-design-system" element={
             <CaseStudyWrapper>
               <DesignSystemsCaseStudy onBack={() => { }} />
+            </CaseStudyWrapper>
+          } />
+
+          <Route path="/work/beach-locker" element={
+            <CaseStudyWrapper>
+              <BeachLockerCaseStudy onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 

@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
     }, [capabilities.length]);
 
     return (
-        <section className="relative min-h-screen w-full flex items-center justify-center font-inter overflow-hidden pt-24 pb-12 md:pt-32 md:pb-16">
+        <section className="relative w-full flex items-center justify-center font-inter overflow-hidden pt-12 pb-0 md:pt-32 md:pb-0 md:min-h-[85vh] lg:min-h-screen max-h-none md:max-h-none">
             {/* Background Gradient */}
             <div
                 className="absolute inset-0 pointer-events-none z-0"
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-col space-y-10 md:space-y-16 h-full"
+                    className="flex flex-col space-y-6 md:space-y-16 h-full"
                 >
                     {/* Hero Grid: Content Left, Image Right */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -126,11 +126,11 @@ const Hero: React.FC = () => {
                             </motion.div>
 
                             {/* Headline */}
-                            <motion.h1 variants={fadeUpVariants} className="space-y-2">
-                                <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
+                            <motion.h1 variants={fadeUpVariants} className="space-y-1 md:space-y-2">
+                                <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
                                     Hey, I'm Soliman
                                 </span>
-                                <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
+                                <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
                                     I design with{' '}
                                     <span
                                         className="font-bold"
@@ -147,7 +147,7 @@ const Hero: React.FC = () => {
                             </motion.h1>
 
                             {/* Description */}
-                            <motion.p variants={fadeUpVariants} className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter">
+                            <motion.p variants={fadeUpVariants} className="hidden md:block text-base md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter">
                                 Building bilingual design systems that power Dubai's AI-driven government transformation.
                             </motion.p>
 
@@ -199,9 +199,9 @@ const Hero: React.FC = () => {
                         {/* Right Side: Image with matching height */}
                         <motion.div
                             variants={fadeUpVariants}
-                            className="relative order-1 lg:order-2 flex"
+                            className="hidden md:flex relative order-1 lg:order-2"
                         >
-                            <div className="relative w-full h-[350px] lg:h-[450px] overflow-hidden rounded-[40px] shadow-2xl group border-[8px] border-white">
+                            <div className="relative w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-[40px] shadow-2xl group border-[8px] border-white">
                                 <img
                                     src="/images/soliman-portrait-new.png"
                                     alt="Soliman Shaban"
@@ -217,28 +217,19 @@ const Hero: React.FC = () => {
                                         <p className="text-sm font-bold text-slate-900 leading-tight">93% Time saved with AI in urban planning tools</p>
                                     </div>
 
-                                    <div className="bg-[#1A1D23]/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 shadow-xl self-end flex items-center gap-3">
-                                        <div className="flex flex-col">
-                                            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none mb-1">Featured at</p>
-                                            <p className="text-sm font-black text-white tracking-tight leading-none">
-                                                GITEX <span className="text-blue-500">GLOBAL</span>
-                                            </p>
-                                        </div>
-                                        <div className="w-[1px] h-6 bg-white/20"></div>
-                                        <p className="text-[10px] font-bold text-white uppercase tracking-wider">Dubai</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </motion.div>
                     </div>
 
                     {/* Simplified Impact Row: Logos + Metrics */}
-                    <motion.div variants={fadeUpVariants} className="pt-12 border-t border-slate-200/50">
-                        <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
+                    <motion.div variants={fadeUpVariants} className="pt-6 md:pt-12 border-t border-slate-200/50">
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16">
 
                             {/* Government Logos */}
-                            <div className="border-b lg:border-b-0 lg:border-r border-slate-200 pb-8 lg:pb-0 lg:pr-16">
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">Government Trust</p>
+                            <div className="border-b lg:border-b-0 lg:border-r border-slate-200 pb-4 md:pb-8 lg:pb-0 lg:pr-16">
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-3 md:mb-6">Government Trust</p>
                                 <div className="flex flex-wrap items-center gap-8">
                                     <img src="/images/01.png" alt="RTA" className="h-7 md:h-8 w-auto" />
                                     <img src="/images/02.png" alt="Dubai Municipality" className="h-7 md:h-8 w-auto" />
@@ -247,14 +238,14 @@ const Hero: React.FC = () => {
                             </div>
 
                             {/* Metrics Grid */}
-                            <div className="flex flex-wrap gap-8 md:gap-12">
+                            <div className="grid grid-cols-2 md:flex gap-4 md:gap-12">
                                 <div className="flex flex-col">
-                                    <span className="text-2xl md:text-3xl font-bold text-slate-900 font-display">12M+</span>
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">Citizens</span>
+                                    <span className="text-[32px] md:text-3xl font-bold text-slate-900 font-display leading-none">12M+</span>
+                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">Citizens</span>
                                 </div>
                                 <div className="flex flex-col">
                                     <span
-                                        className="text-2xl md:text-3xl font-bold font-display"
+                                        className="text-[32px] md:text-3xl font-bold font-display leading-none"
                                         style={{
                                             background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
                                             WebkitBackgroundClip: 'text',
@@ -262,15 +253,15 @@ const Hero: React.FC = () => {
                                             backgroundClip: 'text'
                                         }}
                                     >93%</span>
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">AI Speed</span>
+                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">AI Speed</span>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-2xl md:text-3xl font-bold text-slate-900 font-display">8+</span>
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">Years</span>
+                                    <span className="text-[32px] md:text-3xl font-bold text-slate-900 font-display leading-none">8+</span>
+                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">Years</span>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-2xl md:text-3xl font-bold text-slate-900 font-display">5+</span>
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-1">Systems</span>
+                                    <span className="text-[32px] md:text-3xl font-bold text-slate-900 font-display leading-none">5+</span>
+                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">Systems</span>
                                 </div>
                             </div>
 

@@ -1,18 +1,9 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import FeaturedCaseStudySection from '../components/FeaturedCaseStudySection';
-import MoreExpertise from '../components/MoreExpertise';
-
+import ProjectsGrid from '../components/ProjectsGrid';
 import Testimonials from '../components/Testimonials';
-import { FEATURED_CASE_STUDIES } from '../constants';
 
-interface HomeProps {
-    onNavigateAI: () => void;
-    onNavigateZLaundry: () => void;
-    onNavigateDesignSystems: () => void;
-}
-
-const Home: React.FC<HomeProps> = ({ onNavigateAI, onNavigateZLaundry, onNavigateDesignSystems }) => {
+const Home: React.FC = () => {
     return (
         <>
             {/* GLOBAL BACKGROUND GRID (Homepage Only) */}
@@ -44,21 +35,7 @@ const Home: React.FC<HomeProps> = ({ onNavigateAI, onNavigateZLaundry, onNavigat
             {/* Main Content */}
             <div className="relative z-20">
                 <Hero />
-
-                {/* 4 Featured Case Studies with Alternating Layouts */}
-                {FEATURED_CASE_STUDIES.map((caseStudy, index) => (
-                    <FeaturedCaseStudySection
-                        key={caseStudy.id}
-                        caseStudy={caseStudy}
-                        index={index}
-                        totalCount={FEATURED_CASE_STUDIES.length}
-                    />
-                ))}
-
-                {/* More Expertise Section (3 Cards) */}
-                <MoreExpertise />
-
-                {/* Testimonials */}
+                <ProjectsGrid />
                 <Testimonials />
             </div>
         </>

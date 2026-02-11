@@ -229,6 +229,21 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
   {
     id: 3,
     category: "SERVICE DESIGN",
+    headline: "Beach Locker Service Redesign",
+    valueStatement: "Redesigned the end-to-end beach locker experience for Dubai Municipality — from mobile app to physical lockers to call center support. Delivered service blueprints, user flows, and stakeholder recommendations across digital and physical touchpoints.",
+    stats: [
+      { value: "360°", label: "SERVICE DESIGN", context: "Full service ecosystem" },
+      { value: "11", label: "JOURNEY PHASES", context: "Discovery to re-access" },
+      { value: "DM", label: "DUBAI MUNICIPALITY", context: "Government client" }
+    ],
+    ctaText: "View Case Study →",
+    ctaLink: "/work/beach-locker",
+    imageAlt: "Service blueprint showing beach locker journey across touchpoints",
+    backgroundColor: "light"
+  },
+  {
+    id: 4,
+    category: "SERVICE DESIGN",
     headline: "360° Government Services",
     valueStatement: "End-to-end service design connecting citizen interfaces, corporate dashboards, and back-office systems — from application to approval across multiple government entities.",
     stats: [
@@ -242,7 +257,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     backgroundColor: "white"
   },
   {
-    id: 4,
+    id: 5,
     category: "RESEARCH & INSIGHTS",
     headline: "UX Research & Usability Lab",
     valueStatement: "Built RTA's usability testing practice from scratch. 30+ moderated sessions, standardized protocols, and executive reports that directly influence product decisions.",
