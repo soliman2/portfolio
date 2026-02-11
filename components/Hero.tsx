@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
     }, [capabilities.length]);
 
     return (
-        <section className="relative w-full flex items-center justify-center font-inter overflow-hidden pt-12 pb-0 md:pt-32 md:pb-0 md:min-h-[85vh] lg:min-h-screen max-h-none md:max-h-none">
+        <section id="hero" className="relative w-full flex items-center justify-center font-inter overflow-hidden pt-8 pb-10 md:pt-32 md:pb-0 md:min-h-[85vh] lg:min-h-screen">
             {/* Background Gradient */}
             <div
                 className="absolute inset-0 pointer-events-none z-0"
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-col space-y-6 md:space-y-16 h-full"
+                    className="flex flex-col h-full"
                 >
                     {/* Hero Grid: Content Left, Image Right */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -107,9 +107,9 @@ const Hero: React.FC = () => {
                         {/* Left Side: Content Block */}
                         <div className="flex flex-col justify-center items-start text-left space-y-4 order-2 lg:order-1">
                             {/* Glass Badge - Sr. Product Designer */}
-                            <motion.div variants={fadeUpVariants}>
+                            <motion.div variants={fadeUpVariants} className="mt-8 md:mt-0 mb-4 md:mb-0">
                                 <span
-                                    className="inline-block px-4 py-1.5 text-xs md:text-sm font-semibold"
+                                    className="hidden md:inline-block px-4 py-1.5 text-xs md:text-sm font-semibold"
                                     style={{
                                         background: 'rgba(255, 255, 255, 0.45)',
                                         backdropFilter: 'blur(12px)',
@@ -126,16 +126,16 @@ const Hero: React.FC = () => {
                             </motion.div>
 
                             {/* Headline */}
-                            <motion.h1 variants={fadeUpVariants} className="space-y-1 md:space-y-2">
-                                <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
+                            <motion.h1 variants={fadeUpVariants} className="mb-3 md:mb-2 space-y-0.5 md:space-y-2">
+                                <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-[1.2] font-display">
                                     Hey, I'm Soliman
                                 </span>
-                                <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-tight font-display">
+                                <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-[1.2] font-display">
                                     I design with{' '}
                                     <span
                                         className="font-bold"
                                         style={{
-                                            background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                            background: 'linear-gradient(135deg, #4169E1 0%, #4f46e5 50%, #7c3aed 100%)',
                                             WebkitBackgroundClip: 'text',
                                             WebkitTextFillColor: 'transparent',
                                             backgroundClip: 'text'
@@ -146,16 +146,27 @@ const Hero: React.FC = () => {
                                 </span>
                             </motion.h1>
 
-                            {/* Description */}
-                            <motion.p variants={fadeUpVariants} className="hidden md:block text-base md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter">
+                            {/* Mobile Subtitle */}
+                            <motion.p variants={fadeUpVariants} className="md:hidden text-sm text-[#6B7280] font-normal mb-4">
+                                Senior Product Designer · Design Systems · AI · UX Research
+                            </motion.p>
+
+                            {/* Description (Desktop Only) */}
+                            <motion.p variants={fadeUpVariants} className="hidden md:block text-base md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter mb-4">
                                 Building bilingual design systems that power Dubai's AI-driven government transformation.
                             </motion.p>
 
-                            {/* Capability Ticker */}
+                            {/* Capability Ticker / Tag */}
                             <motion.div
                                 variants={fadeUpVariants}
-                                className="flex items-center min-h-[28px]"
+                                className="flex items-center min-h-[24px] mb-[20px] md:mb-6"
                             >
+                                <div className="flex items-center gap-2">
+                                    <span className="md:hidden w-1.5 h-1.5 rounded-full bg-[#4169E1]"></span>
+                                    <span className="md:hidden text-[12px] font-medium text-[#4169E1] uppercase tracking-[1px]">
+                                        AI-powered solutions
+                                    </span>
+                                </div>
                                 <AnimatePresence mode="wait">
                                     <motion.span
                                         key={currentCapabilityIndex}
@@ -163,7 +174,7 @@ const Hero: React.FC = () => {
                                         initial="enter"
                                         animate="center"
                                         exit="exit"
-                                        className="font-bold text-xl md:text-2xl"
+                                        className="hidden md:block font-bold text-xl md:text-2xl"
                                         style={{
                                             background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
                                             WebkitBackgroundClip: 'text',
@@ -176,23 +187,22 @@ const Hero: React.FC = () => {
                                 </AnimatePresence>
                             </motion.div>
 
-                            {/* CTA Button */}
-                            <motion.div variants={fadeUpVariants} className="pt-4">
+                            {/* CTA Buttons */}
+                            <motion.div variants={fadeUpVariants} className="flex items-center gap-6 mb-7 md:mb-0">
                                 <a
                                     href="/soliman-shaban-cv.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full font-bold text-base text-[#1A1D23] transition-all hover:shadow-2xl hover:shadow-blue-200 active:scale-95 group"
-                                    style={{
-                                        background: 'white',
-                                        border: '2px solid transparent',
-                                        backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
-                                        backgroundOrigin: 'border-box',
-                                        backgroundClip: 'padding-box, border-box',
-                                    }}
+                                    className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 bg-[#4169E1] text-white rounded-[10px] md:rounded-full font-semibold md:font-bold text-sm md:text-base transition-all hover:bg-blue-600 active:scale-95 shadow-lg shadow-blue-600/20"
                                 >
-                                    Download My CV <span className="group-hover:translate-y-1 transition-transform">↓</span>
+                                    Download CV ↓
                                 </a>
+                                <button
+                                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                                    className="text-[13px] font-medium text-[#4169E1] hover:underline"
+                                >
+                                    View Work ↓
+                                </button>
                             </motion.div>
                         </div>
 
@@ -224,44 +234,44 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Simplified Impact Row: Logos + Metrics */}
-                    <motion.div variants={fadeUpVariants} className="pt-6 md:pt-12 border-t border-slate-200/50">
-                        <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16">
+                    <motion.div variants={fadeUpVariants} className="pt-0 border-t border-black/[0.1] mt-6 md:mt-0">
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16 pt-6 md:pt-12">
 
                             {/* Government Logos */}
-                            <div className="border-b lg:border-b-0 lg:border-r border-slate-200 pb-4 md:pb-8 lg:pb-0 lg:pr-16">
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-3 md:mb-6">Government Trust</p>
-                                <div className="flex flex-wrap items-center gap-8">
-                                    <img src="/images/01.png" alt="RTA" className="h-7 md:h-8 w-auto" />
-                                    <img src="/images/02.png" alt="Dubai Municipality" className="h-7 md:h-8 w-auto" />
-                                    <img src="/images/03.png" alt="Digital Dubai" className="h-7 md:h-8 w-auto" />
+                            <div className="lg:border-r border-slate-200 lg:pr-16">
+                                <p className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-[1.5px] mb-3 md:mb-6">Government Trust</p>
+                                <div className="flex items-center gap-6 md:gap-8">
+                                    <img src="/images/01.png" alt="RTA" className="h-6 md:h-8 w-auto grayscale opacity-60" />
+                                    <img src="/images/02.png" alt="Dubai Municipality" className="h-6 md:h-8 w-auto grayscale opacity-60" />
+                                    <img src="/images/03.png" alt="Digital Dubai" className="h-6 md:h-8 w-auto grayscale opacity-60" />
                                 </div>
                             </div>
 
                             {/* Metrics Grid */}
-                            <div className="grid grid-cols-2 md:flex gap-4 md:gap-12">
+                            <div className="grid grid-cols-2 md:flex gap-4 md:gap-12 mt-6 md:mt-0">
                                 <div className="flex flex-col">
-                                    <span className="text-[32px] md:text-3xl font-bold text-slate-900 font-display leading-none">12M+</span>
-                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">Citizens</span>
+                                    <span className="text-[28px] md:text-3xl font-bold text-[#1A1D23] font-display leading-none">12M+</span>
+                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Citizens</span>
                                 </div>
                                 <div className="flex flex-col">
                                     <span
-                                        className="text-[32px] md:text-3xl font-bold font-display leading-none"
+                                        className="text-[28px] md:text-3xl font-bold font-display leading-none"
                                         style={{
-                                            background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
+                                            background: 'linear-gradient(135deg, #4169E1 0%, #4f46e5 50%, #7c3aed 100%)',
                                             WebkitBackgroundClip: 'text',
                                             WebkitTextFillColor: 'transparent',
                                             backgroundClip: 'text'
                                         }}
                                     >93%</span>
-                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">AI Speed</span>
+                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">AI Speed</span>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-[32px] md:text-3xl font-bold text-slate-900 font-display leading-none">8+</span>
-                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">Years</span>
+                                    <span className="text-[28px] md:text-3xl font-bold text-[#1A1D23] font-display leading-none">8+</span>
+                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Years</span>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-[32px] md:text-3xl font-bold text-slate-900 font-display leading-none">5+</span>
-                                    <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mt-1">Systems</span>
+                                    <span className="text-[28px] md:text-3xl font-bold text-[#1A1D23] font-display leading-none">5+</span>
+                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Systems</span>
                                 </div>
                             </div>
 

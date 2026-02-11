@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className="fixed top-4 md:top-6 inset-x-0 mx-auto z-50 w-[92%] max-w-5xl"
     >
-      <div className="relative bg-white/75 backdrop-blur-xl border border-slate-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-full px-3 py-2.5 md:px-5 md:py-3 flex items-center justify-between transition-all duration-300">
+      <div className="relative h-14 md:h-auto bg-white/75 backdrop-blur-[10px] border border-slate-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-full px-3 py-2.5 md:px-5 md:py-3 flex items-center justify-between transition-all duration-300">
 
         {/* Logo or Back Button */}
         <div className="flex-shrink-0 flex items-center">
