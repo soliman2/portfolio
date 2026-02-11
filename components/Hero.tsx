@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
 
                         {/* Left Side: Content Block */}
-                        <div className="flex flex-col justify-center items-start text-left space-y-4 order-2 lg:order-1">
+                        <div className="flex flex-col justify-center items-start text-left space-y-8 order-2 lg:order-1">
                             {/* Glass Badge - Sr. Product Designer */}
                             <motion.div variants={fadeUpVariants} className="mt-8 md:mt-0 mb-4 md:mb-0">
                                 <span
@@ -188,8 +188,7 @@ const Hero: React.FC = () => {
                                 </AnimatePresence>
                             </motion.div>
 
-                            {/* CTA Buttons */}
-                            <motion.div variants={fadeUpVariants} className="flex items-center gap-6 mb-7 md:mb-0">
+                            <motion.div variants={fadeUpVariants} className="flex items-center gap-6 mb-0 md:mb-0">
                                 <a
                                     href="/soliman-shaban-cv.pdf"
                                     target="_blank"
@@ -207,12 +206,6 @@ const Hero: React.FC = () => {
                                 >
                                     <Linkedin className="w-5 h-5" />
                                 </a>
-                                <button
-                                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="hidden md:block text-[13px] font-medium text-[#4169E1] hover:underline"
-                                >
-                                    View Work ↓
-                                </button>
                             </motion.div>
                         </div>
 
@@ -251,9 +244,9 @@ const Hero: React.FC = () => {
                             <div className="lg:border-r border-slate-200 lg:pr-16">
                                 <p className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-[1.5px] mb-3 md:mb-6">Government Trust</p>
                                 <div className="flex items-center gap-6 md:gap-8">
-                                    <img src="/images/01.png" alt="RTA" className="h-6 md:h-8 w-auto grayscale opacity-60" />
-                                    <img src="/images/02.png" alt="Dubai Municipality" className="h-6 md:h-8 w-auto grayscale opacity-60" />
-                                    <img src="/images/03.png" alt="Digital Dubai" className="h-6 md:h-8 w-auto grayscale opacity-60" />
+                                    <img src="/images/01.png" alt="RTA" className="h-6 md:h-8 w-auto" />
+                                    <img src="/images/02.png" alt="Dubai Municipality" className="h-6 md:h-8 w-auto" />
+                                    <img src="/images/03.png" alt="Digital Dubai" className="h-6 md:h-8 w-auto" />
                                 </div>
                             </div>
 
