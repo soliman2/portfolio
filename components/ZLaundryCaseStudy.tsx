@@ -37,7 +37,7 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 1: HERO
            ============================================================================== */}
-            <section className="relative py-20 lg:py-32 bg-[#1A1D23] text-white overflow-hidden">
+            <section className="relative py-12 lg:py-20 bg-[#1A1D23] text-white overflow-hidden">
                 {/* Background Pattern - Laundry Icons */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.05] flex flex-wrap gap-12 justify-center content-center rotate-12 scale-150">
                     {Array.from({ length: 40 }).map((_, i) => (
@@ -49,7 +49,7 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
                     ))}
                 </div>
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -62,7 +62,7 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
                             <span className="text-xs font-bold uppercase tracking-wider font-display">Research & Discovery</span>
                         </motion.div>
 
-                        <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold font-display mb-6 tracking-tight">
+                        <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[56px] font-bold font-display mb-6 tracking-tight">
                             Z-Laundry UX Research
                         </motion.h1>
 
@@ -95,11 +95,11 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 2: RESEARCH PROCESS OVERVIEW
            ============================================================================== */}
-            <section className="py-24 bg-white relative">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-white relative">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Methodology</span>
-                        <h2 className="text-3xl font-bold font-display text-[#1A1D23]">Research Process</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23]">Research Process</h2>
                     </div>
 
                     <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-4 md:gap-0 relative">
@@ -133,9 +133,9 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 3: THE BRIEF
            ============================================================================== */}
-            <section className="py-24 bg-[#F8F9FA]">
+            <section className="py-12 lg:py-20 bg-[#F8F9FA]">
                 <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
-                    <h3 className="text-3xl font-bold font-display text-[#1A1D23] mb-8">The Brief</h3>
+                    <h3 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-8">The Brief</h3>
                     <p className="text-xl text-slate-600 leading-relaxed font-light mb-12">
                         Z-Laundry aims to launch an on-demand laundry mobile application for the Egyptian market.
                         Before design and development, they needed to understand the competitive landscape, identifying
@@ -151,12 +151,12 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 4: UX STRATEGY
            ============================================================================== */}
-            <section className="py-24 bg-[#1A1D23] text-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-[#1A1D23] text-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row gap-12 items-start">
                         <div className="md:w-1/3 sticky top-24">
                             <span className="text-6xl font-bold font-display text-[#06B6D4]/20 block mb-4">01</span>
-                            <h2 className="text-3xl font-bold font-display mb-6">UX Strategy</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display mb-6">UX Strategy</h2>
                             <p className="text-slate-400 leading-relaxed mb-6">
                                 We started by aligning business goals with user needs. Using the UX Strategy Canvas, we mapped out the business strategy, value innovation, validated user research, and killer UX features.
                             </p>
@@ -212,12 +212,12 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 5: COMPETITOR ANALYSIS
            ============================================================================== */}
-            <section className="py-24 bg-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row gap-12 items-start">
                         <div className="md:w-1/3 sticky top-24">
                             <span className="text-6xl font-bold font-display text-slate-100 block mb-4">02</span>
-                            <h2 className="text-3xl font-bold font-display text-[#1A1D23] mb-6">Competitor Analysis</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-6">Competitor Analysis</h2>
                             <p className="text-slate-600 leading-relaxed mb-6">
                                 I analyzed 7 direct and indirect competitors in the Egyptian market to identify feature gaps and opportunities.
                             </p>
@@ -286,11 +286,11 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 6: VALUE PROPOSITION CANVAS
            ============================================================================== */}
-            <section className="py-24 bg-[#1A1D23] text-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-[#1A1D23] text-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-6xl font-bold font-display text-[#06B6D4]/10 block mb-4">03</span>
-                        <h2 className="text-3xl md:text-4xl font-bold font-display">Value Proposition Canvas</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display">Value Proposition Canvas</h2>
                         <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
                             Mapping user pains and gains to our product features to ensure product-market fit.
                         </p>
@@ -341,12 +341,12 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 7: USER INTERVIEWS
            ============================================================================== */}
-            <section className="py-24 bg-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row gap-12 items-start">
                         <div className="md:w-1/3 sticky top-24">
                             <span className="text-6xl font-bold font-display text-slate-100 block mb-4">04</span>
-                            <h2 className="text-3xl font-bold font-display text-[#1A1D23] mb-6">User Interviews</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-6">User Interviews</h2>
                             <div className="text-4xl font-bold text-[#06B6D4] mb-2">6</div>
                             <p className="font-bold text-[#1A1D23] mb-6">Users Interviewed</p>
 
@@ -388,11 +388,11 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 8: USER PERSONAS
            ============================================================================== */}
-            <section className="py-24 bg-[#1A1D23] text-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-[#1A1D23] text-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-6xl font-bold font-display text-[#06B6D4]/10 block mb-4">05</span>
-                        <h2 className="text-3xl font-bold font-display text-white">User Personas</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-white">User Personas</h2>
                         <p className="text-slate-400 mt-2">3 Personas Created</p>
                     </div>
 
@@ -469,12 +469,12 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 9: EMPATHY MAPS
            ============================================================================== */}
-            <section className="py-24 bg-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row gap-12 items-center">
                         <div className="md:w-1/3">
                             <span className="text-6xl font-bold font-display text-slate-100 block mb-4">06</span>
-                            <h2 className="text-3xl font-bold font-display text-[#1A1D23] mb-6">Empathy Maps</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-6">Empathy Maps</h2>
                             <p className="text-slate-600 leading-relaxed">
                                 To dive deeper into the emotional state of our users, we mapped out what they Say, Think, Do, and Feel during the laundry process.
                             </p>
@@ -514,11 +514,11 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 10: USER STORIES
            ============================================================================== */}
-            <section className="py-24 bg-[#1A1D23] text-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-[#1A1D23] text-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-6xl font-bold font-display text-[#06B6D4]/10 block mb-4">07</span>
-                        <h2 className="text-3xl font-bold font-display text-white">User Stories & Journey</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-white">User Stories & Journey</h2>
                         <p className="text-slate-400 mt-2">Translating research into requirements</p>
                     </div>
 
@@ -546,10 +546,10 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 11: DELIVERABLES SUMMARY
            ============================================================================== */}
-            <section className="py-24 bg-white">
-                <div className="max-w-[1000px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="bg-slate-50 border border-slate-200 rounded-3xl p-12 text-center">
-                        <h3 className="text-2xl font-bold font-display text-[#1A1D23] mb-8">Research Package Delivered</h3>
+                        <h3 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-8">Research Package Delivered</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                             {[
                                 { val: "7", label: "Competitors Analyzed" },
@@ -572,10 +572,10 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 12: KEY INSIGHTS
            ============================================================================== */}
-            <section className="py-24 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] text-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] text-white">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">What I Learned</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display mb-4">What I Learned</h2>
                         <p className="text-white/80">Key takeaways that influenced the design phase</p>
                     </div>
 
@@ -608,10 +608,10 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
             {/* ==============================================================================
             SECTION 13: NEXT PROJECT / CTA
            ============================================================================== */}
-            <section className="py-24 bg-[#1A1D23] text-white text-center">
+            <section className="py-12 lg:py-20 bg-[#1A1D23] text-white text-center">
                 <div className="max-w-[800px] mx-auto px-6 lg:px-8">
                     <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Next Project</div>
-                    <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">Ready to see the designs?</h2>
+                    <h2 className="text-[32px] md:text-[36px] font-bold font-display mb-8">Ready to see the designs?</h2>
 
                     <div className="flex flex-col md:flex-row justify-center gap-4">
                         <button

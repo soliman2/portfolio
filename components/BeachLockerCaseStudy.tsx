@@ -183,7 +183,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(13,148,136,0.5) 59px, rgba(13,148,136,0.5) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(13,148,136,0.5) 59px, rgba(13,148,136,0.5) 60px)',
                 }} />
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -196,8 +196,8 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                             <span className="text-xs font-bold uppercase tracking-wider font-display">Service Design</span>
                         </motion.div>
 
-                        <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold font-display mb-6 tracking-tight">
-                            Reimagining Public Beach Services
+                        <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[56px] font-bold font-display mb-6 tracking-tight text-white leading-[1.1]">
+                            Reimagining Public <br />Beach Services
                         </motion.h1>
 
                         <motion.p variants={fadeInUp} className="text-xl text-slate-400 font-light mb-12 max-w-2xl mx-auto">
@@ -245,7 +245,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 2: THE CHALLENGE
                ============================================================================== */}
             <section className="py-24 bg-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -256,7 +256,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                         {/* Text Content — 60% */}
                         <motion.div variants={fadeInUp} className="lg:col-span-3">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">The Problem</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-8">The Challenge</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-8">The Challenge</h2>
 
                             <p className="text-lg text-slate-600 leading-relaxed mb-6">
                                 Dubai Municipality operates beach locker services across Dubai's public beaches — a system where visitors book lockers through a mobile app, receive a PIN code, and access physical lockers to store their belongings while enjoying the beach.
@@ -323,7 +323,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 3: MY APPROACH
                ============================================================================== */}
             <section className="py-24 bg-[#F8F9FA]">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -332,7 +332,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-16">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Methodology</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-4">My Approach</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">My Approach</h2>
                             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                                 I approached this as a 360° service design challenge — not just the app interface, but the entire service ecosystem including physical infrastructure, staff operations, and customer support channels.
                             </p>
@@ -389,7 +389,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 4: SERVICE BLUEPRINT
                ============================================================================== */}
             <section className="py-24 bg-slate-50">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -398,7 +398,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-12">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Complete Journey</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-4">Service Blueprint</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">Service Blueprint</h2>
                             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                                 A map showing all the steps needed to deliver the service, including what the customer sees and what happens behind the scenes.
                             </p>
@@ -454,7 +454,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 5: USER FLOW — HAPPY PATH
                ============================================================================== */}
             <section className="py-24 bg-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -463,7 +463,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-16">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Step by Step</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-4">User Flow — Happy Path</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">User Flow — Happy Path</h2>
                             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                                 The step-by-step experience for a user who successfully books, uses, and extends a locker.
                             </p>
@@ -505,7 +505,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 6: EDGE CASE — LOST PHONE RECOVERY
                ============================================================================== */}
             <section className="py-24 bg-[#F8F9FA]">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -514,7 +514,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-6">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Edge Case</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-4">Designing for the Worst Case</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">Designing for the Worst Case</h2>
                             <h3 className="text-xl text-slate-600 font-medium mb-4">Lost Phone Recovery</h3>
                         </motion.div>
 
@@ -589,7 +589,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 7: RECOMMENDATIONS
                ============================================================================== */}
             <section className="py-24 bg-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -598,7 +598,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-16">
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Deliverables</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-4">Actionable Recommendations</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">Actionable Recommendations</h2>
                             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                                 I delivered two targeted sets of recommendations — one for business stakeholders focused on operational decisions, and one for business analysts focused on technical implementation.
                             </p>
@@ -679,7 +679,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 8: NAVIGATING STAKEHOLDER PUSHBACK
                ============================================================================== */}
             <section className="py-24 bg-gradient-to-br from-teal-50 to-cyan-50">
-                <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -688,7 +688,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp}>
                             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Real-World Design</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#1A1D23] mb-8">Navigating Stakeholder Decisions</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-8">Navigating Stakeholder Decisions</h2>
                         </motion.div>
 
                         <motion.p variants={fadeInUp} className="text-lg text-slate-600 leading-relaxed mb-8">
@@ -734,7 +734,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 SECTION 9: OUTCOME & IMPACT
                ============================================================================== */}
             <section className="py-24 bg-[#2B3544] text-white">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -743,7 +743,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-16">
                             <span className="text-xs font-bold text-teal-400 uppercase tracking-widest font-display block mb-3">Results</span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-display text-white">Outcome</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-white">Outcome</h2>
                         </motion.div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">

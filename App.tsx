@@ -29,13 +29,13 @@ const CaseStudyWrapper: React.FC<{ children: React.ReactNode }> = ({ children })
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
       <Navbar isCaseStudy={true} />
-      {/* Single back-to-home link */}
-      <div className="max-w-[1280px] mx-auto px-6 pt-4 pb-0">
+      {/* Subtle back-to-projects link */}
+      <div className="max-w-[1120px] mx-auto px-6 pt-6 pb-0">
         <button
           onClick={() => navigate('/')}
-          className="inline-flex items-center gap-1 text-sm font-medium text-[#4169E1] hover:underline"
+          className="inline-flex items-center gap-1 text-[14px] font-medium text-[#6B7280] hover:text-[#4169E1] hover:underline transition-colors"
         >
-          ← Back to Home
+          ← Back to Projects
         </button>
       </div>
       <main>{children}</main>

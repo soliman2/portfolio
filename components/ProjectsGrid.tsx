@@ -130,9 +130,31 @@ const ProjectsGrid: React.FC = () => {
                                 <h3 className="text-[20px] font-semibold text-[#1A1D23] mb-2 group-hover:text-[#4169E1] transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-sm text-[#6B7280] leading-relaxed line-clamp-2 mb-4">
-                                    {project.description}
+                                <p className="text-sm text-[#6B7280] leading-relaxed line-clamp-3 mb-4">
+                                    {project.imageIndex === 0
+                                        ? "First GenAI Design Lab in Dubai Government. Reduced urban planning from 5 days to 8 hours — officially recognized at GITEX 2025."
+                                        : project.description}
                                 </p>
+
+                                {project.imageIndex === 0 && (
+                                    <div className="flex items-center gap-4 py-4 mb-4 border-y border-[#E5E7EB]">
+                                        <div className="flex flex-col">
+                                            <span className="text-[18px] font-bold text-[#1A1D23]">93%</span>
+                                            <span className="text-[11px] font-bold text-[#9CA3AF] uppercase">Faster</span>
+                                        </div>
+                                        <div className="w-px h-8 bg-[#E5E7EB]"></div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[18px] font-bold text-[#1A1D23]">5d→8h</span>
+                                            <span className="text-[11px] font-bold text-[#9CA3AF] uppercase">Reduction</span>
+                                        </div>
+                                        <div className="w-px h-8 bg-[#E5E7EB]"></div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[18px] font-bold text-[#1A1D23]">GITEX</span>
+                                            <span className="text-[11px] font-bold text-[#9CA3AF] uppercase">Showcase</span>
+                                        </div>
+                                    </div>
+                                )}
+
                                 <span className="text-sm font-medium text-[#4169E1] hover:underline">
                                     View Case Study →
                                 </span>

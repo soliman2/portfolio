@@ -47,7 +47,7 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 1: HERO
            ============================================================================== */}
-            <section className="relative py-20 lg:py-32 bg-[#1A1D23] text-white overflow-hidden min-h-[80vh] flex items-center justify-center">
+            <section className="relative py-12 lg:py-20 bg-[#1A1D23] text-white overflow-hidden min-h-[80vh] flex items-center justify-center">
 
                 {/* Floating Components Background */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -106,7 +106,7 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
                     </motion.div>
                 </div>
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -120,7 +120,7 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
                         </motion.div>
 
                         {/* Title */}
-                        <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-[80px] font-bold font-display mb-8 leading-[1.1] tracking-tight">
+                        <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[56px] font-bold font-display mb-8 leading-[1.1] tracking-tight">
                             Design Systems <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#4169E1]">at Scale</span>
                         </motion.h1>
@@ -161,11 +161,11 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 2: SYSTEMS OVERVIEW
            ============================================================================== */}
-            <section id="overview" className="py-24 bg-white relative">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section id="overview" className="py-12 lg:py-20 bg-white relative">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold text-[#4169E1] uppercase tracking-widest font-display block mb-3">Overview</span>
-                        <h2 className="text-4xl font-bold font-display text-[#1A1D23]">Systems I've Built & Maintained</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23]">Systems I've Built & Maintained</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -252,11 +252,11 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 3: PHILOSOPHY
            ============================================================================== */}
-            <section className="py-24 bg-[#F8F9FA] border-y border-slate-200">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-[#F8F9FA] border-y border-slate-200">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold text-[#4169E1] uppercase tracking-widest font-display block mb-3">Philosophy</span>
-                        <h2 className="text-4xl font-bold font-display text-[#1A1D23] mb-4">How I Build Design Systems</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">How I Build Design Systems</h2>
                         <p className="text-slate-600 text-lg">Principles that guide every system I create</p>
                     </div>
 
@@ -296,13 +296,13 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 4: RTA PORTAL (FLAGSHIP)
            ============================================================================== */}
-            <section id="rta-portal" className="py-24 bg-[#1A1D23] text-white relative overflow-hidden">
+            <section id="rta-portal" className="py-12 lg:py-20 bg-[#1A1D23] text-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 text-[120px] md:text-[200px] font-bold font-display text-white/5 leading-none -translate-y-1/4 -translate-x-1/4 pointer-events-none">01</div>
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10">
                     <div className="mb-16">
                         <div className="text-xs font-bold text-[#7C3AED] uppercase tracking-widest mb-4">Flagship System</div>
-                        <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">RTA Portal Design System</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-white mb-6">RTA Portal Design System</h2>
                         <p className="text-xl text-white/70 max-w-2xl leading-relaxed">The backbone of Dubai's transport services, ensuring consistency across 30+ public services.</p>
                     </div>
 
@@ -391,13 +391,13 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 5: S'HAIL & DDA (MERGED)
            ============================================================================== */}
-            <section id="shail" className="py-24 bg-white relative overflow-hidden">
+            <section id="shail" className="py-12 lg:py-20 bg-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 text-[120px] md:text-[200px] font-bold font-display text-slate-100 leading-none -translate-y-1/4 translate-x-1/4 pointer-events-none">02</div>
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-4xl font-bold font-display text-[#1A1D23] mb-4">S'hail & DDA Shared Channels</h2>
+                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">S'hail & DDA Shared Channels</h2>
                             <p className="text-xl text-slate-600 mb-8">Adapting Dubai-wide standards to RTA's mobile experience</p>
 
                             <div className="space-y-8">
@@ -470,12 +470,12 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 6: LICENSING BACK OFFICE
            ============================================================================== */}
-            <section id="licensing" className="py-24 bg-[#1A1D23] text-white relative overflow-hidden">
+            <section id="licensing" className="py-12 lg:py-20 bg-[#1A1D23] text-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 text-[120px] md:text-[200px] font-bold font-display text-white/5 leading-none -translate-y-1/4 -translate-x-1/4 pointer-events-none">03</div>
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-4xl font-bold font-display text-white mb-4">Licensing Back-Office System</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-white mb-4">Licensing Back-Office System</h2>
                         <p className="text-xl text-white/70">Multi-role dashboards for complex government workflows</p>
                     </div>
 
@@ -514,15 +514,15 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 7: FAWRY
            ============================================================================== */}
-            <section id="fawry" className="py-24 bg-white relative">
+            <section id="fawry" className="py-12 lg:py-20 bg-white relative">
                 <div className="absolute top-0 right-0 text-[120px] md:text-[200px] font-bold font-display text-slate-100 leading-none -translate-y-1/4 translate-x-1/4 pointer-events-none">04</div>
 
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="max-w-[800px] mx-auto">
 
                         {/* Fawry */}
                         <div className="bg-slate-50 rounded-2xl p-8 md:p-12 border border-slate-200">
-                            <h3 className="text-3xl font-bold font-display text-[#1A1D23] mb-2">Fawry Loyalty DS</h3>
+                            <h3 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-2">Fawry Loyalty DS</h3>
                             <div className="text-sm font-bold text-yellow-600 uppercase tracking-widest mb-6">Fintech • SaaS</div>
 
                             <p className="text-slate-600 mb-8 leading-relaxed">
@@ -543,11 +543,11 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 8: TECHNICAL FIGMA
            ============================================================================== */}
-            <section className="py-24 bg-[#F8F9FA] border-t border-slate-200">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+            <section className="py-12 lg:py-20 bg-[#F8F9FA] border-t border-slate-200">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold text-[#4169E1] uppercase tracking-widest font-display block mb-3">Under The Hood</span>
-                        <h2 className="text-4xl font-bold font-display text-[#1A1D23]">Technical Excellence in Figma</h2>
+                        <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23]">Technical Excellence in Figma</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -572,9 +572,9 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 9: IMPACT
            ============================================================================== */}
-            <section className="py-24 bg-white border-t border-slate-200">
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl font-bold font-display text-[#1A1D23] mb-16">Impact at Scale</h2>
+            <section className="py-12 lg:py-20 bg-white border-t border-slate-200">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 text-center">
+                    <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-16">Impact at Scale</h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
                         {[
@@ -584,7 +584,7 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
                             { val: "500+", label: "Designers Trained" }
                         ].map((stat, i) => (
                             <div key={i}>
-                                <div className="text-5xl md:text-7xl font-bold font-display text-[#1A1D23] mb-2">{stat.val}</div>
+                                <div className="text-4xl md:text-6xl font-bold font-display text-[#1A1D23] mb-2">{stat.val}</div>
                                 <div className="text-lg font-medium text-slate-500">{stat.label}</div>
                             </div>
                         ))}
@@ -595,9 +595,9 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
             {/* ==============================================================================
             SECTION 10: CTA
            ============================================================================== */}
-            <section className="py-24 bg-gradient-to-r from-[#7C3AED] to-[#4169E1] text-white text-center">
+            <section className="py-12 lg:py-20 bg-gradient-to-r from-[#7C3AED] to-[#4169E1] text-white text-center">
                 <div className="max-w-[800px] mx-auto px-6 lg:px-8">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">Need a Design System?</h2>
+                    <h2 className="text-[32px] md:text-[36px] font-bold font-display mb-6">Need a Design System?</h2>
                     <p className="text-xl text-white/90 mb-12 font-light">
                         I build scalable, documented systems that grow with your product — from startup to 12M+ users.
                     </p>
