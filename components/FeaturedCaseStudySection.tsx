@@ -101,47 +101,14 @@ const FeaturedCaseStudySection: React.FC<FeaturedCaseStudySectionProps> = ({
                         <div className="w-full h-full bg-slate-100 rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-200 flex items-center justify-center overflow-hidden">
                             {/* Conditional rendering: Real images for case studies with assets, placeholder for others */}
                             <div className="aspect-[4/3] w-full relative max-h-[200px] md:max-h-none overflow-hidden">
-                                {index === 0 ? (
-                                    // Real image for AI Urban Design Tool
+                                {caseStudy.imageUrl ? (
                                     <img
-                                        src="/thumnails /AI Urban Design Tool thumbnail.png"
-                                        alt="AI Urban Design Tool – before and after urban visualization"
-                                        className="w-full h-full object-cover"
-                                    />
-                                ) : index === 1 ? (
-                                    // Real image for Enterprise Design Systems
-                                    <img
-                                        src="/thumnails /Design systm.png"
-                                        alt="Enterprise Design Systems – component library and system overview"
-                                        className="w-full h-full object-cover"
-                                    />
-                                ) : index === 2 ? (
-                                    // Beach Locker Service Redesign — styled placeholder
-                                    <div className="w-full h-full bg-gradient-to-br from-teal-50 to-cyan-50 flex items-center justify-center relative">
-                                        <div className="absolute inset-0 opacity-[0.04]" style={{
-                                            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, #0D9488 39px, #0D9488 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, #0D9488 39px, #0D9488 40px)',
-                                        }} />
-                                        <div className="relative z-10 text-center p-8">
-                                            <div className="flex justify-center gap-2 mb-4">
-                                                {['Discovery', 'Booking', 'Payment', 'Usage'].map((phase, i) => (
-                                                    <div key={i} className="px-3 py-2 bg-white rounded-lg shadow-sm border border-teal-100 text-xs font-bold text-teal-700">{phase}</div>
-                                                ))}
-                                            </div>
-                                            <div className="inline-flex items-center gap-2 bg-[#2B3544] text-white px-4 py-2 rounded-full text-sm font-bold">
-                                                <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                                                Service Blueprint
-                                            </div>
-                                        </div>
-                                    </div>
-                                ) : index === 4 ? (
-                                    // Real image for UX Research & Usability Lab
-                                    <img
-                                        src="/thumnails /UX Research & Usability Lab.png"
-                                        alt="UX Research & Usability Lab – usability testing sessions and research reports"
+                                        src={caseStudy.imageUrl}
+                                        alt={caseStudy.imageAlt}
                                         className="w-full h-full object-cover"
                                     />
                                 ) : (
-                                    // Placeholder for other case studies
+                                    // Fallback for case studies without imageUrl
                                     <>
                                         <img
                                             src={`https://images.unsplash.com/photo-${1486325212027 + index}?q=80&w=2070&auto=format&fit=crop`}

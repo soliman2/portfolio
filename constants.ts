@@ -76,7 +76,8 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     description: "Creating intelligent experiences officially recognized by RTA's AI & Data Science Center. From 'Urbanist in GITEX' to AI service platforms driving data-driven decisions.",
     stats: ["3+ AI products delivered", "🏆 Official RTA AI Center recognition", "GITEX Dubai 2025 showcase", "Strategic objectives contribution"],
     buttonText: "View GenAI Projects",
-    imageAlt: "AI Urban Planning Tool Screenshot"
+    imageAlt: "AI Urban Planning Tool Screenshot",
+    imageUrl: "/thumbnails/AI Urban Design Tool thumbnail.png"
   },
   {
     id: 2,
@@ -86,7 +87,8 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     description: "Building enterprise design systems for government and fintech—from RTA's mobile system serving 12M+ users to Fawry's payment platform.",
     stats: ["4 Major systems built", "12M+ users served daily", "iOS, Android, Web platforms", "RTL/LTR bilingual support"],
     buttonText: "View Design Systems",
-    imageAlt: "RTA Design System in Figma"
+    imageAlt: "RTA Design System in Figma",
+    imageUrl: "/thumbnails/Design systm.png"
   },
   {
     id: 3,
@@ -96,7 +98,8 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     description: "Designing multi-stakeholder platforms handling licensing, permits, fines, and public engagement across Dubai.",
     stats: ["8+ Services designed", "80.77% user approval rate", "Multi-role journeys", "Bilingual Arabic/English"],
     buttonText: "View Government Work",
-    imageAlt: "Licensing Platform Interface"
+    imageAlt: "Licensing Platform Interface",
+    imageUrl: "/thumbnails/Frame 1321315531.png"
   },
   {
     id: 4,
@@ -106,7 +109,8 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     description: "Leading usability testing in RTA's UX Lab—creating protocols, moderating sessions, delivering insights that influence strategy.",
     stats: ["30+ Usability sessions led", "6+ Major products tested", "Executive-ready reports", "Nielsen's heuristics applied"],
     buttonText: "View Research Approach",
-    imageAlt: "UX Lab Testing Session"
+    imageAlt: "UX Lab Testing Session",
+    imageUrl: "/thumbnails/UX Research & Usability Lab.png"
   },
   {
     id: 5,
@@ -116,7 +120,8 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     description: "Delivering live design systems workshops—teaching Figma mastery, systems thinking, and real-world UX practices.",
     stats: ["20+ Live sessions delivered", "500+ Designers trained", "Bilingual instruction (AR/EN)", "Real-world case studies"],
     buttonText: "View Workshop Content",
-    imageAlt: "Workshop Zoom Session"
+    imageAlt: "Workshop Zoom Session",
+    imageUrl: "/thumbnails/Teaching & Mentorship..png"
   },
   {
     id: 6,
@@ -126,7 +131,8 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     description: "Designing executive and operational dashboards officially recognized by RTA's AI & Data Science Center for 'significantly enhancing innovation'.",
     stats: ["5+ Dashboard systems", "🏆 Official RTA AI Center recognition", "Executive to operational levels", "Real-time KPIs & insights"],
     buttonText: "View Dashboard Work",
-    imageAlt: "Executive Dashboard Interface"
+    imageAlt: "Executive Dashboard Interface",
+    imageUrl: "/thumbnails/Gemini_Generated_Image_k7ize6k7ize6k7iz.png"
   }
 ];
 
@@ -209,7 +215,8 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaText: "View Case Study →",
     ctaLink: "/work/ai-urban-tool",
     imageAlt: "AI tool interface showing before/after urban visualization",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    imageUrl: "/thumbnails/AI Urban Design Tool thumbnail.png"
   },
   {
     id: 2,
@@ -224,7 +231,8 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaText: "View Case Study →",
     ctaLink: "/work/rta-design-system",
     imageAlt: "Design system component library showcase",
-    backgroundColor: "light"
+    backgroundColor: "light",
+    imageUrl: "/thumbnails/Design systm.png"
   },
   {
     id: 3,
@@ -239,7 +247,8 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaText: "View Case Study →",
     ctaLink: "/work/beach-locker",
     imageAlt: "Service blueprint showing beach locker journey across touchpoints",
-    backgroundColor: "light"
+    backgroundColor: "light",
+    imageUrl: "/thumbnails/Frame 1321315531.png"
   },
   {
     id: 4,
@@ -254,7 +263,8 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaText: "View Case Study →",
     ctaLink: "/work",
     imageAlt: "Service blueprint showing journey across touchpoints",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    imageUrl: "/thumbnails/Gemini_Generated_Image_k7ize6k7ize6k7iz.png"
   },
   {
     id: 5,
@@ -269,7 +279,8 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaText: "View Case Study →",
     ctaLink: "/work",
     imageAlt: "UX lab setting and research report preview",
-    backgroundColor: "light"
+    backgroundColor: "light",
+    imageUrl: "/thumbnails/UX Research & Usability Lab.png"
   }
 ];
 

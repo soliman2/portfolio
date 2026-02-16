@@ -15,6 +15,7 @@ export interface ExpertiseCard {
   stats: string[];
   buttonText: string;
   imageAlt: string;
+  imageUrl?: string;
 }
 
 export interface Testimonial {
@@ -48,6 +49,7 @@ export interface FeaturedCaseStudy {
   ctaLink: string;
   imageAlt: string;
   backgroundColor: 'white' | 'light';
+  imageUrl?: string;
 }
 
 export interface MoreExpertiseCard {
