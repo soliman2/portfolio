@@ -248,7 +248,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaLink: "/work/beach-locker",
     imageAlt: "Service blueprint showing beach locker journey across touchpoints",
     backgroundColor: "light",
-    imageUrl: "/thumbnails/Frame 1321315531.png"
+    imageUrl: "/thumbnails/Thumail Beach Locker Service Redesign.png"
   },
   {
     id: 4,
