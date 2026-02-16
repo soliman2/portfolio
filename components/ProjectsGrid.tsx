@@ -137,5 +137,3 @@ const ProjectsGrid: React.FC = () => {
 };
 
 export default ProjectsGrid;
-
-export default ProjectsGrid;
