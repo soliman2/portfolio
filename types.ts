@@ -50,6 +50,7 @@ export interface FeaturedCaseStudy {
   imageAlt: string;
   backgroundColor: 'white' | 'light';
   imageUrl?: string;
+  gitexBadge?: boolean;
 }
 
 export interface MoreExpertiseCard {

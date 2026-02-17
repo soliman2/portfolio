@@ -216,7 +216,8 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaLink: "/work/ai-urban-tool",
     imageAlt: "AI tool interface showing before/after urban visualization",
     backgroundColor: "white",
-    imageUrl: "/thumbnails/AI Urban Design Tool thumbnail.png"
+    imageUrl: "/thumbnails/AI Urban Design Tool thumbnail.png",
+    gitexBadge: true
   },
   {
     id: 2,

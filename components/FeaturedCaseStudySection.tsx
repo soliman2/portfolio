@@ -102,11 +102,24 @@ const FeaturedCaseStudySection: React.FC<FeaturedCaseStudySectionProps> = ({
                             {/* Conditional rendering: Real images for case studies with assets, placeholder for others */}
                             <div className="aspect-[4/3] w-full relative max-h-[200px] md:max-h-none overflow-hidden">
                                 {caseStudy.imageUrl ? (
-                                    <img
-                                        src={caseStudy.imageUrl}
-                                        alt={caseStudy.imageAlt}
-                                        className="w-full h-full object-cover"
-                                    />
+                                    <div className="relative w-full h-full">
+                                        <img
+                                            src={caseStudy.imageUrl}
+                                            alt={caseStudy.imageAlt}
+                                            className="w-full h-full object-cover"
+                                        />
+                                        {caseStudy.gitexBadge && (
+                                            <div className="absolute top-4 right-4 z-20 flex items-center gap-2.5 px-3.5 py-2.5 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200/50">
+                                                <img
+                                                    src="/Gitex-Global-2025-_-GCS.jpg"
+                                                    alt="GITEX Logo"
+                                                    className="h-5 w-auto object-contain"
+                                                />
+                                                <div className="w-px h-4 bg-slate-300"></div>
+                                                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider">Showcased on GITEX</span>
+                                            </div>
+                                        )}
+                                    </div>
                                 ) : (
                                     // Fallback for case studies without imageUrl
                                     <>

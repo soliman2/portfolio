@@ -7,11 +7,24 @@ import { FeaturedCaseStudy } from '../types';
 const ProjectImageContent: React.FC<{ project: FeaturedCaseStudy }> = ({ project }) => {
     if (project.imageUrl) {
         return (
-            <img
-                src={project.imageUrl}
-                alt={project.imageAlt}
-                className="w-full h-full object-cover"
-            />
+            <div className="relative w-full h-full">
+                <img
+                    src={project.imageUrl}
+                    alt={project.imageAlt}
+                    className="w-full h-full object-cover"
+                />
+                {project.gitexBadge && (
+                    <div className="absolute top-3 right-3 z-10 flex items-center gap-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-md border border-slate-200/50 scale-90 origin-top-right">
+                        <img
+                            src="/Gitex-Global-2025-_-GCS.jpg"
+                            alt="GITEX Logo"
+                            className="h-4 w-auto object-contain"
+                        />
+                        <div className="w-px h-3 bg-slate-200"></div>
+                        <span className="text-[9px] font-bold text-slate-800 uppercase tracking-wider">Showcased on GITEX</span>
+                    </div>
+                )}
+            </div>
         );
     }
 
