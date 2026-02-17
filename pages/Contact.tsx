@@ -180,7 +180,7 @@ const Contact: React.FC = () => {
                                         <span className="text-[16px] font-bold text-[#1A1D23]">Connect with me</span>
                                     </div>
                                 </div>
-                                <span className="text-[12px] text-[#6B7280] font-medium pl-[52px]">2,500+ connections · Active</span>
+                                <span className="text-[12px] text-[#6B7280] font-medium pl-[52px]">17,000+ connections · Active</span>
                             </div>
                         </motion.a>
                     </div>
