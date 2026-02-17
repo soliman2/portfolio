@@ -10,6 +10,7 @@ import CaseStudyPage from './components/CaseStudyPage';
 import ZLaundryCaseStudy from './components/ZLaundryCaseStudy';
 import DesignSystemsCaseStudy from './components/DesignSystemsCaseStudy';
 import BeachLockerCaseStudy from './components/BeachLockerCaseStudy';
+import UXResearchCaseStudy from './components/UXResearchCaseStudy';
 
 // Scroll to top on every route change
 const ScrollToTop: React.FC = () => {
@@ -111,6 +112,12 @@ const App: React.FC = () => {
           <Route path="/work/beach-locker" element={
             <CaseStudyWrapper>
               <BeachLockerCaseStudy onBack={() => { }} />
+            </CaseStudyWrapper>
+          } />
+
+          <Route path="/work/ux-research-rta" element={
+            <CaseStudyWrapper>
+              <UXResearchCaseStudy onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 

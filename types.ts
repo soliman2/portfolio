@@ -51,6 +51,7 @@ export interface FeaturedCaseStudy {
   backgroundColor: 'white' | 'light';
   imageUrl?: string;
   gitexBadge?: boolean;
+  customBadges?: string[];
 }
 
 export interface MoreExpertiseCard {
