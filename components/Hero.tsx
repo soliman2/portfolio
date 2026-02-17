@@ -237,7 +237,7 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Simplified Impact Row: Logos + Metrics */}
-                    <motion.div variants={fadeUpVariants} className="pt-0 border-t border-black/[0.1] mt-6 md:mt-0">
+                    <motion.div variants={fadeUpVariants} className="pt-0 mt-6 md:mt-0">
                         <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-16 pt-6 md:pt-12">
 
                             {/* Government Logos */}
