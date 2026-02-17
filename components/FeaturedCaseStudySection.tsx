@@ -109,14 +109,14 @@ const FeaturedCaseStudySection: React.FC<FeaturedCaseStudySectionProps> = ({
                                             className="w-full h-full object-cover"
                                         />
                                         {caseStudy.gitexBadge && (
-                                            <div className="absolute top-4 right-4 z-20 flex items-center gap-2.5 px-3.5 py-2.5 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200/50">
+                                            <div className="absolute bottom-6 right-6 z-20 flex items-center h-[56px] gap-3 px-5 bg-white shadow-xl rounded-2xl border border-white/50 ring-1 ring-black/5 backdrop-blur-md">
                                                 <img
                                                     src="/Gitex-Global-2025-_-GCS.jpg"
                                                     alt="GITEX Logo"
-                                                    className="h-5 w-auto object-contain"
+                                                    className="h-7 w-auto object-contain"
                                                 />
-                                                <div className="w-px h-4 bg-slate-300"></div>
-                                                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider">Showcased on GITEX</span>
+                                                <div className="w-px h-6 bg-slate-200"></div>
+                                                <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Showcased on GITEX</span>
                                             </div>
                                         )}
                                     </div>
