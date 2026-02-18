@@ -14,96 +14,137 @@ const Testimonials: React.FC = () => {
         setMobileIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
     };
 
-    // Pick the 3 strongest testimonials for the desktop row
+    // Pick top 3 for desktop
     const desktopTestimonials = TESTIMONIALS.slice(0, 3);
     const currentMobileTestimonial = TESTIMONIALS[mobileIndex];
 
+    const getInitials = (name: string) => {
+        return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+    };
+
     return (
-        <section className="pt-4 pb-4 md:py-10 bg-[#F9FAFB] overflow-hidden" id="testimonials">
+        <section className="py-16 md:py-24 bg-white overflow-hidden" id="testimonials">
             <div className="max-w-[1280px] mx-auto px-5 md:px-6 lg:px-12">
 
                 {/* Section Header */}
-                <div className="mb-8 md:mb-12">
-                    <h2 className="text-[28px] md:text-4xl font-bold font-display text-slate-900 tracking-tight">
+                <div className="max-w-3xl mb-12 md:mb-16">
+                    <h2 className="text-[32px] md:text-4xl font-bold font-display text-slate-900 tracking-tight mb-4">
                         What Leaders Say
                     </h2>
+                    <div className="h-1.5 w-20 bg-[#4169E1] rounded-full"></div>
                 </div>
 
-                {/* ===== MOBILE: Single centered quote ===== */}
+                {/* ===== MOBILE: Card slider ===== */}
                 <div className="md:hidden">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={`mobile-${mobileIndex}`}
-                            initial={{ opacity: 0, x: 30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -30 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
-                            className="text-center px-2"
+                            className="bg-slate-50 border border-slate-100 p-8 rounded-[32px] relative"
                         >
-                            <Quote className="w-6 h-6 text-[#4169E1]/30 mx-auto mb-4" />
-                            <p className="text-base text-slate-700 leading-relaxed italic mb-4">
+                            <Quote className="absolute top-6 right-8 w-12 h-12 text-[#4169E1]/10" />
+
+                            {currentMobileTestimonial.badge && (
+                                <div className="inline-block px-3 py-1 bg-[#E8F0FE] text-[#4169E1] text-[10px] font-bold rounded-full uppercase tracking-wider mb-6 border border-[#4169E1]/10">
+                                    {currentMobileTestimonial.badge}
+                                </div>
+                            )}
+
+                            <p className="text-[16px] text-slate-700 leading-relaxed font-medium italic mb-8 relative z-10">
                                 "{currentMobileTestimonial.quote}"
                             </p>
-                            <div className="font-bold text-slate-900 text-sm">
-                                {currentMobileTestimonial.name}
-                            </div>
-                            <div className="text-xs text-[#4169E1] font-medium mt-0.5">
-                                {currentMobileTestimonial.title}
-                            </div>
-                            <div className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">
-                                {currentMobileTestimonial.company}
+
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4169E1] to-blue-700 text-white flex items-center justify-center font-bold text-sm shadow-lg shadow-blue-500/20">
+                                    {getInitials(currentMobileTestimonial.name)}
+                                </div>
+                                <div>
+                                    <div className="font-bold text-slate-900 text-[15px]">
+                                        {currentMobileTestimonial.name}
+                                    </div>
+                                    <div className="text-[13px] text-slate-500 font-medium leading-tight mt-0.5">
+                                        {currentMobileTestimonial.title}
+                                    </div>
+                                    <div className="text-[11px] text-[#4169E1] font-bold uppercase tracking-wider mt-1">
+                                        {currentMobileTestimonial.company}
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     </AnimatePresence>
 
                     {/* Dot indicators + nav buttons */}
-                    <div className="flex items-center justify-center gap-4 mt-6">
+                    <div className="flex items-center justify-center gap-4 mt-10">
                         <button
                             onClick={prevMobile}
-                            className="p-2 rounded-full border border-slate-200 bg-white text-slate-500"
+                            className="p-3 rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm active:scale-90 transition-transform"
                             aria-label="Previous"
                         >
-                            <ChevronLeft className="w-4 h-4" />
+                            <ChevronLeft className="w-5 h-5" />
                         </button>
-                        <div className="flex gap-1.5">
+                        <div className="flex gap-2">
                             {TESTIMONIALS.map((_, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => setMobileIndex(idx)}
-                                    className={`w-2 h-2 rounded-full transition-colors ${idx === mobileIndex ? 'bg-[#4169E1]' : 'bg-slate-300'}`}
+                                    className={`h-2 rounded-full transition-all duration-300 ${idx === mobileIndex ? 'w-6 bg-[#4169E1]' : 'w-2 bg-slate-300'}`}
                                     aria-label={`Go to testimonial ${idx + 1}`}
                                 />
                             ))}
                         </div>
                         <button
                             onClick={nextMobile}
-                            className="p-2 rounded-full border border-slate-200 bg-white text-slate-500"
+                            className="p-3 rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm active:scale-90 transition-transform"
                             aria-label="Next"
                         >
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-5 h-5" />
                         </button>
                     </div>
                 </div>
 
-                {/* ===== DESKTOP: 3 quotes in one row, text-only with left border accent ===== */}
+                {/* ===== DESKTOP: Modern cards ===== */}
                 <div className="hidden md:grid md:grid-cols-3 gap-8">
                     {desktopTestimonials.map((testimonial, idx) => (
                         <motion.div
                             key={testimonial.id}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: idx * 0.1 }}
-                            className="border-l-[3px] border-[#4169E1] pl-6"
+                            transition={{ duration: 0.5, delay: idx * 0.15 }}
+                            className="group bg-slate-50 border border-slate-100 p-8 rounded-[32px] hover:bg-white hover:border-[#4169E1]/20 hover:shadow-2xl hover:shadow-[#4169E1]/5 transition-all duration-500 flex flex-col h-full relative"
                         >
-                            <p className="text-[15px] text-[#6B7280] leading-relaxed italic mb-4">
-                                "{testimonial.quote}"
-                            </p>
-                            <div className="text-sm font-semibold text-[#1A1D23]">
-                                {testimonial.name}
+                            <Quote className="absolute top-8 right-8 w-12 h-12 text-[#4169E1]/10 group-hover:text-[#4169E1]/20 transition-colors" />
+
+                            <div className="flex-1 relative z-10">
+                                {testimonial.badge && (
+                                    <div className="inline-block px-3 py-1 bg-[#E8F0FE] text-[#4169E1] text-[10px] font-bold rounded-full uppercase tracking-wider mb-6 border border-[#4169E1]/10">
+                                        {testimonial.badge}
+                                    </div>
+                                )}
+
+                                <p className="text-[16px] text-slate-700 leading-relaxed font-medium italic mb-10">
+                                    "{testimonial.quote}"
+                                </p>
                             </div>
-                            <div className="text-[13px] text-[#9CA3AF] mt-0.5">
-                                {testimonial.title}, {testimonial.company}
+
+                            <div className="flex items-center gap-4 mt-auto">
+                                <div className="w-12 h-12 rounded-full bg-slate-200 group-hover:bg-[#4169E1] group-hover:text-white flex items-center justify-center font-bold text-sm text-slate-600 transition-all duration-300 shadow-sm">
+                                    {getInitials(testimonial.name)}
+                                </div>
+                                <div>
+                                    <div className="font-bold text-slate-900 text-[15px] group-hover:text-[#4169E1] transition-colors leading-tight">
+                                        {testimonial.name}
+                                    </div>
+                                    <div className="text-[13px] text-slate-500 font-medium leading-tight mt-1">
+                                        {testimonial.title}
+                                    </div>
+                                    <div className="text-[11px] text-[#4169E1] font-bold uppercase tracking-wider mt-1.5 opacity-80">
+                                        {testimonial.company}
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
