@@ -77,9 +77,9 @@ const Hero: React.FC = () => {
                 className="absolute inset-0 pointer-events-none z-0"
                 style={{
                     background: `
-            radial-gradient(ellipse 80% 60% at 90% 10%, rgba(125, 211, 232, 0.6) 0%, transparent 50%),
-            radial-gradient(ellipse 100% 50% at 50% 100%, rgba(125, 211, 232, 0.5) 0%, transparent 40%),
-            radial-gradient(ellipse 60% 50% at 10% 40%, rgba(240, 198, 212, 0.5) 0%, transparent 50%),
+            radial-gradient(ellipse 80% 60% at 90% 10%, rgba(125, 211, 232, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 50% at 50% 100%, rgba(65, 105, 225, 0.08) 0%, transparent 40%),
+            radial-gradient(ellipse 60% 50% at 10% 40%, rgba(65, 105, 225, 0.05) 0%, transparent 50%),
             linear-gradient(180deg, #FDFBF9 0%, #F8F9FA 100%)
           `
                 }}
@@ -122,16 +122,16 @@ const Hero: React.FC = () => {
                                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                                     }}
                                 >
-                                    Sr. Product Designer • AI • Service Design
+                                    Sr. Product Designer • Design Systems • AI • UX Research
                                 </span >
                             </motion.div>
 
                             {/* Headline */}
                             <motion.h1 variants={fadeUpVariants} className="mb-3 md:mb-2 space-y-0.5 md:space-y-2">
-                                <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-[1.2] font-display">
+                                <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#111827] leading-[1.2] font-display">
                                     Hey, I'm Soliman
                                 </span>
-                                <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-[1.2] font-display">
+                                <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#111827] leading-[1.2] font-display">
                                     I design with{' '}
                                     <span
                                         className="font-bold"
@@ -148,65 +148,47 @@ const Hero: React.FC = () => {
                             </motion.h1>
 
                             {/* Mobile Subtitle */}
-                            <motion.p variants={fadeUpVariants} className="md:hidden text-sm text-[#6B7280] font-normal mb-4">
+                            <motion.p variants={fadeUpVariants} className="md:hidden text-sm text-[#4B5563] font-normal mb-1">
                                 Senior Product Designer · Design Systems · AI · UX Research
                             </motion.p>
 
-                            {/* Description (Desktop Only) */}
-                            <motion.p variants={fadeUpVariants} className="hidden md:block text-base md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter mb-4">
-                                Building bilingual design systems that power Dubai's AI-driven government transformation.
+                            {/* Desktop Subtitle - Replacement for rotating tags */}
+                            <motion.p variants={fadeUpVariants} className="hidden md:block text-base font-medium text-[#6B7280] tracking-[0.5px] uppercase">
+                                Senior Product Designer — Design Systems · AI · UX Research · Service Design
                             </motion.p>
 
-                            {/* Capability Ticker / Tag */}
-                            <motion.div
-                                variants={fadeUpVariants}
-                                className="flex items-center min-h-[24px] mb-[20px] md:mb-6"
-                            >
-                                <div className="flex items-center gap-2">
-                                    <span className="md:hidden w-1.5 h-1.5 rounded-full bg-[#4169E1]"></span>
-                                    <span className="md:hidden text-[12px] font-medium text-[#4169E1] uppercase tracking-[1px]">
-                                        AI-powered solutions
-                                    </span>
-                                </div>
-                                <AnimatePresence mode="wait">
-                                    <motion.span
-                                        key={currentCapabilityIndex}
-                                        variants={capabilityItemVariants}
-                                        initial="enter"
-                                        animate="center"
-                                        exit="exit"
-                                        className="hidden md:block font-bold text-xl md:text-2xl"
-                                        style={{
-                                            background: 'linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%)',
-                                            WebkitBackgroundClip: 'text',
-                                            WebkitTextFillColor: 'transparent',
-                                            backgroundClip: 'text'
-                                        }}
-                                    >
-                                        {capabilities[currentCapabilityIndex]}
-                                    </motion.span>
-                                </AnimatePresence>
-                            </motion.div>
+                            {/* Description */}
+                            <motion.p variants={fadeUpVariants} className="text-base md:text-xl text-[#4B5563] leading-relaxed max-w-xl font-inter mb-2">
+                                I design AI-powered tools, enterprise design systems, and 360° government services for 12M+ users across Dubai. Officially recognized at GITEX 2025.
+                            </motion.p>
 
-                            <motion.div variants={fadeUpVariants} className="flex items-center gap-6 mb-0 md:mb-0">
-                                <a
-                                    href="/soliman-shaban-cv.pdf"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 bg-[#4169E1] text-white rounded-[10px] md:rounded-full font-semibold md:font-bold text-sm md:text-base transition-all hover:bg-blue-600 active:scale-95 shadow-lg shadow-blue-600/20"
-                                >
-                                    Download CV ↓
-                                </a>
-                                <a
-                                    href="https://www.linkedin.com/in/solimanshaban/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="p-3 text-[#4169E1] hover:bg-blue-50 rounded-full transition-colors order-first md:order-none"
-                                    aria-label="LinkedIn Profile"
-                                >
-                                    <Linkedin className="w-5 h-5" />
-                                </a>
-                            </motion.div>
+                            <div className="flex flex-col gap-4">
+                                <motion.div variants={fadeUpVariants} className="flex items-center gap-6 mb-0 md:mb-0">
+                                    <a
+                                        href="/soliman-shaban-cv.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 bg-[#4169E1] text-white rounded-[10px] md:rounded-full font-semibold md:font-bold text-sm md:text-base transition-all hover:bg-blue-600 active:scale-95 shadow-lg shadow-blue-600/20"
+                                    >
+                                        Download CV ↓
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/solimanshaban/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-3 text-[#4169E1] hover:bg-blue-50 rounded-full transition-colors order-first md:order-none"
+                                        aria-label="LinkedIn Profile"
+                                    >
+                                        <Linkedin className="w-5 h-5" />
+                                    </a>
+                                </motion.div>
+
+                                {/* Availability Indicator */}
+                                <motion.div variants={fadeUpVariants} className="flex items-center gap-2 px-1">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
+                                    <span className="text-sm text-[#6B7280] font-medium">Available for new opportunities</span>
+                                </motion.div>
+                            </div>
                         </div>
 
                         {/* Right Side: Image with matching height */}
@@ -244,17 +226,17 @@ const Hero: React.FC = () => {
                             <div className="lg:border-r border-slate-200 lg:pr-16">
                                 <p className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-[1.5px] mb-3 md:mb-6">Government Trust</p>
                                 <div className="flex items-center gap-6 md:gap-8">
-                                    <img src="/images/01.png" alt="RTA" className="h-6 md:h-8 w-auto" />
-                                    <img src="/images/02.png" alt="Dubai Municipality" className="h-6 md:h-8 w-auto" />
-                                    <img src="/images/03.png" alt="Digital Dubai" className="h-6 md:h-8 w-auto" />
+                                    <motion.img variants={badgeItemVariants} custom={0} src="/images/01.png" alt="RTA" className="h-6 md:h-8 w-auto" />
+                                    <motion.img variants={badgeItemVariants} custom={1} src="/images/02.png" alt="Dubai Municipality" className="h-6 md:h-8 w-auto" />
+                                    <motion.img variants={badgeItemVariants} custom={2} src="/images/03.png" alt="Digital Dubai" className="h-6 md:h-8 w-auto" />
                                 </div>
                             </div>
 
                             {/* Metrics Grid */}
                             <div className="grid grid-cols-2 md:flex gap-4 md:gap-12 mt-6 md:mt-0">
                                 <div className="flex flex-col">
-                                    <span className="text-[28px] md:text-3xl font-bold text-[#1A1D23] font-display leading-none">12M+</span>
-                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Citizens</span>
+                                    <span className="text-[28px] md:text-3xl font-bold text-[#111827] font-display leading-none">12M+</span>
+                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Users Served</span>
                                 </div>
                                 <div className="flex flex-col">
                                     <span
@@ -266,14 +248,14 @@ const Hero: React.FC = () => {
                                             backgroundClip: 'text'
                                         }}
                                     >93%</span>
-                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">AI Speed</span>
+                                    <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Time Saved</span>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-[28px] md:text-3xl font-bold text-[#1A1D23] font-display leading-none">8+</span>
+                                    <span className="text-[28px] md:text-3xl font-bold text-[#111827] font-display leading-none">8+</span>
                                     <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Years</span>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-[28px] md:text-3xl font-bold text-[#1A1D23] font-display leading-none">5+</span>
+                                    <span className="text-[28px] md:text-3xl font-bold text-[#111827] font-display leading-none">5+</span>
                                     <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider mt-1">Systems</span>
                                 </div>
                             </div>

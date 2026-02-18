@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import ProjectsGrid from '../components/ProjectsGrid';
+import ProcessSection from '../components/ProcessSection';
+import SkillsSection from '../components/SkillsSection';
 import Testimonials from '../components/Testimonials';
 
 const Home: React.FC = () => {

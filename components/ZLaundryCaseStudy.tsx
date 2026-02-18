@@ -1,16 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    ArrowLeft, ArrowRight, Shirt, Droplets, Waves, ClipboardList, Users, Search,
-    Target, Map, FileText, CheckCircle2, ChevronRight, User,
-    Lightbulb, Briefcase, Layout
+    ArrowRight, Shirt, Droplets, Waves, Search,
+    Target, CheckCircle2, User,
+    Lightbulb, Briefcase, Layout, Users, Award, Zap, Microscope, BookOpen
 } from 'lucide-react';
+import CaseStudyNav from './CaseStudyNav';
 
 interface ZLaundryCaseStudyProps {
-    onBack: () => void;
+    // onBack: () => void; // Removed as per instruction
 }
 
-const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
+const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = () => { // Removed onBack from destructuring
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
@@ -615,7 +616,7 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
 
                     <div className="flex flex-col md:flex-row justify-center gap-4">
                         <button
-                            onClick={onBack}
+                            // onClick={onBack} // Removed onClick as onBack prop is removed
                             className="group px-8 py-4 bg-white text-[#1A1D23] font-bold rounded-full hover:bg-slate-200 transition-colors inline-flex items-center justify-center gap-2"
                         >
                             AI Urban Design Tool
@@ -625,6 +626,8 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
                 </div>
             </section>
 
+            {/* Footer / Navigation */}
+            <CaseStudyNav currentId={5} />
         </div>
     );
 };

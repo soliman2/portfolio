@@ -6,12 +6,9 @@ import {
     Clock, CreditCard, QrCode, Bell, Key, UserCheck, Headphones
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import CaseStudyNav from './CaseStudyNav';
 
-interface BeachLockerCaseStudyProps {
-    onBack: () => void;
-}
-
-const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) => {
+const BeachLockerCaseStudy: React.FC = () => {
     const navigate = useNavigate();
 
     const fadeInUp = {
@@ -170,9 +167,6 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
 
     return (
         <div className="bg-white w-full overflow-hidden text-[#1A1D23] font-sans">
-
-            {/* Navigation Spacer */}
-            <div className="h-20 lg:h-24"></div>
 
             {/* ==============================================================================
                 SECTION 1: HERO
@@ -778,26 +772,8 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                 </div>
             </section>
 
-            {/* ==============================================================================
-                SECTION 10: NEXT PROJECT CTA
-               ============================================================================== */}
-            <section className="py-24 bg-[#1A1D23] text-white text-center">
-                <div className="max-w-[800px] mx-auto px-6 lg:px-8">
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Next Project</div>
-                    <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">See how I built AI tools for government</h2>
-
-                    <div className="flex flex-col md:flex-row justify-center gap-4">
-                        <button
-                            onClick={() => navigate('/work/ai-urban-tool')}
-                            className="group px-8 py-4 bg-teal-500 text-white font-bold rounded-full hover:bg-teal-400 transition-colors inline-flex items-center justify-center gap-2"
-                        >
-                            AI Urban Design Tool
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </div>
-                </div>
-            </section>
-
+            {/* Footer / Navigation */}
+            <CaseStudyNav currentId={4} />
         </div>
     );
 };

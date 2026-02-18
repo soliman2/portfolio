@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Award, Code, Globe, User, BookOpen } from 'lucide-react';
+import CertificateCard from '../components/CertificateCard';
 
 const About: React.FC = () => {
   const fadeUp = {
@@ -349,19 +350,28 @@ const About: React.FC = () => {
               <h2 className="text-2xl font-bold text-slate-900 tracking-tight uppercase text-[14px]">Recognition & Certifications</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Card 1 - Recognition */}
-              <motion.div
-                variants={fadeUp}
-                className="bg-white p-8 rounded-2xl border border-[#E5E7EB] border-l-4 border-l-[#F59E0B] shadow-sm hover:shadow-md transition-shadow"
-              >
-                <p className="text-[#6B7280] text-sm mb-2 font-medium">December 2025</p>
-                <h3 className="text-[18px] font-bold text-slate-900 mb-3">Official Appreciation — RTA AI & Data Science Center</h3>
-                <p className="text-[16px] text-slate-600 leading-relaxed">
-                  Recognized by the Director of AI & Data Science Center for outstanding UX contributions across 4 AI-powered dashboards: Urbanist (GITEX 2025), HR Attendance, Panorama, and AI-as-a-Service.
-                </p>
-              </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {/* Certificate 1: GITEX CEO */}
+              <CertificateCard
+                title="Certificate of Appreciation — RTA (GITEX 2025) - From CEO"
+                description="Recognized by Dubai’s Roads & Transport Authority (RTA) for impactful contributions to the success of RTA’s participation at GITEX 2025."
+                issuer="RTA CEO Office"
+                date="Oct 2025"
+                imageSrc="/certificate-ceo.jpg"
+                isGitex={true}
+              />
 
+              {/* Certificate 2: AI Center */}
+              <CertificateCard
+                title="Official Appreciation — RTA AI & Data Science Center"
+                description="Recognized by the Director of AI & Data Science Center for outstanding UX contributions across 4 AI-powered dashboards: Urbanist (GITEX 2025), HR Attendance, Panorama, and AI-as-a-Service."
+                issuer="AI & Data Science Center, RTA"
+                date="Dec 2025"
+                imageSrc="/certificate 1.jpeg"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Card 2 */}
               <motion.div
                 variants={fadeUp}
