@@ -48,18 +48,21 @@ export const HERO_SKILL_CARDS = [
 ];
 
 export const HERO_TAGLINES = [
-  "Senior Product Designer — Design Systems · AI · UX Research · Service Design"
+  "Building AI-powered tools",
+  "Creating design systems at scale",
+  "Transforming government services",
+  "Teaching 500+ designers"
 ];
 
 export const IMPACT_STATS_ROW_1: Stat[] = [
   { value: "12M+", label: "Users Served" },
   { value: "8+", label: "Years Experience" },
-  { value: "93%", label: "Time Saved" },
-  { value: "5+", label: "Design Systems" }
+  { value: "30+", label: "Services Designed" },
+  { value: "6", label: "Designers Supported" }
 ];
 
 export const IMPACT_STATS_ROW_2: Stat[] = [
-  { value: "50+", label: "Workshops Delivered" },
+  { value: "20+", label: "Workshops Delivered" },
   { value: "500+", label: "Designers Trained" },
   { value: "🏆", label: "Official Recognition", sub: "RTA AI Center" }
 ];
@@ -104,7 +107,7 @@ export const EXPERTISE_CARDS: ExpertiseCard[] = [
     title: "UX Research & Testing",
     tagline: "Research that drives executive decisions",
     description: "Leading usability testing in RTA's UX Lab—creating protocols, moderating sessions, delivering insights that influence strategy.",
-    stats: ["50+ Usability sessions led", "8+ Major products tested", "Executive-ready reports", "Nielsen's heuristics applied"],
+    stats: ["30+ Usability sessions led", "6+ Major products tested", "Executive-ready reports", "Nielsen's heuristics applied"],
     buttonText: "View Research Approach",
     imageAlt: "UX Lab Testing Session",
     imageUrl: "/thumbnails/UX Research & Usability Lab.png"
@@ -147,7 +150,7 @@ export const WORK_METHODS: WorkMethod[] = [
   {
     title: "Research-Driven",
     icon: "🔬",
-    description: "Real users, real testing, real insights. I've led 50+ usability sessions in RTA's UX Lab, turning findings into executive-ready recommendations that drive strategic decisions."
+    description: "Real users, real testing, real insights. I've led 30+ usability sessions in RTA's UX Lab, turning findings into executive-ready recommendations that drive strategic decisions."
   },
   {
     title: "Teaching & Mentoring",
@@ -180,10 +183,24 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Hesham Farag",
     title: "Chief UX Designer",
     company: "RTA Dubai"
+  },
+  {
+    id: 4,
+    quote: "One of the standout projects he worked on was the Chairman's Dashboard. Soliman played a key role in shaping its design and functionality, ensuring it met the highest standards of usability and performance.",
+    name: "Kausar Jahan",
+    title: "Lead UX&CX & Product Design",
+    company: "RTA Dubai"
+  },
+  {
+    id: 5,
+    quote: "He is hardworking, always willing to help, and consistently delivers excellent results, commitment and positive attitude.",
+    name: "Huda Hassan",
+    title: "UX/UI Team Leader",
+    company: "Fawry Banking and Payment Technology Services"
   }
 ];
 
-// FEATURED CASE STUDIES (Keep only 4 core projects)
+// FEATURED CASE STUDIES (4 full-width sections)
 export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
   {
     id: 1,
@@ -191,7 +208,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     headline: "AI Urban Design Tool",
     valueStatement: "First GenAI Design Lab in Dubai Government. Reduced urban planning visualization from 5 days to 8 hours — officially recognized at GITEX 2025.",
     stats: [
-      { value: "93%", label: "Time Saved", context: "Processing time reduction" },
+      { value: "93%", label: "FASTER", context: "Processing time reduction" },
       { value: "5→8hrs", label: "TURNAROUND", context: "Days to hours" },
       { value: "GITEX", label: "2025", context: "Live demonstration" }
     ],
@@ -208,7 +225,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     headline: "Enterprise Design Systems",
     valueStatement: "Built and maintained design systems serving 12M+ users across RTA Portal, Mobile Apps, and Licensing platforms — with full RTL/LTR bilingual support.",
     stats: [
-      { value: "12M+", label: "USERS Served", context: "Across platforms" },
+      { value: "12M+", label: "USERS", context: "Across platforms" },
       { value: "5", label: "SYSTEMS", context: "Portal, Mobile, Licensing, S'hail, DDA" },
       { value: "RTL/LTR", label: "BILINGUAL", context: "Arabic & English" }
     ],
@@ -235,6 +252,38 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     imageUrl: "/thumbnails/Thumail Beach Locker Service Redesign.png"
   },
   {
+    id: 4,
+    category: "SERVICE DESIGN",
+    headline: "360° Government Services",
+    valueStatement: "End-to-end service design connecting citizen interfaces, corporate dashboards, and back-office systems — from application to approval across multiple government entities.",
+    stats: [
+      { value: "360°", label: "COVERAGE", context: "Frontstage + Backstage" },
+      { value: "6+", label: "SERVICES", context: "Licensing, Fines, Permits, Nol" },
+      { value: "4", label: "USER ROLES", context: "Citizen, Corporate, Reviewer, Admin" }
+    ],
+    ctaText: "View Case Study →",
+    ctaLink: "/work",
+    imageAlt: "Service blueprint showing journey across touchpoints",
+    backgroundColor: "white",
+    imageUrl: "/thumbnails/Gemini_Generated_Image_k7ize6k7ize6k7iz.png"
+  },
+  {
+    id: 5,
+    category: "RESEARCH & INSIGHTS",
+    headline: "UX Research & Usability Lab",
+    valueStatement: "Built RTA's usability testing practice from scratch. 30+ moderated sessions, standardized protocols, and executive reports that directly influence product decisions.",
+    stats: [
+      { value: "30+", label: "SESSIONS", context: "Moderated usability tests" },
+      { value: "100%", label: "ADOPTION", context: "Protocol used across RTA" },
+      { value: "DG-LEVEL", label: "REPORTS", context: "Executive storytelling" }
+    ],
+    ctaText: "View Case Study →",
+    ctaLink: "/work",
+    imageAlt: "UX lab setting and research report preview",
+    backgroundColor: "light",
+    imageUrl: "/thumbnails/UX Research & Usability Lab.png"
+  },
+  {
     id: 6,
     category: "UX RESEARCH",
     headline: "Leading UX Research at RTA Dubai",
@@ -242,7 +291,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     stats: [
       { value: "50+", label: "Sessions", context: "Usability testing" },
       { value: "8", label: "Products", context: "Tested platforms" },
-      { value: "12M+", label: "Users Served", context: "Total impact" }
+      { value: "12M+", label: "Users", context: "Total impact" }
     ],
     ctaText: "View Case Study →",
     ctaLink: "/work/ux-research-rta",

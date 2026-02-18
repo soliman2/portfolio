@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
-    ArrowLeft, ArrowRight, ExternalLink, Mail, Linkedin, Twitter,
-    ChevronRight, Trophy, CheckCircle2, Star, Target, Zap, Shield, Sparkles,
-    Clock, Send, Laptop, Layout, Palette, Type, Globe, AlertCircle, Loader2, Layers
+    ArrowLeft, ArrowRight, Layers, Sparkles, Trophy,
+    CheckCircle2, ChevronRight, ExternalLink, Clock, Send, Laptop, Layout,
+    Palette, Type, Globe, AlertCircle, Loader2
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import CaseStudyNav from './CaseStudyNav';
-import CertificateCard from './CertificateCard';
 
-const CaseStudyPage: React.FC = () => {
+interface CaseStudyPageProps {
+    onBack: () => void;
+}
+
+const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
     const navigate = useNavigate();
 
     // Scroll to top on load (extra safety)
@@ -47,7 +49,7 @@ const CaseStudyPage: React.FC = () => {
         <div className="bg-white w-full overflow-hidden text-[#1A1D23] font-sans selection:bg-[#4169E1] selection:text-white">
 
             {/* SECTION 1: HERO */}
-            <section className="relative pb-24 lg:pb-32 overflow-hidden bg-white">
+            <section className="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-white">
                 {/* Background Decor */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.2]"
                     style={{
@@ -252,7 +254,7 @@ const CaseStudyPage: React.FC = () => {
                     {/* Presets Mini Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto opacity-80">
                         {["/AI Urban/first sedction /11.png", "/AI Urban/first sedction /03.png", "/AI Urban/06.png", "/AI Urban/10.png"].map((img, i) => (
-                            <img key={i} src={img} alt={`Preset ${i} `} className="w-full h-24 object-cover rounded-xl grayscale hover:grayscale-0 transition-all cursor-pointer border border-white/5" />
+                            <img key={i} src={img} alt={`Preset ${i}`} className="w-full h-24 object-cover rounded-xl grayscale hover:grayscale-0 transition-all cursor-pointer border border-white/5" />
                         ))}
                     </div>
                 </div>
@@ -275,7 +277,7 @@ const CaseStudyPage: React.FC = () => {
                             { title: "Success State", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Impactful reveal of the final concept.", color: "text-[#10B981]" }
                         ].map((card, i) => (
                             <div key={i} className="bg-white p-10 rounded-[24px] border border-slate-100 shadow-lg text-center">
-                                <div className={`flex justify - center mb - 6 ${card.color} `}>{card.icon}</div>
+                                <div className={`flex justify-center mb-6 ${card.color}`}>{card.icon}</div>
                                 <h4 className="text-[18px] font-bold text-[#1A1D23] mb-3">{card.title}</h4>
                                 <p className="text-[14px] text-[#6B7280] leading-relaxed">{card.desc}</p>
                             </div>
@@ -331,35 +333,46 @@ const CaseStudyPage: React.FC = () => {
             </section>
 
             {/* SECTION 9: OFFICIAL ACKNOWLEDGMENT */}
-            <section className="py-24 bg-slate-50 relative">
+            <section className="py-24 bg-white relative">
                 <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
                     <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1D23] mb-16 text-center">Official Recognition</h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
-                        {/* Certificate 1: GITEX CEO */}
-                        <CertificateCard
-                            title="Certificate of Appreciation — RTA (GITEX 2025) - From CEO"
-                            description="Recognized by Dubai’s Roads & Transport Authority (RTA) for impactful contributions to the success of RTA’s participation at GITEX 2025."
-                            issuer="RTA CEO Office"
-                            date="Oct 2025"
-                            imageSrc="/certificate-ceo.jpg"
-                            isGitex={true}
-                        />
-
-                        {/* Certificate 2: AI Center */}
-                        <CertificateCard
-                            title="Official Appreciation — RTA AI & Data Science Center"
-                            description="Received official appreciation from RTA's AI & Data Science Center for innovation impact. 'The AI Urban Design Tool has fundamentally shifted how we visualize infrastructure projects, enabling rapid decision-making and showcasing the future of Dubai's AI strategy.'"
-                            issuer="AI & Data Science Center, RTA"
-                            date="Dec 2025"
-                            imageSrc="/certificate 1.jpeg"
-                        />
+                    <div className="max-w-[800px] mx-auto bg-white border-2 border-[#F59E0B]/30 rounded-[32px] p-10 md:p-16 relative overflow-hidden shadow-2xl shadow-orange-500/5">
+                        <div className="absolute top-0 right-0 p-32 bg-orange-50 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none -z-10"></div>
+                        <Trophy className="w-12 h-12 text-[#F59E0B] mb-8" />
+                        <h3 className="text-2xl font-bold text-[#1A1D23] mb-6 leading-relaxed">
+                            Received official appreciation from RTA's AI & Data Science Center for innovation impact.
+                        </h3>
+                        <p className="text-[16px] text-[#6B7280] leading-[1.8]">
+                            "The AI Urban Design Tool has fundamentally shifted how we visualize infrastructure projects, enabling rapid decision-making and showcasing the future of Dubai's AI strategy."
+                        </p>
+                        <div className="mt-8 pt-8 border-t border-slate-100 flex items-center justify-between gap-4">
+                            <div className="text-sm font-bold text-[#1A1D23]">AI & Data Science Center, RTA</div>
+                            <ExternalLink className="w-4 h-4 text-slate-300" />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Footer / Navigation */}
-            <CaseStudyNav currentId={1} />
+            {/* SECTION 10: CTA */}
+            <section className="py-24 lg:py-32 bg-white text-center">
+                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#1A1D23] mb-8">Let's Build Something Innovative Together</h2>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="w-full sm:w-auto px-8 py-4 bg-[#4169E1] text-white rounded-full font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all flex items-center justify-center gap-2"
+                        >
+                            Get in Touch <ArrowRight className="w-4 h-4" />
+                        </button>
+                        <button
+                            onClick={() => navigate('/')}
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-[#1A1D23] border border-[#E5E7EB] rounded-full font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+                        >
+                            Next Project <ChevronRight className="w-4 h-4" />
+                        </button>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

@@ -38,49 +38,33 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-base md:text-xl text-slate-300 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-base md:text-xl text-slate-400 mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Currently available for Senior/Principal Product Designer roles. Specializing in design systems, data visualization, AI-powered products, and government digital transformation.
+          Currently open to Principal/Staff Designer opportunities at Big Tech and Saudi Government digital transformation initiatives.
         </motion.p>
 
-        {/* Quick Contact Row */}
+        {/* Recognition Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10"
+          className="hidden md:inline-block mb-12 bg-amber-900/20 border border-amber-500/20 px-4 py-2 rounded-lg"
         >
-          <a href="https://wa.me/971502768308" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group backdrop-blur-sm">
-            <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
-              <Phone className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-1">WhatsApp Me</p>
-              <p className="text-sm md:text-base font-bold text-white">+971 50 276 8308</p>
-            </div>
-          </a>
-          <a href="mailto:soliman.shaban7@gmail.com" className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group backdrop-blur-sm">
-            <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform">
-              <Mail className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-1">Email Me</p>
-              <p className="text-sm md:text-base font-bold text-white">soliman.shaban7@gmail.com</p>
-            </div>
-          </a>
+          <p className="text-amber-400 text-sm font-semibold flex items-center gap-2">
+            <span>🏆</span> RTA AI & Data Science Center Recognition
+          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-4"
         >
-          <a href="mailto:soliman.shaban7@gmail.com" className="w-full md:w-auto inline-flex justify-center items-center px-8 py-4 bg-[#4169E1] hover:bg-blue-600 text-white rounded-full font-bold font-display transition-all shadow-lg shadow-blue-900/50 hover:-translate-y-0.5">
+          <a href="mailto:hello@solimanshaban.com" className="w-full md:w-auto inline-flex justify-center items-center px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold font-display transition-all shadow-lg shadow-blue-900/50 hover:-translate-y-0.5">
             <Mail className="mr-2 h-5 w-5" />
-            Send Email
+            Email Me
           </a>
           <div className="flex gap-4 w-full md:w-auto justify-center">
             <a href="https://www.linkedin.com/in/solimanshaban/" target="_blank" rel="noreferrer" className="flex-1 md:flex-none inline-flex justify-center items-center px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full font-semibold font-display transition-all">
@@ -99,38 +83,12 @@ const Footer: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Social Icons Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-12 flex justify-center gap-4"
-        >
-          {[
-            { icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/in/solimanshaban/", label: "LinkedIn" },
-            { icon: <span className="font-bold text-sm">Bē</span>, url: "https://www.behance.net/solimanshaban", label: "Behance" },
-            { icon: <Phone className="w-5 h-5" />, url: "https://wa.me/971502768308", label: "WhatsApp" }
-          ].map((social, i) => (
-            <a
-              key={i}
-              href={social.url}
-              target="_blank"
-              rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-white/10 hover:text-white transition-all shadow-sm"
-              aria-label={social.label}
-            >
-              {social.icon}
-            </a>
-          ))}
-        </motion.div>
-
-        <div className="mt-16 flex flex-col md:flex-row justify-center items-center gap-6 text-slate-500 text-sm font-medium">
+        <div className="mt-16 flex flex-col md:flex-row justify-center items-center gap-6 text-slate-400 text-sm font-medium">
           <div className="flex items-center hover:text-white transition-colors">
             <Phone className="w-4 h-4 mr-2" />
             +971 50 276 8308
           </div>
-          <div className="hidden md:block w-1.5 h-1.5 bg-slate-800 rounded-full"></div>
+          <div className="hidden md:block w-1.5 h-1.5 bg-slate-700 rounded-full"></div>
           <div className="flex items-center hover:text-white transition-colors">
             <MapPin className="w-4 h-4 mr-2" />
             Dubai, UAE | Open to relocation
@@ -138,7 +96,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-slate-800 text-center">
-          <p className="text-slate-600 text-[11px] font-medium uppercase tracking-widest">© {new Date().getFullYear()} Soliman Shaban • Product Designer</p>
+          <p className="text-slate-500 text-xs">© {new Date().getFullYear()} Soliman Shaban. All rights reserved.</p>
         </div>
       </div>
     </section>

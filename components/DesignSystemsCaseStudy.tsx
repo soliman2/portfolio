@@ -5,9 +5,12 @@ import {
     CheckCircle2, Smartphone, Monitor, Database, Settings,
     Code, Command, ToggleLeft, Palette, Type, Grid, MousePointer2
 } from 'lucide-react';
-import CaseStudyNav from './CaseStudyNav';
 
-const DesignSystemsCaseStudy: React.FC = () => {
+interface DesignSystemsCaseStudyProps {
+    onBack: () => void;
+}
+
+const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack }) => {
 
     // Animation Variants
     const fadeInUp = {
@@ -36,7 +39,10 @@ const DesignSystemsCaseStudy: React.FC = () => {
     });
 
     return (
-        <div className="bg-white w-full overflow-hidden text-[#1A1D23] font-sans selection:bg-[#7C3AED] selection:text-white pb-20">
+        <div className="bg-white w-full overflow-hidden text-[#1A1D23] font-sans selection:bg-[#7C3AED] selection:text-white">
+
+            {/* Navigation Spacer */}
+            <div className="h-20 lg:h-24 bg-[#1A1D23]"></div>
 
             {/* ==============================================================================
             SECTION 1: HERO
@@ -601,8 +607,6 @@ const DesignSystemsCaseStudy: React.FC = () => {
                 </div>
             </section>
 
-            {/* Footer / Navigation */}
-            <CaseStudyNav currentId={3} />
         </div>
     );
 };

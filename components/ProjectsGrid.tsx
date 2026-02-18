@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FEATURED_CASE_STUDIES } from '../constants';
 import { FeaturedCaseStudy } from '../types';
 
@@ -140,10 +140,14 @@ const ProjectsGrid: React.FC = () => {
             <div className="max-w-[1280px] mx-auto px-5 md:px-6 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projectsToShow.map((project, index) => (
-                        <Link
+                        <motion.div
                             key={project.id}
-                            to={project.ctaLink}
-                            className="group bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] block"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            onClick={() => navigate(project.ctaLink)}
+                            className="group bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
                         >
                             {/* Image Area */}
                             <div className={`relative h-[250px] md:h-[320px] bg-gradient-to-br ${getBgGradient(project.id)} overflow-hidden`}>
@@ -197,11 +201,11 @@ const ProjectsGrid: React.FC = () => {
                                     </div>
                                 )}
 
-                                <span className="text-sm font-medium text-[#4169E1] group-hover:underline">
+                                <span className="text-sm font-medium text-[#4169E1] hover:underline">
                                     View Case Study →
                                 </span>
                             </div>
-                        </Link>
+                        </motion.div>
                     ))}
                 </div>
             </div>

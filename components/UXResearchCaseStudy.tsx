@@ -17,9 +17,8 @@ import {
     Eye
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import CaseStudyNav from './CaseStudyNav';
 
-const UXResearchCaseStudy: React.FC = () => {
+const UXResearchCaseStudy: React.FC<{ onBack: () => void }> = ({ onBack }) => {
     const navigate = useNavigate();
 
     const fadeUp = {
@@ -34,7 +33,7 @@ const UXResearchCaseStudy: React.FC = () => {
     return (
         <div className="bg-white font-inter">
             {/* SECTION 1: HERO */}
-            <section className="pb-20 md:pb-32 bg-[#F8F9FA]">
+            <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-[#F8F9FA]">
                 <div className="max-w-[1120px] mx-auto px-6">
                     <motion.div
                         initial="hidden"
@@ -538,8 +537,27 @@ const UXResearchCaseStudy: React.FC = () => {
                 </div>
             </section>
 
-            {/* Footer / Navigation */}
-            <CaseStudyNav currentId={2} />
+            {/* SECTION 9: CTA — NEXT PROJECT */}
+            <section className="py-24 bg-[#F8F9FA] text-center">
+                <div className="max-w-[1120px] mx-auto px-6">
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={fadeUp}
+                        className="space-y-6"
+                    >
+                        <span className="text-[14px] font-bold text-slate-400 uppercase tracking-widest">Next Case Study</span>
+                        <h3
+                            onClick={() => navigate('/work/ai-urban-tool')}
+                            className="text-[32px] md:text-[40px] font-bold text-[#4169E1] hover:underline cursor-pointer tracking-tight font-display"
+                        >
+                            AI Urban Design Tool →
+                        </h3>
+                        <p className="text-[16px] text-slate-500 font-medium">Designing AI-powered visualization for GITEX Dubai 2025</p>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     );
 };

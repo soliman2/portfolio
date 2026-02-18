@@ -30,17 +30,14 @@ const CaseStudyWrapper: React.FC<{ children: React.ReactNode }> = ({ children })
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
       <Navbar isCaseStudy={true} />
-      {/* Back Link Header */}
-      <div className="bg-white border-b border-slate-50">
-        <div className="max-w-[1120px] mx-auto px-6 py-4">
-          <button
-            onClick={() => navigate('/')}
-            className="inline-flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-[#4169E1] uppercase tracking-widest transition-all group"
-          >
-            <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
-            Back to All Projects
-          </button>
-        </div>
+      {/* Subtle back-to-projects link */}
+      <div className="max-w-[1120px] mx-auto px-6 pt-6 pb-0">
+        <button
+          onClick={() => navigate('/')}
+          className="inline-flex items-center gap-1 text-[14px] font-medium text-[#6B7280] hover:text-[#4169E1] hover:underline transition-colors"
+        >
+          ← Back to Projects
+        </button>
       </div>
       <main>{children}</main>
     </div>
@@ -96,31 +93,31 @@ const App: React.FC = () => {
           {/* Case Study Routes */}
           <Route path="/work/ai-urban-tool" element={
             <CaseStudyWrapper>
-              <CaseStudyPage />
+              <CaseStudyPage onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 
           <Route path="/work/z-laundry" element={
             <CaseStudyWrapper>
-              <ZLaundryCaseStudy />
+              <ZLaundryCaseStudy onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 
           <Route path="/work/rta-design-system" element={
             <CaseStudyWrapper>
-              <DesignSystemsCaseStudy />
+              <DesignSystemsCaseStudy onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 
           <Route path="/work/beach-locker" element={
             <CaseStudyWrapper>
-              <BeachLockerCaseStudy />
+              <BeachLockerCaseStudy onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 
           <Route path="/work/ux-research-rta" element={
             <CaseStudyWrapper>
-              <UXResearchCaseStudy />
+              <UXResearchCaseStudy onBack={() => { }} />
             </CaseStudyWrapper>
           } />
 
