@@ -59,72 +59,184 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
         <div className="bg-white w-full overflow-hidden text-[#1A1D23] font-sans selection:bg-[#4169E1] selection:text-white">
 
             {/* ============================================================
-                SECTION 1 — HERO
+                SECTION 1 — HERO (full viewport, dark aurora theme)
                 ============================================================ */}
-            <section className="relative pt-20 pb-20 lg:pt-28 lg:pb-28 overflow-hidden bg-[#F8F9FA]">
-                {/* Dot grid */}
-                <div className="absolute inset-0 pointer-events-none opacity-[0.02] z-0" style={dotGridStyle}></div>
+            <section className="relative min-h-screen flex items-center overflow-hidden bg-[#080C14]">
 
-                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                        {/* Left Content */}
+                {/* ── Animated aurora orbs ── */}
+                <div className="pointer-events-none absolute inset-0 z-0">
+                    {/* Large primary orb */}
+                    <div
+                        className="absolute rounded-full blur-[120px] opacity-40 animate-pulse"
+                        style={{
+                            width: '60vw', height: '60vw',
+                            top: '-15%', left: '-10%',
+                            background: 'radial-gradient(circle, #4169E1 0%, #4169E100 70%)',
+                            animationDuration: '6s'
+                        }}
+                    />
+                    {/* Secondary indigo orb */}
+                    <div
+                        className="absolute rounded-full blur-[100px] opacity-30"
+                        style={{
+                            width: '50vw', height: '50vw',
+                            bottom: '-10%', right: '-5%',
+                            background: 'radial-gradient(circle, #7C3AED 0%, #7C3AED00 70%)',
+                            animation: 'pulse 8s ease-in-out infinite alternate'
+                        }}
+                    />
+                    {/* Accent cyan orb */}
+                    <div
+                        className="absolute rounded-full blur-[80px] opacity-20"
+                        style={{
+                            width: '30vw', height: '30vw',
+                            top: '40%', left: '35%',
+                            background: 'radial-gradient(circle, #06B6D4 0%, #06B6D400 70%)',
+                            animation: 'pulse 10s ease-in-out 2s infinite alternate'
+                        }}
+                    />
+                    {/* Fine dot grid overlay */}
+                    <div
+                        className="absolute inset-0 opacity-[0.07]"
+                        style={{
+                            backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)',
+                            backgroundSize: '32px 32px'
+                        }}
+                    />
+                    {/* Subtle noise texture */}
+                    <div
+                        className="absolute inset-0 opacity-[0.03]"
+                        style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                            backgroundSize: '200px 200px'
+                        }}
+                    />
+                    {/* Horizontal separator glow at bottom */}
+                    <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                </div>
+
+                {/* ── Content ── */}
+                <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10 w-full py-32 lg:py-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+                        {/* ── Left — Text ── */}
                         <motion.div
                             initial="hidden"
                             animate="visible"
                             variants={staggerContainer}
-                            className="space-y-8"
+                            className="space-y-8 lg:space-y-10"
                         >
-                            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4169E1] text-white">
-                                <Sparkles className="w-3.5 h-3.5" />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">First GenAI Lab in Dubai Gov</span>
+                            {/* Badge */}
+                            <motion.div variants={fadeInUp}>
+                                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#4169E1]/40 bg-[#4169E1]/10 backdrop-blur-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#4169E1] animate-pulse" />
+                                    <Sparkles className="w-3.5 h-3.5 text-[#4169E1]" />
+                                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#7B96F5]">First GenAI Lab in Dubai Gov</span>
+                                </div>
                             </motion.div>
 
-                            <motion.div variants={fadeInUp}>
-                                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[#1A1D23] mb-5 leading-[1.1] tracking-tight font-display">
-                                    AI Urban <br />Design Tool
+                            {/* Headline */}
+                            <motion.div variants={fadeInUp} className="space-y-4">
+                                <h1 className="text-[52px] md:text-[64px] lg:text-[72px] font-bold leading-[1.02] tracking-tight font-display">
+                                    <span className="text-white">AI Urban</span>
+                                    <br />
+                                    <span
+                                        className="bg-clip-text text-transparent"
+                                        style={{ backgroundImage: 'linear-gradient(135deg, #4169E1 0%, #7C3AED 50%, #06B6D4 100%)' }}
+                                    >
+                                        Design Tool
+                                    </span>
                                 </h1>
-                                <p className="text-[18px] text-[#4B5563] leading-[1.7] max-w-lg">
+                                <p className="text-[17px] md:text-[18px] text-white/55 leading-[1.75] max-w-[480px]">
                                     Revolutionizing city planning with generative AI — transforming multi-day manual visualizations into minutes of intelligent generation.
                                 </p>
                             </motion.div>
 
-                            {/* Stats Row */}
-                            <motion.div variants={fadeInUp} className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+                            {/* Stat Pills */}
+                            <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
                                 {[
-                                    { val: '93%', label: 'Faster Workflow' },
-                                    { val: '5d→8h', label: 'Time Reduction' },
-                                    { val: "GITEX '25", label: 'Live Showcase' },
-                                    { val: 'Official', label: 'Recognition' }
+                                    { val: '93%', label: 'Faster Workflow', icon: '⚡' },
+                                    { val: '5d → 8h', label: 'Time Reduction', icon: '⏱' },
+                                    { val: "GITEX '25", label: 'Live Showcase', icon: '🏆' },
                                 ].map((m, i) => (
-                                    <div key={i} className="bg-white border border-[#E5E7EB] rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                                        <div className="text-[28px] lg:text-[32px] font-bold text-[#4169E1] mb-1 font-display leading-none">{m.val}</div>
-                                        <div className="text-[13px] font-medium text-[#6B7280]">{m.label}</div>
+                                    <div
+                                        key={i}
+                                        className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-colors"
+                                    >
+                                        <span className="text-[18px] leading-none">{m.icon}</span>
+                                        <div>
+                                            <div className="text-[18px] font-bold text-white font-display leading-none mb-0.5">{m.val}</div>
+                                            <div className="text-[11px] font-medium text-white/40 uppercase tracking-wider">{m.label}</div>
+                                        </div>
                                     </div>
                                 ))}
                             </motion.div>
+
+                            {/* Official Recognition strip */}
+                            <motion.div variants={fadeInUp}>
+                                <div className="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-gradient-to-r from-amber-500/10 to-yellow-400/5 border border-amber-400/20">
+                                    <Trophy className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                                    <span className="text-[12px] font-semibold text-amber-300/80">Officially recognized by RTA's AI &amp; Data Science Center</span>
+                                </div>
+                            </motion.div>
                         </motion.div>
 
-                        {/* Right — Large Browser Mockup */}
+                        {/* ── Right — Browser mockup ── */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
+                            initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                             className="relative"
                         >
-                            <BrowserMockup url="erta-urban-lab.gov.ae" className="group">
-                                <div className="p-1">
-                                    <img
-                                        src="/AI Urban/AI Urban Design Tool.png"
-                                        alt="AI Urban Tool Interface"
-                                        className="w-full h-auto rounded-b-[14px] transform group-hover:scale-[1.02] transition-transform duration-700"
-                                    />
-                                </div>
-                            </BrowserMockup>
-                            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-blue-100/30 rounded-full blur-3xl"></div>
+                            {/* Glow halo */}
+                            <div
+                                className="absolute -inset-6 rounded-3xl blur-2xl opacity-50 pointer-events-none"
+                                style={{ background: 'radial-gradient(ellipse, #4169E130 0%, transparent 70%)' }}
+                            />
+                            {/* Thin coloured border ring */}
+                            <div className="relative p-[1.5px] rounded-2xl"
+                                style={{ background: 'linear-gradient(135deg, rgba(65,105,225,0.5), rgba(124,58,237,0.3), rgba(6,182,212,0.3))' }}>
+                                <BrowserMockup url="erta-urban-lab.gov.ae" className="group rounded-2xl overflow-hidden">
+                                    <div className="p-1">
+                                        <img
+                                            src="/AI Urban/AI Urban Design Tool.png"
+                                            alt="AI Urban Tool Interface"
+                                            className="w-full h-auto rounded-b-[14px] transform group-hover:scale-[1.02] transition-transform duration-700"
+                                        />
+                                    </div>
+                                </BrowserMockup>
+                            </div>
+
+                            {/* Floating badge */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.8, duration: 0.5 }}
+                                className="absolute -bottom-4 -left-4 flex items-center gap-2.5 px-4 py-2.5 bg-white rounded-xl shadow-2xl border border-slate-100"
+                            >
+                                <img src="/Gitex-Global-2025-_-GCS.jpg" alt="GITEX" className="h-6 w-auto object-contain" />
+                                <div className="w-px h-5 bg-slate-200" />
+                                <span className="text-[11px] font-extrabold text-slate-800 uppercase tracking-wider">GITEX 2025</span>
+                            </motion.div>
                         </motion.div>
+
                     </div>
                 </div>
+
+                {/* ── Scroll cue ── */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.4 }}
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+                >
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Scroll</span>
+                    <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
+                </motion.div>
             </section>
+
+            {/* Dark → white transition fade */}
+            <div className="h-20 bg-gradient-to-b from-[#080C14] to-white" />
 
             {/* ============================================================
                 SECTION 2 — THE CHALLENGE
