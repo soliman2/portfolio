@@ -252,6 +252,22 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     imageUrl: "/thumbnails/Thumail Beach Locker Service Redesign.png"
   },
   {
+    id: 6,
+    category: "UX RESEARCH",
+    headline: "Leading UX Research at RTA Dubai",
+    valueStatement: "Built the UX research practice from scratch — protocols, moderated and unmoderated testing, storytelling reports that drive executive decisions across 8+ government products serving 12M+ users.",
+    stats: [
+      { value: "50+", label: "Sessions", context: "Usability testing" },
+      { value: "8", label: "Products", context: "Tested platforms" },
+      { value: "12M+", label: "Users", context: "Total impact" }
+    ],
+    ctaText: "View Case Study →",
+    ctaLink: "/work/ux-research-rta",
+    imageAlt: "Research composition with sticky notes, screenshots, and annotation markers",
+    backgroundColor: "white",
+    customBadges: ["50+ Sessions", "8 Products", "12M+ Users"]
+  },
+  {
     id: 4,
     category: "SERVICE DESIGN",
     headline: "360° Government Services",
@@ -282,22 +298,6 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     imageAlt: "UX lab setting and research report preview",
     backgroundColor: "light",
     imageUrl: "/thumbnails/UX Research & Usability Lab.png"
-  },
-  {
-    id: 6,
-    category: "UX RESEARCH",
-    headline: "Leading UX Research at RTA Dubai",
-    valueStatement: "Built the UX research practice from scratch — protocols, moderated and unmoderated testing, storytelling reports that drive executive decisions across 8+ government products serving 12M+ users.",
-    stats: [
-      { value: "50+", label: "Sessions", context: "Usability testing" },
-      { value: "8", label: "Products", context: "Tested platforms" },
-      { value: "12M+", label: "Users", context: "Total impact" }
-    ],
-    ctaText: "View Case Study →",
-    ctaLink: "/work/ux-research-rta",
-    imageAlt: "Research composition with sticky notes, screenshots, and annotation markers",
-    backgroundColor: "white",
-    customBadges: ["50+ Sessions", "8 Products", "12M+ Users"]
   }
 ];
 

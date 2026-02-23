@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowLeft } from 'lucide-react';
 
@@ -13,7 +13,9 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+  const isInnerPage = !isHomePage;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
@@ -30,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
     { name: 'About', href: '/about', external: false },
     {
       name: 'Resume',
-      href: '/soliman-shaban-cv.pdf',
+      href: '/Soliman - Senior Product Designer | Design Systems · AI · Service Design.pdf',
       external: true
     },
     { name: 'Contact', href: '/contact', external: false },
@@ -48,12 +50,20 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
     >
       <div className="relative h-14 md:h-auto bg-white/75 backdrop-blur-[10px] border border-slate-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-full px-3 py-2.5 md:px-5 md:py-3 flex items-center justify-between transition-all duration-300">
 
-        {/* Logo or Back Button */}
+        {/* Logo / Back Button */}
         <div className="flex-shrink-0 flex items-center">
-          {isCaseStudy && onBack ? (
-            <button onClick={onBack} className="flex items-center gap-2 text-slate-900 hover:text-blue-600 transition-colors font-medium ml-2">
-              <ArrowLeft size={18} />
-              <span className="font-display">Back</span>
+          {isInnerPage ? (
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2 ml-2 group"
+              aria-label="Go back"
+            >
+              <span className="w-7 h-7 flex items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-50 transition-colors">
+                <ArrowLeft className="w-4 h-4 text-slate-600 group-hover:text-blue-600 transition-colors" />
+              </span>
+              <span className="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+                Soliman<span className="text-blue-600">.</span>
+              </span>
             </button>
           ) : (
             <Link to="/" className="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-900 ml-2">
@@ -62,68 +72,55 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
           )}
         </div>
 
-        {/* Desktop Nav - Centered Pills (Only show on Home) */}
-        {!isCaseStudy && (
-          <div className="hidden md:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            {links.map((link) => (
-              link.external ? (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
-                >
-                  {link.name}
-                </a>
-              ) : (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
-                >
-                  {link.name}
-                </Link>
-              )
-            ))}
-          </div>
-        )}
+        {/* Desktop Nav - Centered Pills */}
+        <div className="hidden md:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          {links.map((link) => (
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
+              >
+                {link.name}
+              </Link>
+            )
+          ))}
+        </div>
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
-          {isCaseStudy ? (
-            <a
-              href="mailto:hello@solimanshaban.com"
-              className="px-6 py-2.5 text-sm font-bold font-display text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
-            >
-              Let's Talk
-            </a>
-          ) : (
-            <Link
-              to="/contact"
-              className="px-6 py-2.5 text-sm font-bold font-display text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
-            >
-              Let's Talk
-            </Link>
-          )}
+          <Link
+            to="/contact"
+            className="px-6 py-2.5 text-sm font-bold font-display text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30"
+          >
+            Let's Talk
+          </Link>
         </div>
 
-        {/* Mobile Toggle (Only show on Home) */}
-        {!isCaseStudy && (
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-slate-600 hover:text-slate-900 bg-slate-100/50 rounded-full transition-colors"
-            >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
-        )}
+        {/* Mobile Toggle */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 text-slate-600 hover:text-slate-900 bg-slate-100/50 rounded-full transition-colors"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
       <AnimatePresence>
-        {isOpen && !isCaseStudy && (
+        {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}

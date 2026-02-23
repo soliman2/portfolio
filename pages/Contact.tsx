@@ -354,7 +354,7 @@ const Contact: React.FC = () => {
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                                 <a
-                                    href="/soliman-shaban-cv.pdf"
+                                    href="/Soliman - Senior Product Designer | Design Systems · AI · Service Design.pdf"
                                     target="_blank"
                                     className="w-full sm:w-auto px-10 py-4 bg-white text-[#4169E1] rounded-[14px] font-bold text-[16px] transition-all hover:bg-[#F8F9FA] hover:shadow-xl hover:scale-[1.02] active:scale-95 text-center"
                                 >

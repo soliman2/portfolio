@@ -5,12 +5,14 @@ import {
     Target, Map, FileText, CheckCircle2, ChevronRight, User,
     Lightbulb, Briefcase, Layout
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface ZLaundryCaseStudyProps {
-    onBack: () => void;
+    onBack?: () => void;
 }
 
 const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
+    const navigate = useNavigate();
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
@@ -615,7 +617,7 @@ const ZLaundryCaseStudy: React.FC<ZLaundryCaseStudyProps> = ({ onBack }) => {
 
                     <div className="flex flex-col md:flex-row justify-center gap-4">
                         <button
-                            onClick={onBack}
+                            onClick={() => navigate('/work/ai-urban-tool')}
                             className="group px-8 py-4 bg-white text-[#1A1D23] font-bold rounded-full hover:bg-slate-200 transition-colors inline-flex items-center justify-center gap-2"
                         >
                             AI Urban Design Tool

@@ -190,7 +190,7 @@ const Hero: React.FC = () => {
 
                             <motion.div variants={fadeUpVariants} className="flex items-center gap-6 mb-0 md:mb-0">
                                 <a
-                                    href="/soliman-shaban-cv.pdf"
+                                    href="/Soliman - Senior Product Designer | Design Systems · AI · Service Design.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3.5 bg-[#4169E1] text-white rounded-[10px] md:rounded-full font-semibold md:font-bold text-sm md:text-base transition-all hover:bg-blue-600 active:scale-95 shadow-lg shadow-blue-600/20"
