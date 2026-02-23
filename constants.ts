@@ -265,40 +265,9 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     ctaLink: "/work/ux-research-rta",
     imageAlt: "Research composition with sticky notes, screenshots, and annotation markers",
     backgroundColor: "white",
-    customBadges: ["50+ Sessions", "8 Products", "12M+ Users"]
-  },
-  {
-    id: 4,
-    category: "SERVICE DESIGN",
-    headline: "360° Government Services",
-    valueStatement: "End-to-end service design connecting citizen interfaces, corporate dashboards, and back-office systems — from application to approval across multiple government entities.",
-    stats: [
-      { value: "360°", label: "COVERAGE", context: "Frontstage + Backstage" },
-      { value: "6+", label: "SERVICES", context: "Licensing, Fines, Permits, Nol" },
-      { value: "4", label: "USER ROLES", context: "Citizen, Corporate, Reviewer, Admin" }
-    ],
-    ctaText: "View Case Study →",
-    ctaLink: "/work",
-    imageAlt: "Service blueprint showing journey across touchpoints",
-    backgroundColor: "white",
-    imageUrl: "/thumbnails/Gemini_Generated_Image_k7ize6k7ize6k7iz.png"
-  },
-  {
-    id: 5,
-    category: "RESEARCH & INSIGHTS",
-    headline: "UX Research & Usability Lab",
-    valueStatement: "Built RTA's usability testing practice from scratch. 30+ moderated sessions, standardized protocols, and executive reports that directly influence product decisions.",
-    stats: [
-      { value: "30+", label: "SESSIONS", context: "Moderated usability tests" },
-      { value: "100%", label: "ADOPTION", context: "Protocol used across RTA" },
-      { value: "DG-LEVEL", label: "REPORTS", context: "Executive storytelling" }
-    ],
-    ctaText: "View Case Study →",
-    ctaLink: "/work",
-    imageAlt: "UX lab setting and research report preview",
-    backgroundColor: "light",
+    customBadges: ["50+ Sessions", "8 Products", "12M+ Users"],
     imageUrl: "/thumbnails/UX Research & Usability Lab.png"
-  }
+  },
 ];
 
 // MORE EXPERTISE CARDS (3-card section)

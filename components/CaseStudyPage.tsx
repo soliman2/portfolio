@@ -578,44 +578,123 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
             </section>
 
             {/* ============================================================
-                SECTION 7 — MEASURABLE RESULTS
+                SECTION 7 — MEASURABLE RESULTS (modern split layout)
                 ============================================================ */}
-            <section className="py-20 bg-[#4169E1] relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-700/30 rounded-full blur-[80px] pointer-events-none"></div>
-
-                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10">
+            <section className="py-0 overflow-hidden">
+                <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={staggerContainer}
+                        className="grid grid-cols-1 lg:grid-cols-5 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(65,105,225,0.12)] border border-slate-100"
                     >
-                        <motion.div variants={fadeInUp} className="text-center mb-14 space-y-3">
-                            <span className="text-[12px] font-bold text-white/60 uppercase tracking-widest">Impact & Efficiency</span>
-                            <h2 className="text-[32px] md:text-[36px] font-bold text-white font-display">Measurable Results</h2>
-                        </motion.div>
+                        {/* ── Left — context panel ── */}
+                        <div className="lg:col-span-2 relative p-10 lg:p-14 flex flex-col justify-center overflow-hidden"
+                            style={{ background: 'linear-gradient(145deg, #2B4FD8 0%, #1E3AB8 50%, #172F9E 100%)' }}>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {/* Dot grid */}
+                            <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="rdots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+                                        <circle cx="1.5" cy="1.5" r="1.5" fill="white" fillOpacity="0.5" />
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#rdots)" />
+                            </svg>
+
+                            {/* Top-right glow */}
+                            <div className="absolute top-0 right-0 w-56 h-56 bg-white/10 rounded-full blur-[80px] pointer-events-none" />
+
+                            <div className="relative z-10 space-y-6">
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20">
+                                    <BarChart2 className="w-3.5 h-3.5 text-blue-200" />
+                                    <span className="text-[11px] font-bold uppercase tracking-widest text-blue-100">Impact &amp; Efficiency</span>
+                                </div>
+
+                                <div>
+                                    <h2 className="text-[36px] md:text-[42px] font-bold text-white font-display leading-tight mb-4">
+                                        Measurable<br />Results
+                                    </h2>
+                                    <p className="text-[15px] text-white/65 leading-[1.7]">
+                                        From 5-day manual cycles to 8-hour AI-powered workflows — the numbers speak for themselves.
+                                    </p>
+                                </div>
+
+                                <div className="flex items-center gap-3 pt-2">
+                                    <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center">
+                                        <Trophy className="w-4 h-4 text-amber-300" />
+                                    </div>
+                                    <span className="text-[13px] font-semibold text-white/70">Officially recognized by RTA AI Center</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* ── Right — stat cards ── */}
+                        <div className="lg:col-span-3 bg-white p-8 lg:p-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
                             {[
-                                { val: '93%', label: 'Time Saving Efficiency' },
-                                { val: '5d → 8h', label: 'Reduction per Concept' },
-                                { val: '100%', label: 'Brand Design Alignment' },
-                                { val: 'First', label: 'GenAI Lab in Dubai Gov' }
+                                {
+                                    val: '93%', label: 'Time Saving Efficiency',
+                                    sub: 'From days to hours', accent: '#4169E1',
+                                    icon: <TrendingUp className="w-5 h-5" />,
+                                    gradient: 'from-blue-50 to-indigo-50'
+                                },
+                                {
+                                    val: '5d→8h', label: 'Reduction per Concept',
+                                    sub: 'Per visualization cycle', accent: '#7C3AED',
+                                    icon: <Clock className="w-5 h-5" />,
+                                    gradient: 'from-violet-50 to-purple-50'
+                                },
+                                {
+                                    val: '100%', label: 'Brand Alignment',
+                                    sub: 'On every output', accent: '#0EA5E9',
+                                    icon: <CheckCircle2 className="w-5 h-5" />,
+                                    gradient: 'from-sky-50 to-cyan-50'
+                                },
+                                {
+                                    val: 'First', label: 'GenAI Lab in Dubai Gov',
+                                    sub: 'Pioneering AI design', accent: '#F59E0B',
+                                    icon: <Sparkles className="w-5 h-5" />,
+                                    gradient: 'from-amber-50 to-yellow-50'
+                                },
                             ].map((m, i) => (
                                 <motion.div
                                     key={i}
                                     variants={fadeInUp}
-                                    className="bg-white/10 backdrop-blur-md rounded-2xl p-10 border border-white/20 text-center group hover:bg-white/20 transition-colors"
+                                    whileHover={{ y: -3, boxShadow: '0 12px 32px rgba(0,0,0,0.08)' }}
+                                    className={`relative bg-gradient-to-br ${m.gradient} rounded-2xl p-6 border border-slate-100 overflow-hidden group transition-all duration-200`}
                                 >
-                                    <div className="text-[56px] font-bold text-white mb-2 font-display leading-none">{m.val}</div>
-                                    <div className="text-[14px] font-medium text-white/80">{m.label}</div>
+                                    {/* Left accent bar */}
+                                    <div className="absolute left-0 top-4 bottom-4 w-1 rounded-r-full" style={{ background: m.accent }} />
+
+                                    <div className="pl-3 space-y-3">
+                                        {/* Icon */}
+                                        <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${m.accent}18`, color: m.accent }}>
+                                            {m.icon}
+                                        </div>
+
+                                        {/* Value */}
+                                        <div className="text-[42px] font-bold font-display leading-none" style={{
+                                            background: `linear-gradient(135deg, ${m.accent} 0%, ${m.accent}99 100%)`,
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent'
+                                        }}>
+                                            {m.val}
+                                        </div>
+
+                                        {/* Label + sub */}
+                                        <div>
+                                            <div className="text-[14px] font-bold text-[#1A1D23]">{m.label}</div>
+                                            <div className="text-[12px] text-[#9CA3AF] mt-0.5">{m.sub}</div>
+                                        </div>
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
                     </motion.div>
                 </div>
             </section>
+
 
             {/* ============================================================
                 SECTION 8 — FROM SCREEN TO REALITY (GITEX)
