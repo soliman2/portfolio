@@ -207,7 +207,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
                                 transition={{ delay: 0.8, duration: 0.5 }}
                                 className="absolute -bottom-5 -left-5 flex items-center gap-2.5 px-4 py-2.5 bg-white rounded-xl shadow-xl border border-slate-100"
                             >
-                                <img src="/Gitex-Global-2025-_-GCS.jpg" alt="GITEX" className="h-6 w-auto object-contain" />
+                                <img src="/Gitex-Global-2025-_-GCS.jpg" alt="GITEX" className="h-10 w-auto object-contain" />
                                 <div className="w-px h-5 bg-slate-200" />
                                 <span className="text-[11px] font-extrabold text-slate-800 uppercase tracking-wider">GITEX 2025</span>
                             </motion.div>

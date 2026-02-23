@@ -172,30 +172,16 @@ const ProjectsGrid: React.FC = () => {
                                     {project.valueStatement}
                                 </p>
 
-                                {project.id === 1 && (
-                                    <div className="flex items-center gap-4 py-4 mb-4 border-y border-[#E5E7EB]">
-                                        <div className="flex flex-col">
-                                            <span className="text-[18px] font-bold text-[#1A1D23]">93%</span>
-                                            <span className="text-[11px] font-bold text-[#9CA3AF] uppercase">Faster</span>
-                                        </div>
-                                        <div className="w-px h-8 bg-[#E5E7EB]"></div>
-                                        <div className="flex flex-col">
-                                            <span className="text-[18px] font-bold text-[#1A1D23]">5d→8h</span>
-                                            <span className="text-[11px] font-bold text-[#9CA3AF] uppercase">Reduction</span>
-                                        </div>
-                                        <div className="w-px h-8 bg-[#E5E7EB]"></div>
-                                        <div className="flex flex-col">
-                                            <span className="text-[18px] font-bold text-[#1A1D23]">GITEX</span>
-                                            <span className="text-[11px] font-bold text-[#9CA3AF] uppercase">Showcase</span>
-                                        </div>
-                                    </div>
-                                )}
-                                {project.id === 6 && (
-                                    <div className="flex items-center gap-3 mb-4">
+                                {/* Stats row — hero-style highlighted pills */}
+                                {project.stats && project.stats.length > 0 && (
+                                    <div className="flex items-center gap-0 mb-4 py-3 border-y border-[#F3F4F6]">
                                         {project.stats.map((stat, i) => (
                                             <React.Fragment key={i}>
-                                                <span className="text-[12px] text-[#6B7280] font-medium">{stat.value} {stat.label}</span>
-                                                {i < project.stats.length - 1 && <span className="text-slate-300">•</span>}
+                                                <div className="flex items-center gap-2 px-3">
+                                                    <span className="text-[17px] font-bold text-[#4169E1] font-display leading-none">{stat.value}</span>
+                                                    <span className="text-[11px] font-semibold text-[#9CA3AF] uppercase tracking-wide leading-tight">{stat.label}</span>
+                                                </div>
+                                                {i < project.stats.length - 1 && <div className="w-px h-6 bg-[#E5E7EB] flex-shrink-0" />}
                                             </React.Fragment>
                                         ))}
                                     </div>
