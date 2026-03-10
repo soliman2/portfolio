@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ProjectsGrid from '../components/ProjectsGrid';
 import Testimonials from '../components/Testimonials';
+import Recognition from '../components/Recognition';
 
 const Home: React.FC = () => {
     return (
@@ -37,6 +38,7 @@ const Home: React.FC = () => {
                 <Hero />
                 <ProjectsGrid />
                 <Testimonials />
+                <Recognition />
             </div>
         </>
     );
