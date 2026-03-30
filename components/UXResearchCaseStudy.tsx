@@ -34,7 +34,7 @@ const UXResearchCaseStudy: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <div className="bg-white font-inter">
             {/* SECTION 1: HERO */}
             <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-[#F8F9FA]">
-                <div className="max-w-[1120px] mx-auto px-6">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
                     <motion.div
                         initial="hidden"
                         animate="visible"

@@ -130,13 +130,14 @@ const ProjectsGrid: React.FC = () => {
             case 3: return "from-teal-50 to-cyan-100";
             case 2: return "from-stone-100 to-amber-50";
             case 4: return "from-indigo-100 to-slate-200";
+            case 5: return "from-blue-50 to-violet-50";
             case 6: return "from-slate-50 to-purple-50";
             default: return "from-slate-100 to-slate-200";
         }
     };
 
     return (
-        <section className="pt-4 pb-4 md:pt-10 md:pb-10 bg-white overflow-hidden">
+        <section id="work" className="pt-4 pb-4 md:pt-10 md:pb-10 bg-white overflow-hidden">
             <div className="max-w-[1280px] mx-auto px-5 md:px-6 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projectsToShow.map((project, index) => (
@@ -149,45 +150,55 @@ const ProjectsGrid: React.FC = () => {
                             onClick={() => navigate(project.ctaLink)}
                             className="group bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
                         >
-                            {/* Image Area */}
-                            <div className={`relative h-[250px] md:h-[320px] bg-gradient-to-br ${getBgGradient(project.id)} overflow-hidden`}>
+                            {/* Image Area — taller on desktop */}
+                            <div className={`relative h-[250px] md:h-[420px] bg-gradient-to-br ${getBgGradient(project.id)} overflow-hidden`}>
                                 <ProjectImageContent project={project} />
                             </div>
 
                             {/* Text Area */}
-                            <div className="p-6">
-                                {project.id === 6 ? (
-                                    <div className="inline-block px-2 py-1 bg-[#EDE9FE] text-[#7C3AED] text-[10px] font-bold rounded-md uppercase tracking-wider mb-3">
-                                        UX Research
-                                    </div>
-                                ) : (
-                                    <div className="inline-block px-2 py-1 bg-blue-50 text-[#4169E1] text-[10px] font-bold rounded-md uppercase tracking-wider mb-3">
-                                        {project.category}
-                                    </div>
-                                )}
-                                <h3 className="text-[20px] font-semibold text-[#1A1D23] mb-2 group-hover:text-[#4169E1] transition-colors line-clamp-1">
+                            <div className="p-6 md:p-8">
+                                {/* Category badge with unique colors */}
+                                <div className={`inline-block px-2.5 py-1 text-[10px] font-bold rounded-md uppercase tracking-wider mb-3 ${
+                                    project.id === 1 ? 'bg-[#EEF2FF] text-[#4169E1]' :
+                                    project.id === 2 ? 'bg-[#FFF7ED] text-[#D97706]' :
+                                    project.id === 3 ? 'bg-[#F0FDFA] text-[#0D9488]' :
+                                    project.id === 5 ? 'bg-[#F3F0FF] text-[#7C3AED]' :
+                                    project.id === 6 ? 'bg-[#EDE9FE] text-[#7C3AED]' :
+                                    'bg-blue-50 text-[#4169E1]'
+                                }`}>
+                                    {project.category}
+                                </div>
+
+                                <h3 className="text-[22px] font-semibold text-[#1A1D23] mb-2 group-hover:text-[#4169E1] transition-colors line-clamp-1 font-display">
                                     {project.headline}
                                 </h3>
-                                <p className="text-sm text-[#6B7280] leading-relaxed line-clamp-3 mb-4">
+                                <p className="text-[14px] text-[#6B7280] leading-relaxed line-clamp-2 mb-5">
                                     {project.valueStatement}
                                 </p>
 
-                                {/* Stats row — hero-style highlighted pills */}
+                                {/* Stats row — bigger & bolder */}
                                 {project.stats && project.stats.length > 0 && (
-                                    <div className="flex items-center gap-0 mb-4 py-3 border-y border-[#F3F4F6]">
+                                    <div className="flex items-center gap-0 mb-5 py-4 border-y border-[#F3F4F6]">
                                         {project.stats.map((stat, i) => (
                                             <React.Fragment key={i}>
-                                                <div className="flex items-center gap-2 px-3">
-                                                    <span className="text-[17px] font-bold text-[#4169E1] font-display leading-none">{stat.value}</span>
-                                                    <span className="text-[11px] font-semibold text-[#9CA3AF] uppercase tracking-wide leading-tight">{stat.label}</span>
+                                                <div className="flex-1 text-center px-2">
+                                                    <div className={`text-[22px] font-bold font-display leading-none mb-1 ${
+                                                        project.id === 1 ? 'text-[#4169E1]' :
+                                                        project.id === 2 ? 'text-[#D97706]' :
+                                                        project.id === 3 ? 'text-[#0D9488]' :
+                                                        project.id === 5 ? 'text-[#7C3AED]' :
+                                                        project.id === 6 ? 'text-[#7C3AED]' :
+                                                        'text-[#4169E1]'
+                                                    }`}>{stat.value}</div>
+                                                    <div className="text-[10px] font-semibold text-[#9CA3AF] uppercase tracking-wider">{stat.label}</div>
                                                 </div>
-                                                {i < project.stats.length - 1 && <div className="w-px h-6 bg-[#E5E7EB] flex-shrink-0" />}
+                                                {i < project.stats.length - 1 && <div className="w-px h-8 bg-[#E5E7EB] flex-shrink-0" />}
                                             </React.Fragment>
                                         ))}
                                     </div>
                                 )}
 
-                                <span className="text-sm font-medium text-[#4169E1] hover:underline">
+                                <span className="text-sm font-semibold text-[#4169E1] group-hover:underline">
                                     View Case Study →
                                 </span>
                             </div>

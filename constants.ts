@@ -57,12 +57,12 @@ export const HERO_TAGLINES = [
 export const IMPACT_STATS_ROW_1: Stat[] = [
   { value: "12M+", label: "Users Served" },
   { value: "8+", label: "Years Experience" },
-  { value: "30+", label: "Services Designed" },
-  { value: "6", label: "Designers Supported" }
+  { value: "5+", label: "Design Systems" },
+  { value: "50+", label: "Usability Sessions" }
 ];
 
 export const IMPACT_STATS_ROW_2: Stat[] = [
-  { value: "20+", label: "Workshops Delivered" },
+  { value: "200+", label: "Screens Designed" },
   { value: "500+", label: "Designers Trained" },
   { value: "🏆", label: "Official Recognition", sub: "RTA AI Center" }
 ];
@@ -206,7 +206,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     id: 1,
     category: "GENAI PRODUCTS",
     headline: "AI Urban Design Tool",
-    valueStatement: "First GenAI Design Lab in Dubai Government. Reduced urban planning visualization from 5 days to 8 hours — officially recognized at GITEX 2025.",
+    valueStatement: "First GenAI Design Lab in Dubai Government — reducing urban planning visualization from 5 days to 8 hours.",
     stats: [
       { value: "93%", label: "FASTER", context: "Processing time reduction" },
       { value: "5→8hrs", label: "TURNAROUND", context: "Days to hours" },
@@ -223,7 +223,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     id: 2,
     category: "SYSTEMS & SCALE",
     headline: "Enterprise Design Systems",
-    valueStatement: "Built and maintained design systems serving 12M+ users across RTA Portal, Mobile Apps, and Licensing platforms — with full RTL/LTR bilingual support.",
+    valueStatement: "Scalable design systems serving 12M+ users across RTA Portal, Mobile Apps, and Licensing — with full RTL/LTR bilingual support.",
     stats: [
       { value: "12M+", label: "USERS", context: "Across platforms" },
       { value: "5", label: "SYSTEMS", context: "Portal, Mobile, Licensing, S'hail, DDA" },
@@ -239,7 +239,7 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     id: 3,
     category: "SERVICE DESIGN",
     headline: "Beach Locker Service Redesign",
-    valueStatement: "Redesigned the end-to-end beach locker experience for Dubai Municipality — from mobile app to physical lockers to call center support. Delivered service blueprints, user flows, and stakeholder recommendations across digital and physical touchpoints.",
+    valueStatement: "End-to-end beach locker experience for Dubai Municipality — from mobile app to physical lockers to call center support.",
     stats: [
       { value: "360°", label: "SERVICE DESIGN", context: "Full service ecosystem" },
       { value: "11", label: "JOURNEY PHASES", context: "Discovery to re-access" },
@@ -252,10 +252,26 @@ export const FEATURED_CASE_STUDIES: FeaturedCaseStudy[] = [
     imageUrl: "/thumbnails/Thumail Beach Locker Service Redesign.png"
   },
   {
+    id: 5,
+    category: "SERVICE DESIGN",
+    headline: "Service Provider Licensing Platform",
+    valueStatement: "End-to-end government licensing platform — turning a 45-day paper process into a seamless digital journey for RTA Dubai.",
+    stats: [
+      { value: "200+", label: "SCREENS", context: "Across all scenarios" },
+      { value: "11", label: "STEPS", context: "End-to-end flow" },
+      { value: "8", label: "ROLES", context: "Role architecture" }
+    ],
+    ctaText: "View Case Study →",
+    ctaLink: "/case-studies/service-provider",
+    imageAlt: "Service blueprint overview of the licensing platform",
+    backgroundColor: "light",
+    imageUrl: "/case-studies/service-provider/all-screens-overview.png"
+  },
+  {
     id: 6,
     category: "UX RESEARCH",
     headline: "Leading UX Research at RTA Dubai",
-    valueStatement: "Built the UX research practice from scratch — protocols, moderated and unmoderated testing, storytelling reports that drive executive decisions across 8+ government products serving 12M+ users.",
+    valueStatement: "Built the UX research practice from scratch — 50+ usability sessions driving executive decisions across 8+ government products.",
     stats: [
       { value: "50+", label: "Sessions", context: "Usability testing" },
       { value: "8", label: "Products", context: "Tested platforms" },

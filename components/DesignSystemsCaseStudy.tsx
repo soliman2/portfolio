@@ -106,7 +106,7 @@ const DesignSystemsCaseStudy: React.FC<DesignSystemsCaseStudyProps> = ({ onBack 
                     </motion.div>
                 </div>
 
-                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"

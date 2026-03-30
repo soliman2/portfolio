@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, LayoutGrid, ScanEye, Users, ArrowRight, Sparkles, Mic, Video } from 'lucide-react';
+import { Bot, LayoutGrid, ScanEye, Users, ArrowRight, Sparkles, Mic, Video, Handshake } from 'lucide-react';
 
 const HowIWork: React.FC = () => {
   const features = [
     {
       id: "01",
       icon: <Bot className="w-5 h-5" />,
-      title: "AI-First Design",
-      description: "Leveraging GenAI tools like v0 & Bolt to prototype in hours, not days.",
+      title: "AI Product Design",
+      description: "Designing AI-powered products — from concept to GITEX recognition. Tools like v0, Bolt, and Claude turn ideas into working products in hours.",
       visual: (
         <div className="flex flex-col gap-3">
             {/* Input Field */}
@@ -35,7 +35,7 @@ const HowIWork: React.FC = () => {
       id: "02",
       icon: <LayoutGrid className="w-5 h-5" />,
       title: "Systems Thinking",
-      description: "Building scalable atomic design systems that serve millions of users.",
+      description: "Building scalable design systems and service blueprints that serve 12M+ users across platforms and government departments.",
       visual: (
         <div className="space-y-3">
              <div className="grid grid-cols-2 gap-2">
@@ -74,7 +74,7 @@ const HowIWork: React.FC = () => {
       id: "03",
       icon: <ScanEye className="w-5 h-5" />,
       title: "Research-Driven",
-      description: "Conducting usability labs to drive decisions with 30+ sessions led.",
+      description: "Leading 50+ usability sessions in RTA's UX Lab. Turning findings into executive-ready reports that drive product decisions.",
       visual: (
          <div className="h-28 flex flex-col justify-end pb-1">
              <div className="flex items-end justify-between gap-2 h-20 px-1">
@@ -101,9 +101,50 @@ const HowIWork: React.FC = () => {
     },
     {
       id: "04",
+      icon: <Handshake className="w-5 h-5" />,
+      title: "Stakeholder Alignment",
+      description: "Aligning 8+ stakeholder roles — from CEOs to inspectors — through service blueprints and 4-perspective design patterns.",
+      visual: (
+        <div className="space-y-2.5">
+            {/* Stakeholder swim lanes */}
+            <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-indigo-400 rounded-full"></div>
+                </div>
+                <div className="flex-1 h-1.5 bg-indigo-200 rounded-full"></div>
+                <div className="w-4 h-4 bg-emerald-100 rounded flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                </div>
+            </div>
+            <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-violet-400 rounded-full"></div>
+                </div>
+                <div className="flex-1 h-1.5 bg-violet-200 rounded-full"></div>
+                <div className="w-4 h-4 bg-emerald-100 rounded flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                </div>
+            </div>
+            <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
+                </div>
+                <div className="flex-1 h-1.5 bg-amber-200 rounded-full"></div>
+                <div className="w-4 h-4 bg-emerald-100 rounded flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                </div>
+            </div>
+            <div className="text-center pt-1">
+                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider">Aligned in 1 review</span>
+            </div>
+        </div>
+      )
+    },
+    {
+      id: "05",
       icon: <Users className="w-5 h-5" />,
       title: "Teaching & Mentoring",
-      description: "Empowering 500+ designers through workshops.",
+      description: "Trained 500+ designers across MENA through 20+ workshops on design systems, research, and AI tools.",
       visual: (
         <div className="space-y-2">
             <div className="grid grid-cols-2 gap-2">
@@ -147,7 +188,7 @@ const HowIWork: React.FC = () => {
             </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {features.map((feature, index) => (
                 <motion.div
                     key={index}

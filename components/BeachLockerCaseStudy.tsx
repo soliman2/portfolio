@@ -183,7 +183,7 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                     backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(13,148,136,0.5) 59px, rgba(13,148,136,0.5) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(13,148,136,0.5) 59px, rgba(13,148,136,0.5) 60px)',
                 }} />
 
-                <div className="max-w-[1120px] mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -388,8 +388,8 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
             {/* ==============================================================================
                 SECTION 4: SERVICE BLUEPRINT
                ============================================================================== */}
-            <section className="py-24 bg-slate-50">
-                <div className="max-w-[1120px] mx-auto px-6 lg:px-8">
+            <section className="py-24 md:py-32 bg-slate-50 overflow-hidden">
+                <div className="w-full mx-auto px-6 lg:px-10">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -397,53 +397,61 @@ const BeachLockerCaseStudy: React.FC<BeachLockerCaseStudyProps> = ({ onBack }) =
                         variants={staggerContainer}
                     >
                         <motion.div variants={fadeInUp} className="text-center mb-12">
-                            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-display block mb-3">Complete Journey</span>
-                            <h2 className="text-[32px] md:text-[36px] font-bold font-display text-[#1A1D23] mb-4">Service Blueprint</h2>
-                            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                            <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-[#0D9488] block mb-3">Complete Journey</span>
+                            <h2 className="text-[32px] md:text-[40px] font-bold font-display text-[#1A1D23] mb-4">Service Blueprint</h2>
+                            <p className="text-[16px] md:text-[18px] text-[#6B7280] leading-[1.7] max-w-2xl mx-auto">
                                 A map showing all the steps needed to deliver the service, including what the customer sees and what happens behind the scenes.
                             </p>
                         </motion.div>
 
-                        <motion.div variants={fadeInUp} className="overflow-x-auto pb-4 -mx-2">
-                            <div className="min-w-[1100px] px-2">
-                                {/* Swim Lane Headers */}
-                                <div className="grid grid-cols-[140px_1fr] gap-0 mb-0">
-                                    <div className="bg-[#2B3544] rounded-tl-xl p-3 text-white font-bold text-xs uppercase tracking-wider flex items-center">
+                        <motion.div variants={fadeInUp} className="overflow-x-auto pb-6 -mx-2">
+                            <div className="min-w-[1600px] px-2">
+                                {/* Phase Headers */}
+                                <div className="grid grid-cols-[200px_1fr] gap-0">
+                                    <div className="bg-white rounded-tl-2xl p-5 border border-slate-200 font-display font-bold text-[14px] uppercase tracking-wider text-[#1A1D23] flex items-center">
                                         Phase →
                                     </div>
-                                    <div className="grid grid-cols-11 gap-px bg-slate-200">
+                                    <div className="grid grid-cols-11 gap-[1px]">
                                         {blueprintPhases.map((bp, i) => (
-                                            <div key={i} className="bg-[#2B3544] p-2 text-center">
-                                                <span className="text-[10px] font-bold text-teal-300 uppercase leading-tight block">{bp.phase}</span>
+                                            <div key={i} className="bg-[#F0FDFA] border border-slate-200/60 p-4 text-center flex items-center justify-center">
+                                                <span className="text-[12px] font-bold text-[#0D9488] uppercase leading-tight block font-display">{bp.phase}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
 
+                                {/* Dashed line of interaction */}
+                                <div className="w-full border-t-2 border-dashed border-[#0D9488]/20" />
+
                                 {/* Swim Lanes */}
                                 {[
-                                    { label: 'User Actions', key: 'user' as const, color: 'bg-teal-50 text-teal-800', labelBg: 'bg-teal-600' },
-                                    { label: 'App Frontend', key: 'app' as const, color: 'bg-blue-50 text-blue-800', labelBg: 'bg-blue-600' },
-                                    { label: 'Backend', key: 'backend' as const, color: 'bg-purple-50 text-purple-800', labelBg: 'bg-purple-600' },
-                                    { label: 'Physical Locker', key: 'locker' as const, color: 'bg-amber-50 text-amber-800', labelBg: 'bg-amber-600' },
+                                    { label: 'User Actions', key: 'user' as const, labelBg: 'bg-[#F0FDFA]', labelText: 'text-[#0D9488]', cellStyle: 'bg-white text-[#374151]' },
+                                    { label: 'App Frontend', key: 'app' as const, labelBg: 'bg-[#EEF2FF]', labelText: 'text-[#4169E1]', cellStyle: 'bg-[#FAFAFF] text-[#374151]' },
+                                    { label: 'Backend', key: 'backend' as const, labelBg: 'bg-[#F3F0FF]', labelText: 'text-[#7C3AED]', cellStyle: 'bg-[#FCFBFF] text-[#374151]' },
+                                    { label: 'Physical Locker', key: 'locker' as const, labelBg: 'bg-[#FFF7ED]', labelText: 'text-[#D97706]', cellStyle: 'bg-[#FFFCF8] text-[#374151]' },
                                 ].map((lane, laneIdx) => (
-                                    <div key={laneIdx} className="grid grid-cols-[140px_1fr] gap-0">
-                                        <div className={`${lane.labelBg} p-3 text-white font-bold text-[11px] uppercase tracking-wider flex items-center ${laneIdx === 3 ? 'rounded-bl-xl' : ''}`}>
-                                            {lane.label}
+                                    <React.Fragment key={laneIdx}>
+                                        {laneIdx > 0 && (
+                                            <div className="w-full border-t-2 border-dashed border-slate-200" />
+                                        )}
+                                        <div className="grid grid-cols-[200px_1fr] gap-0">
+                                            <div className={`${lane.labelBg} p-5 font-display font-bold text-[13px] uppercase tracking-wider flex items-center ${lane.labelText} ${laneIdx === 3 ? 'rounded-bl-2xl' : ''} border-l border-b border-slate-200/60`}>
+                                                {lane.label}
+                                            </div>
+                                            <div className="grid grid-cols-11 gap-[1px]">
+                                                {blueprintPhases.map((bp, i) => (
+                                                    <div key={i} className={`${lane.cellStyle} p-4 text-[13px] leading-[1.5] font-medium min-h-[100px] flex items-center border-b border-r border-slate-100`}>
+                                                        {bp[lane.key]}
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
-                                        <div className="grid grid-cols-11 gap-px bg-slate-200">
-                                            {blueprintPhases.map((bp, i) => (
-                                                <div key={i} className={`${lane.color} p-2 text-[10px] leading-tight font-medium min-h-[60px] flex items-center`}>
-                                                    {bp[lane.key]}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                    </React.Fragment>
                                 ))}
                             </div>
                         </motion.div>
 
-                        <motion.p variants={fadeInUp} className="text-sm text-slate-500 text-center mt-4 lg:hidden">
+                        <motion.p variants={fadeInUp} className="text-[13px] text-slate-400 text-center mt-4 lg:hidden">
                             ← Scroll horizontally to see all phases →
                         </motion.p>
                     </motion.div>

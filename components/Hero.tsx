@@ -7,9 +7,10 @@ const Hero: React.FC = () => {
     const [currentCapabilityIndex, setCurrentCapabilityIndex] = useState(0);
 
     const capabilities = [
-        'AI-powered solutions',
-        'Design systems',
-        'UX research',
+        'AI-powered products',
+        'Design systems at scale',
+        'End-to-end service design',
+        'UX research & testing',
         'Bilingual (Arabic / English)'
     ];
 
@@ -122,7 +123,7 @@ const Hero: React.FC = () => {
                                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                                     }}
                                 >
-                                    Sr. Product Designer • AI • Service Design
+                                    Sr. Product Designer • Design Systems • AI • Service Design
                                 </span >
                             </motion.div>
 
@@ -132,7 +133,7 @@ const Hero: React.FC = () => {
                                     Hey, I'm Soliman
                                 </span>
                                 <span className="block text-[28px] md:text-5xl lg:text-6xl font-bold text-[#1A1D23] leading-[1.2] font-display">
-                                    I design with{' '}
+                                    I design{' '}
                                     <span
                                         className="font-bold"
                                         style={{
@@ -142,19 +143,19 @@ const Hero: React.FC = () => {
                                             backgroundClip: 'text'
                                         }}
                                     >
-                                        GenAI
+                                        AI products
                                     </span>
                                 </span>
                             </motion.h1>
 
                             {/* Mobile Subtitle */}
                             <motion.p variants={fadeUpVariants} className="md:hidden text-sm text-[#6B7280] font-normal mb-4">
-                                Senior Product Designer · Design Systems · AI · UX Research
+                                Senior Product Designer · Design Systems · AI Products · Service Design
                             </motion.p>
 
                             {/* Description (Desktop Only) */}
                             <motion.p variants={fadeUpVariants} className="hidden md:block text-base md:text-xl text-slate-500 leading-relaxed max-w-xl font-inter mb-4">
-                                Building bilingual design systems that power Dubai's AI-driven government transformation.
+                                Designing AI products, scalable design systems, and end-to-end government services for 12M+ users across Dubai.
                             </motion.p>
 
                             {/* Capability Ticker / Tag */}

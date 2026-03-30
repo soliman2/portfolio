@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowLeft } from 'lucide-react';
+import { Menu, X, ArrowLeft, Briefcase, User, FileText, Mail } from 'lucide-react';
 
 interface NavbarProps {
   isCaseStudy?: boolean;
@@ -28,14 +28,15 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
   });
 
   const links = [
-    { name: 'Work', href: '/work', external: false },
-    { name: 'About', href: '/about', external: false },
+    { name: 'Work', href: '/#work', external: false, isHash: true, icon: Briefcase },
+    { name: 'About', href: '/about', external: false, icon: User },
     {
       name: 'Resume',
       href: '/Soliman - Senior Product Designer | Design Systems · AI · Service Design.pdf',
-      external: true
+      external: true,
+      icon: FileText
     },
-    { name: 'Contact', href: '/contact', external: false },
+    { name: 'Contact', href: '/contact', external: false, icon: Mail },
   ];
 
   return (
@@ -54,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
         <div className="flex-shrink-0 flex items-center">
           {isInnerPage ? (
             <button
-              onClick={() => navigate(-1)}
+              onClick={() => navigate('/')}
               className="flex items-center gap-2 ml-2 group"
               aria-label="Go back"
             >
@@ -74,27 +75,36 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
 
         {/* Desktop Nav - Centered Pills */}
         <div className="hidden md:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          {links.map((link) => (
-            link.external ? (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
-              >
-                {link.name}
+          {links.map((link) => {
+            const Icon = link.icon;
+            const cls = "flex items-center gap-1.5 px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200";
+            const inner = <><Icon size={14} className="opacity-50" />{link.name}</>;
+
+            return link.external ? (
+              <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                {inner}
               </a>
-            ) : (
-              <Link
+            ) : (link as any).isHash ? (
+              <button
                 key={link.name}
-                to={link.href}
-                className="px-5 py-2 text-sm font-medium font-display text-slate-600 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
+                onClick={() => {
+                  if (location.pathname === '/') {
+                    document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    navigate('/');
+                    setTimeout(() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                  }
+                }}
+                className={cls}
               >
-                {link.name}
+                {inner}
+              </button>
+            ) : (
+              <Link key={link.name} to={link.href} className={cls}>
+                {inner}
               </Link>
-            )
-          ))}
+            );
+          })}
         </div>
 
         {/* Desktop CTA */}
@@ -129,29 +139,37 @@ const Navbar: React.FC<NavbarProps> = ({ isCaseStudy = false, onBack }) => {
             className="absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-xl border border-slate-200/50 rounded-3xl shadow-xl overflow-hidden md:hidden p-2"
           >
             <div className="flex flex-col gap-1 p-2">
-              {links.map((link) => (
-                link.external ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-3 text-base font-medium font-display text-slate-700 rounded-xl hover:bg-slate-100/80 hover:text-blue-600 transition-colors"
-                  >
-                    {link.name}
+              {links.map((link) => {
+                const Icon = link.icon;
+                const mobileCls = "flex items-center gap-3 px-4 py-3 text-base font-medium font-display text-slate-700 rounded-xl hover:bg-slate-100/80 hover:text-blue-600 transition-colors";
+                const mobileInner = <><Icon size={18} className="text-slate-400" />{link.name}</>;
+
+                return link.external ? (
+                  <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer" className={mobileCls}>
+                    {mobileInner}
                   </a>
-                ) : (
-                  <Link
+                ) : (link as any).isHash ? (
+                  <button
                     key={link.name}
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="px-4 py-3 text-base font-medium font-display text-slate-700 rounded-xl hover:bg-slate-100/80 hover:text-blue-600 transition-colors"
+                    onClick={() => {
+                      setIsOpen(false);
+                      if (location.pathname === '/') {
+                        document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        navigate('/');
+                        setTimeout(() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' }), 300);
+                      }
+                    }}
+                    className={`${mobileCls} text-left`}
                   >
-                    {link.name}
+                    {mobileInner}
+                  </button>
+                ) : (
+                  <Link key={link.name} to={link.href} onClick={() => setIsOpen(false)} className={mobileCls}>
+                    {mobileInner}
                   </Link>
-                )
-              ))}
+                );
+              })}
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}

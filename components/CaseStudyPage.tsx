@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    ArrowLeft, ArrowRight, Layers, Sparkles, Trophy,
+    ArrowLeft, ArrowRight, Layers, Sparkles, Trophy, Zap,
     CheckCircle2, ChevronRight, ExternalLink, Clock, Send, Laptop, Layout,
     Palette, Type, Globe, AlertCircle, Loader2, X, ZoomIn, MessageSquare, BarChart2, TrendingUp
 } from 'lucide-react';
@@ -113,7 +113,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
                 </div>
 
                 {/* ── Content ── */}
-                <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10 w-full py-32 lg:py-0">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10 w-full py-32 lg:py-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
                         {/* ── Left — Text ── */}
@@ -150,12 +150,12 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
                             {/* Stat cards */}
                             <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
                                 {[
-                                    { val: '93%', label: 'Faster Workflow', icon: '⚡', color: '#4169E1' },
-                                    { val: '5d → 8h', label: 'Time Reduction', icon: '⏱', color: '#7C3AED' },
-                                    { val: "GITEX '25", label: 'Live Showcase', icon: '🏆', color: '#0EA5E9' },
+                                    { val: '93%', label: 'Faster Workflow', Icon: Zap, color: '#4169E1' },
+                                    { val: '5d → 8h', label: 'Time Reduction', Icon: Clock, color: '#7C3AED' },
+                                    { val: "GITEX '25", label: 'Live Showcase', Icon: Trophy, color: '#0EA5E9' },
                                 ].map((m, i) => (
                                     <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-slate-200/80 shadow-sm shadow-slate-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                                        <span className="text-[20px] leading-none">{m.icon}</span>
+                                        <m.Icon size={20} style={{ color: m.color }} />
                                         <div>
                                             <div className="text-[18px] font-bold font-display leading-none mb-0.5" style={{ color: m.color }}>{m.val}</div>
                                             <div className="text-[11px] font-semibold text-[#9CA3AF] uppercase tracking-wider">{m.label}</div>
@@ -219,7 +219,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ onBack }) => {
                                 transition={{ delay: 1, duration: 0.5 }}
                                 className="absolute -top-5 -right-4 flex items-center gap-2 px-3 py-2 bg-white rounded-xl shadow-lg border border-amber-100"
                             >
-                                <span className="text-[16px]">🏆</span>
+                                <Trophy size={16} className="text-amber-500" />
                                 <div>
                                     <div className="text-[10px] font-bold text-amber-700 uppercase tracking-wider">Official</div>
                                     <div className="text-[10px] text-amber-600">RTA Recognition</div>
